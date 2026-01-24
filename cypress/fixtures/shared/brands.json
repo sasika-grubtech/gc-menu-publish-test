@@ -1,0 +1,16 @@
+{
+  "brands": [
+    {
+      "id": "62de66386d3f307b8ace1364",
+      "name": "Test Brand 1"
+    },
+    {
+      "id": "62de66386d3f307b8ace1365",
+      "name": "Test Brand 2"
+    },
+    {
+      "id": "62de66386d3f307b8ace1366",
+      "name": "Test Brand 3"
+    }
+  ]
+}

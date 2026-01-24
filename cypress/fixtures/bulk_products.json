@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "name": "Classic Margherita Pizza",
+      "displayName": "Margherita Pizza",
+      "description": "Traditional Italian pizza with fresh mozzarella, tomato sauce, and basil",
+      "price": "150",
+      "externalId": "EXT_MARG_001",
+      "category": "Pizza",
+      "tags": ["Vegetarian", "Popular"]
+    },
+    {
+      "name": "Chicken Burger Deluxe",
+      "displayName": "Deluxe Chicken Burger",
+      "description": "Grilled chicken breast with lettuce, tomato, and special sauce",
+      "price": "180",
+      "externalId": "EXT_BURG_002",
+      "category": "Burgers",
+      "tags": ["Best Seller"]
+    },
+    {
+      "name": "Caesar Salad Bowl",
+      "displayName": "Classic Caesar Salad",
+      "description": "Fresh romaine lettuce with parmesan cheese and caesar dressing",
+      "price": "120",
+      "externalId": "EXT_SALA_003",
+      "category": "Salads",
+      "tags": ["Healthy", "Vegetarian"]
+    },
+    {
+      "name": "Beef Pasta Carbonara",
+      "displayName": "Carbonara Pasta",
+      "description": "Creamy pasta with bacon, egg, and parmesan cheese",
+      "price": "200",
+      "externalId": "EXT_PAST_004",
+      "category": "Pasta",
+      "tags": ["Italian", "Popular"]
+    },
+    {
+      "name": "Chocolate Lava Cake",
+      "displayName": "Molten Chocolate Cake",
+      "description": "Warm chocolate cake with a gooey molten center, served with vanilla ice cream",
+      "price": "95",
+      "externalId": "EXT_DESS_005",
+      "category": "Desserts",
+      "tags": ["Sweet", "Popular"]
+    },
+    {
+      "name": "Grilled Salmon Fillet",
+      "displayName": "Atlantic Grilled Salmon",
+      "description": "Fresh Atlantic salmon grilled to perfection with lemon butter sauce",
+      "price": "320",
+      "externalId": "EXT_FISH_006",
+      "category": "Seafood",
+      "tags": ["Healthy", "Premium"]
+    },
+    {
+      "name": "Vegetable Spring Rolls",
+      "displayName": "Crispy Spring Rolls",
+      "description": "Golden fried spring rolls filled with fresh vegetables and served with sweet chili sauce",
+      "price": "85",
+      "externalId": "EXT_APPT_007",
+      "category": "Appetizers",
+      "tags": ["Vegetarian", "Starter"]
+    },
+    {
+      "name": "Iced Caramel Macchiato",
+      "displayName": "Caramel Macchiato",
+      "description": "Espresso with vanilla syrup, milk, and caramel drizzle served over ice",
+      "price": "65",
+      "externalId": "EXT_BVRG_008",
+      "category": "Beverages",
+      "tags": ["Coffee", "Cold Drink"]
+    },
+    {
+      "name": "BBQ Chicken Wings",
+      "displayName": "Spicy BBQ Wings",
+      "description": "Crispy chicken wings tossed in smoky BBQ sauce with a side of ranch",
+      "price": "140",
+      "externalId": "EXT_WING_009",
+      "category": "Appetizers",
+      "tags": ["Spicy", "Best Seller"]
+    }
+  ]
+}

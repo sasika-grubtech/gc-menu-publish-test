@@ -1,0 +1,49 @@
+{
+  "textModifierGroup": {
+    "name": "Text Modifier Group Name",
+    "description": "Text Modifier Group Description",
+    "displayName": "Text Modifier Group Display Name",
+    "externalId": "EXT123456",
+    "textModifier": [
+      {
+        "name": "Text Modifier Name",
+        "externalId": "EXT123456",
+        "nutritionInputField": "100"
+      }
+    ],
+    "modifierGroups": [
+      {
+        "name": "Select your cooking style",
+        "id": "6e141046-5cad-4d6c-ac33-042abc06c436"
+      }
+    ]
+  },
+  "productModifierGroup": {
+    "name": "Product Modifier Group Name",
+    "description": "Product Modifier Group Description",
+    "displayName": "Product Modifier Group Display Name",
+    "externalId": "EXT123456",
+    "modifierGroups": [
+      {
+        "name": "Select your cheese",
+        "id": "3e84d284-d8af-476c-acdc-f2f1200ec717"
+      },
+      {
+        "name": "Blue cheese",
+        "id": "9f937fb3-81b6-4cc0-b552-8aeb556c2585"
+      },
+      {
+        "name": "Chedder",
+        "id": "0258824c-b5a2-43ce-b6b0-5d15fc5c04d3"
+      },
+      {
+        "name": "Select your chedder type",
+        "id": "b18282c6-a691-4705-8282-094142c0f193"
+      },
+      {
+        "name": "Mild Chedder Cheese",
+        "id": "1526407f-ab03-4042-8b77-f430d7eff56b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "id": "69744de9aa80327c4e04de64",
+      "name": "Pizza"
+    },
+    {
+      "id": "69744de9aa80327c4e04de65",
+      "name": "Burgers"
+    },
+    {
+      "id": "69744de9aa80327c4e04de66",
+      "name": "Salads"
+    },
+    {
+      "id": "69744deaaa80327c4e04de67",
+      "name": "Pasta"
+    },
+    {
+      "id": "69744deaaa80327c4e04de68",
+      "name": "Desserts"
+    },
+    {
+      "id": "69744deaaa80327c4e04de69",
+      "name": "Seafood"
+    },
+    {
+      "id": "69744deaaa80327c4e04de6a",
+      "name": "Appetizers"
+    },
+    {
+      "id": "69744debaa80327c4e04de6b",
+      "name": "Beverages"
+    },
+    {
+      "id": "69744debaa80327c4e04de6c",
+      "name": "Pizza Category"
+    },
+    {
+      "id": "69744debaa80327c4e04de6d",
+      "name": "Main Dishes"
+    }
+  ]
+}

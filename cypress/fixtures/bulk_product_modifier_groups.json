@@ -1,0 +1,58 @@
+{
+  "productModifierGroups": [
+    {
+      "name": "Burger Additions_PMG001",
+      "displayName": "Premium Burger Add-ons",
+      "description": "Customize your burger with premium toppings and extras to create your perfect meal",
+      "externalId": "PMG_EXT_001"
+    },
+    {
+      "name": "Pizza Sizes_PMG002",
+      "displayName": "Pizza Size Selection",
+      "description": "Choose from our range of pizza sizes to suit your appetite and occasion",
+      "externalId": "PMG_EXT_002"
+    },
+    {
+      "name": "Pasta Variations_PMG003",
+      "displayName": "Pasta Type Selection",
+      "description": "Select your preferred pasta type from our authentic Italian pasta varieties",
+      "externalId": "PMG_EXT_003"
+    },
+    {
+      "name": "Coffee Customization_PMG004",
+      "displayName": "Coffee Preferences",
+      "description": "Personalize your coffee with milk options, syrups, and additional shots",
+      "externalId": "PMG_EXT_004"
+    },
+    {
+      "name": "Salad Dressings_PMG005",
+      "displayName": "Dressing Selection",
+      "description": "Choose from our variety of house-made dressings to complement your fresh salad",
+      "externalId": "PMG_EXT_005"
+    },
+    {
+      "name": "Sandwich Breads_PMG006",
+      "displayName": "Bread Type",
+      "description": "Select your preferred bread type for your sandwich from our fresh-baked options",
+      "externalId": "PMG_EXT_006"
+    },
+    {
+      "name": "Ice Cream Toppings_PMG007",
+      "displayName": "Dessert Toppings",
+      "description": "Complete your dessert with delicious toppings, sauces, and mix-ins",
+      "externalId": "PMG_EXT_007"
+    },
+    {
+      "name": "Smoothie Boosters_PMG008",
+      "displayName": "Health Boosters",
+      "description": "Add nutritious boosters to enhance your smoothie with vitamins and supplements",
+      "externalId": "PMG_EXT_008"
+    },
+    {
+      "name": "Wrap Fillings_PMG009",
+      "displayName": "Wrap Contents",
+      "description": "Customize your wrap with fresh vegetables, proteins, and signature sauces",
+      "externalId": "PMG_EXT_009"
+    }
+  ]
+}
