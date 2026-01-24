@@ -15,10 +15,16 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run --headless --browser chrome",
+    "test": "npx cypress run"
   },
   "devDependencies": {
+    "@cypress/grep": "^4.1.1",
+    "@faker-js/faker": "^9.9.0",
     "cypress": "^14.5.4",
+    "cypress-xpath": "^2.0.1",
+    "dotenv": "^16.4.7",
     "typescript": "^5.2.2"
   }
 }
