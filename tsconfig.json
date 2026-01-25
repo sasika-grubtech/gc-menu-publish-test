@@ -8,13 +8,17 @@
     "allowJs": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "types": ["cypress", "cypress-xpath","node", "@cypress/grep","cypress-file-upload"],
+    "types": ["cypress", "cypress-xpath","node", "@cypress/grep"],
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "cypress/*": ["./cypress/*"]
+    }
   },
+  "include": ["cypress/**/*.ts", "**/*.ts"],
   "exclude": ["node_modules", "dist"],
   "typedocOptions": {
     "entryPoints": ["index.ts"],

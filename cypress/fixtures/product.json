@@ -1,0 +1,16 @@
+{
+  "product": {
+    "name": "Product name",
+    "status": "Active",
+    "displayName": "Product Display Name",
+    "description": "Product description",
+    "nutritionalInfo": "10",
+    "nutritionalInfoConversion": "41.84 kJ",
+    "price": {
+      "price": "100",
+      "tax": "VAT",
+      "newTaxValue": "10"
+    },
+    "externalId": "EXT123456"
+  }
+}

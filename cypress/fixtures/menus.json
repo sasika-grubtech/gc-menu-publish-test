@@ -1,0 +1,62 @@
+{
+  "menus": [
+    {
+      "name": "Test Menu 1",
+      "description": "Test menu with categories and products for workflow testing",
+      "externalId": "TEST_MENU_001",
+      "brandId": "69732fa2033cf464cae30e1e",
+      "brandName": "KFC",
+      "categories": [
+        {
+          "id": "69744debaa80327c4e04de6c",
+          "name": "Pizza Category",
+          "products": ["Classic Margherita Pizza", "Chicken Burger Deluxe"]
+        },
+        {
+          "id": "69744de9aa80327c4e04de65",
+          "name": "Burgers",
+          "products": ["Chicken Burger Deluxe", "Caesar Salad Bowl"]
+        }
+      ]
+    },
+    {
+      "name": "Test Menu 2",
+      "description": "Second test menu with overlapping products",
+      "externalId": "TEST_MENU_002",
+      "brandId": "69732fb8cf208476bf388e8f",
+      "brandName": "Pizza Hut",
+      "categories": [
+        {
+          "id": "69744debaa80327c4e04de6d",
+          "name": "Main Dishes",
+          "products": ["Classic Margherita Pizza", "Chicken Burger Deluxe", "Caesar Salad Bowl"]
+        },
+        {
+          "id": "69744de9aa80327c4e04de66",
+          "name": "Salads",
+          "products": ["Classic Margherita Pizza", "Chicken Burger Deluxe"]
+        }
+      ]
+    }
+  ],
+  "brands": [
+    {
+      "name": "KFC",
+      "id": "69732fa2033cf464cae30e1e"
+    },
+    {
+      "name": "Pizza Hut",
+      "id": "69732fb8cf208476bf388e8f"
+    }
+  ],
+  "currencies": [
+    {
+      "name": "SAR",
+      "id": "61c97429036b9f3731064f02"
+    },
+    {
+      "name": "United Arab Emirates Dirham",
+      "id": "5f7ac8e08088545d96024089"
+    }
+  ]
+}
