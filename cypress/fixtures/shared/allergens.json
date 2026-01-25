@@ -1,0 +1,12 @@
+{
+  "allergens": [
+    {
+      "id": "65ba3c50a74f606040849f0e",
+      "name": "Nuts"
+    },
+    {
+      "id": "65ba3c50a74f606040849f0f",
+      "name": "Dairy"
+    }
+  ]
+}
