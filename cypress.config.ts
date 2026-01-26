@@ -19,6 +19,7 @@ export default defineConfig({
     openMode: 0, // Retry failed tests 1 time in interactive mode
   },
 
+  
   e2e: {
     baseUrl: "https://grubcenter.staging.grubtech.io/",
     viewportWidth: 1920,  // Default width
