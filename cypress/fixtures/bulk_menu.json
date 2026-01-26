@@ -1,0 +1,76 @@
+{
+  "menus": [
+    {
+      "name": "Test Menu 1",
+      "description": "Test menu with categories and products",
+      "externalId": "TEST_MENU_001",
+      "brandName": "KFC",
+      "categories": [
+        {
+          "name": "M1_Category 1",
+          "products": [
+            {
+              "name": "Classic Margherita Pizza",
+              "displayName": "Margherita Pizza"
+            },
+            {
+              "name": "Chicken Burger Deluxe",
+              "displayName": "Deluxe Chicken Burger"
+            }
+          ]
+        },
+        {
+          "name": "M1_Category 2",
+          "products": [
+            {
+              "name": "Chicken Burger Deluxe",
+              "displayName": "Deluxe Chicken Burger"
+            },
+            {
+              "name": "Caesar Salad Bowl",
+              "displayName": "Classic Caesar Salad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Test Menu 2",
+      "description": "Second test menu with overlapping products",
+      "externalId": "TEST_MENU_002",
+      "brandName": "Pizza Hut",
+      "categories": [
+        {
+          "name": "M2_Category 1",
+          "products": [
+            {
+              "name": "Classic Margherita Pizza",
+              "displayName": "Margherita Pizza"
+            },
+            {
+              "name": "Chicken Burger Deluxe",
+              "displayName": "Deluxe Chicken Burger"
+            },
+            {
+              "name": "Caesar Salad Bowl",
+              "displayName": "Classic Caesar Salad"
+            }
+          ]
+        },
+        {
+          "name": "M2_Category 2",
+          "products": [
+            {
+              "name": "Classic Margherita Pizza",
+              "displayName": "Margherita Pizza"
+            },
+            {
+              "name": "Chicken Burger Deluxe",
+              "displayName": "Deluxe Chicken Burger"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
