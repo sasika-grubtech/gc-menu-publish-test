@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - main
   schedule:
     # Run at 8:00 PM UTC daily (equivalent to 0 20 * * * in CircleCI)
     - cron: '0 20 * * *'

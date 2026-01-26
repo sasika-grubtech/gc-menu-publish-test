@@ -2,24 +2,16 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   projectId: "1g4u9o",
-  reporter: "cypress-multi-reporters",
+  reporter: 'mocha-junit-reporter',
   reporterOptions: {
-    reporterEnabled: "spec,mochawesome",
-    mochawesomeReporterOptions: {
-      reportDir: "cypress/reports/mocha",
-      reportFilename: "result-" + process.env.CIRCLE_NODE_INDEX,
-      quiet: true,
-      overwrite: false,
-      html: false,
-      json: true,
-    }
+    mochaFile: 'cypress/results/results-[hash].xml',
   },
   retries: {
-    runMode: 1, // Retry failed tests 1 times in headless mode
+    runMode: 0, // Retry failed tests 1 times in headless mode
     openMode: 0, // Retry failed tests 1 time in interactive mode
   },
 
-  
+
   e2e: {
     baseUrl: "https://grubcenter.staging.grubtech.io/",
     viewportWidth: 1920,  // Default width
