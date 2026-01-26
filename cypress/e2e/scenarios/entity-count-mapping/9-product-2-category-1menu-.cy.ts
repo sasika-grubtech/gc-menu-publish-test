@@ -19,12 +19,11 @@ const gc2CleanupMethods = new GC2CleanupMethods();
 
 describe('Verify entity count mapping - 4 unique products , 2 categories , 1 menu to 1 location', () => {
 
-    it.skip('Should cleanup all created products and modifier groups', function () {
+    after('Should cleanup all created products and modifier groups', function () {
         AuthenticationService.authenticate();
         cleanup.cleanup_menu(1);
-        cleanup.cleanup_product(4);
-        cleanup.cleanup_modifier_group(2);
-        gc2CleanupMethods.cleanup_menu_item(4);
+        cleanup.cleanup_product(9);
+        gc2CleanupMethods.cleanup_menu_item(9);
         gc2CleanupMethods.cleanup_menu(1);
     });
 
@@ -33,7 +32,7 @@ describe('Verify entity count mapping - 4 unique products , 2 categories , 1 men
         productMiddleLayer.product_create_with_mandatory_fields(9);
     });
 
-    it.only('Should create 1 menu with 2 category and 2 product', function () {
+    it('Should create 1 menu with 2 category and 2 product', function () {
         navigator.navigate_to_menu_page();
         sample.logic(1, 3, 3);
     });
@@ -49,7 +48,7 @@ describe('Verify entity count mapping - 4 unique products , 2 categories , 1 men
 
     it('Should verify Menu Items (Products) appear in GC2 Menu Management > Menu Items', function () {
         navigator.navigate_to_gc2_menu_items_page();
-        gc2MiddleLayer.gc2_menu_items_table_verification(8);
+        gc2MiddleLayer.gc2_menu_items_table_verification(9);
     });
 });
 

@@ -34,293 +34,302 @@ const partnerId = Cypress.env('PARTNER_ID') || '60ad435d39f1600f7cce8f37';
 
 export class ModifierGroupMiddleLayer {
 
-    public modifier_group_bulk_create( count?: number) {
-        cy.fixture('bulk_product_modifier_groups').then((bulkData) => {
-            cy.fixture('shared/tags').then((tagsData) => {
-                cy.fixture('shared/category').then((categoryData) => {
-                    // Only create first 6 modifier groups (for 3 chains, 2 per chain)
-                    const modifierGroups = bulkData.productModifierGroups.slice(0, 6);
+    // Fill modifier group overview tab
+    private fillModifierGroupOverview(mg: any, category: any) {
+        modifierGroupHome
+            .step_click_create_new_modifier_group_button()
+            .step_click_modifier_type_product_button()
+            .step_enter_overview_name(mg.name)
+            .step_enter_overview_display_name(mg.displayName)
+            .step_enter_overview_description(mg.description)
+            .step_enter_overview_external_id(mg.externalId);
 
-                    cy.log(`📦 STEP 2: Creating ${modifierGroups.length} product modifier groups`);
+        modifierGroupCreate.step_click_category_select_textbox();
+        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+    }
+
+    // Add tags to modifier group
+    private addTagsToModifierGroup(tag: any) {
+        modifierGroupCreate.verify_tags_title_visible();
+        modifierGroupCreate.step_enter_tags_select(tag.name);
+        modifierGroupCreate.step_select_tag_checkbox(tag.id);
+    }
+
+    // Create a single modifier group
+    private createModifierGroup(mg: any, index: number, category: any, tag: any) {
+        cy.log(`🔹 Creating modifier group ${index + 1}: ${mg.name}`);
+        createdModifierGroupNames.push(mg.name);
+
+        this.fillModifierGroupOverview(mg, category);
+        this.addTagsToModifierGroup(tag);
+
+        modifierGroupCreate.step_click_create_modifier_group_button();
+        modifierGroupHome
+            .verify_toast_message("Modifier group created successfully")
+            .verify_toast_message_text(`New modifier group, "${mg.name}" has been successfully created`);
+
+        cy.log(`✅ Modifier group ${index + 1} created: ${mg.name}`);
+        cy.wait(2000);
+    }
+
+    // Main method to create modifier groups in bulk
+    public modifier_group_bulk_create(count?: number) {
+        cy.fixture('bulk_product_modifier_groups').then((bulkData: any) => {
+            cy.fixture('shared/tags').then((tagsData: any) => {
+                cy.fixture('shared/category').then((categoryData: any) => {
+                    let modifierGroups = bulkData.productModifierGroups;
+                    
+                    // Limit to count if provided
+                    if (count !== undefined) {
+                        modifierGroups = modifierGroups.slice(0, count);
+                    }
+
+                    cy.log(`📦 Creating ${modifierGroups.length} product modifier groups`);
                     cy.log('═══════════════════════════════════════════════════════════════');
 
                     modifierGroups.forEach((mg: any, index: number) => {
-                        cy.log(`🔹 Creating modifier group ${index + 1} of ${modifierGroups.length}: ${mg.name}`);
-
-                        // Store modifier group name for cleanup
-                        createdModifierGroupNames.push(mg.name);
-
-                        // ====== OVERVIEW TAB ======
-                        modifierGroupHome
-                            .step_click_create_new_modifier_group_button()
-                            .step_click_modifier_type_product_button()
-                            .step_enter_overview_name(mg.name)
-                            .step_enter_overview_display_name(mg.displayName)
-                            .step_enter_overview_description(mg.description)
-                            .step_enter_overview_external_id(mg.externalId);
-
-                        // Select existing category
                         const categoryIndex = index % categoryData.categories.length;
                         const category = categoryData.categories[categoryIndex];
-                        modifierGroupCreate.step_click_category_select_textbox();
-                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
-
-                        // Toggle Status to Active
-                       // modifierGroupCreate.step_change_overview_status();
-
-                        // ====== TAGS TAB ======
-                        modifierGroupCreate.verify_tags_title_visible();
-                        modifierGroupCreate.step_enter_tags_select(tagsData.tags[0].name);
-                        modifierGroupCreate.step_select_tag_checkbox(tagsData.tags[0].id);
-
-                        // ====== CREATE MODIFIER GROUP ======
-                        modifierGroupCreate.step_click_create_modifier_group_button();
-
-                        // Validate toast message
-                        modifierGroupHome
-                            .verify_toast_message("Modifier group created successfully")
-                            .verify_toast_message_text(`New modifier group, "${mg.name}" has been successfully created`);
-
-                        cy.log(`✅ Modifier group ${index + 1} created: ${mg.name}`);
-                        cy.wait(2000);
+                        const tag = tagsData.tags[0];
+                        this.createModifierGroup(mg, index + 1, category, tag);
                     });
 
                     cy.log('═══════════════════════════════════════════════════════════════');
-                    cy.log(`✅ STEP 2 COMPLETE: Created ${modifierGroups.length} modifier groups`);
+                    cy.log(`✅ COMPLETE: Created ${modifierGroups.length} modifier groups`);
                 });
             });
         });
-
     }
 
 
-    public modifier_group_bulk_edit(count?: number) {
-        // Define complete nested chains - each entry builds the full chain on one product
-        // Note: productModifierName is used for search, productModifierDisplayName is used for verification
-        const nestedChains = [
-            // Chain 1: Classic Margherita Pizza → MG1 → Chicken Burger Deluxe → MG2 → Caesar Salad Bowl
-            {
-                chainNumber: 1,
-                rootProduct: "Classic Margherita Pizza",
+    // Generate nested chains dynamically from fixture data
+    // Uses only the created products and modifier groups (limited by counts)
+    private generateNestedChains(allProducts: any[], allModifierGroups: any[], chainCount: number, productCount: number, mgCount: number) {
+        const chains: any[] = [];
+        // Use only the created products (first productCount products)
+        const availableProducts = allProducts.slice(0, productCount);
+        // Use only the created modifier groups (first mgCount groups)
+        const availableModifierGroups = allModifierGroups.slice(0, mgCount);
+        
+        if (availableModifierGroups.length < 2) {
+            cy.log(`⚠️ Need at least 2 modifier groups to create chains. Available: ${availableModifierGroups.length}`);
+            return chains;
+        }
+        
+        if (availableProducts.length < 3) {
+            cy.log(`⚠️ Need at least 3 products to create chains. Available: ${availableProducts.length}`);
+            return chains;
+        }
+        
+        for (let i = 0; i < chainCount; i++) {
+            // Use products in groups of 3 per chain, cycle through available products if needed
+            const productIndex = (i * 3) % availableProducts.length;
+            const product1Index = (productIndex + 1) % availableProducts.length;
+            const product2Index = (productIndex + 2) % availableProducts.length;
+            
+            const rootProduct = availableProducts[productIndex];
+            const product1 = availableProducts[product1Index];
+            const product2 = availableProducts[product2Index];
+            
+            // Reuse modifier groups - cycle through available groups
+            // Each chain needs 2 modifier groups (level1 and level2)
+            const mg1Index = (i * 2) % availableModifierGroups.length;
+            const mg2Index = (mg1Index + 1) % availableModifierGroups.length;
+            
+            const mg1 = availableModifierGroups[mg1Index];
+            const mg2 = availableModifierGroups[mg2Index];
+            
+            chains.push({
+                chainNumber: i + 1,
+                rootProduct: rootProduct.name,
                 level1: {
-                    modifierGroupName: "Burger Additions_PMG001",
-                    modifierGroupDisplayName: "Premium Burger Add-ons",
-                    productModifierName: "Chicken Burger Deluxe",
-                    productModifierDisplayName: "Deluxe Chicken Burger"
+                    modifierGroupName: mg1.name,
+                    modifierGroupDisplayName: mg1.displayName,
+                    productModifierName: product1.name,
+                    productModifierDisplayName: product1.displayName
                 },
                 level2: {
-                    modifierGroupName: "Pizza Sizes_PMG002",
-                    modifierGroupDisplayName: "Pizza Size Selection",
-                    productModifierName: "Caesar Salad Bowl",
-                    productModifierDisplayName: "Classic Caesar Salad"
+                    modifierGroupName: mg2.name,
+                    modifierGroupDisplayName: mg2.displayName,
+                    productModifierName: product2.name,
+                    productModifierDisplayName: product2.displayName
                 }
-            },
-            // Chain 2: Beef Pasta Carbonara → MG3 → Chocolate Lava Cake → MG4 → Grilled Salmon Fillet
-            {
-                chainNumber: 2,
-                rootProduct: "Beef Pasta Carbonara",
-                level1: {
-                    modifierGroupName: "Pasta Variations_PMG003",
-                    modifierGroupDisplayName: "Pasta Type Selection",
-                    productModifierName: "Chocolate Lava Cake",
-                    productModifierDisplayName: "Molten Chocolate Cake"
-                },
-                level2: {
-                    modifierGroupName: "Coffee Customization_PMG004",
-                    modifierGroupDisplayName: "Coffee Preferences",
-                    productModifierName: "Grilled Salmon Fillet",
-                    productModifierDisplayName: "Atlantic Grilled Salmon"
-                }
-            },
-            // Chain 3: Vegetable Spring Rolls → MG5 → Iced Caramel Macchiato → MG6 → BBQ Chicken Wings
-            {
-                chainNumber: 3,
-                rootProduct: "Vegetable Spring Rolls",
-                level1: {
-                    modifierGroupName: "Salad Dressings_PMG005",
-                    modifierGroupDisplayName: "Dressing Selection",
-                    productModifierName: "Iced Caramel Macchiato",
-                    productModifierDisplayName: "Caramel Macchiato"
-                },
-                level2: {
-                    modifierGroupName: "Sandwich Breads_PMG006",
-                    modifierGroupDisplayName: "Bread Type",
-                    productModifierName: "BBQ Chicken Wings",
-                    productModifierDisplayName: "Spicy BBQ Wings"
-                }
-            }
-        ];
+            });
+        }
+        
+        return chains;
+    }
 
-        beforeEach(() => {
-            navigator.navigate_to_product_page();
+    // Search and edit a product
+    private searchAndEditProduct(productName: string) {
+        cy.log(`🔧 Searching and editing product: ${productName}`);
+        productHome.step_search_products(productName);
+        productHome.step_click_edit_product();
+        cy.wait(3000);
+    }
+
+    // Add modifier group to product
+    private addModifierGroupToProduct(modifierGroupName: string, modifierGroupDisplayName: string) {
+        cy.log(`➕ Adding Modifier Group: ${modifierGroupName}`);
+        productCreate.step_click_modifier_group_select();
+        
+        cy.get('[data-cy="enter-search-modifier-group-name-input"]').type(modifierGroupName);
+        cy.wait(2000);
+        
+        cy.get('[data-cy^="modifier-group-table-select-"]')
+            .filter(':visible')
+            .first()
+            .click({ force: true });
+        
+        productCreate.step_click_save_add_mg_modal_button();
+        cy.wait(2000);
+        
+        cy.log(`✅ Verifying Modifier Group added: ${modifierGroupDisplayName}`);
+        cy.get('#modifier-groups').within(() => {
+            cy.contains(modifierGroupDisplayName).should('be.visible');
         });
+    }
 
-        nestedChains.forEach((chain) => {
-            it(`Chain ${chain.chainNumber}: ${chain.rootProduct} → ${chain.level1.modifierGroupDisplayName} → ${chain.level1.productModifierDisplayName} → ${chain.level2.modifierGroupDisplayName} → ${chain.level2.productModifierDisplayName}`, function () {
+    // Get element ID from display name
+    private getElementId(displayName: string, selector: string = '[data-cy$="-display-name"]'): Cypress.Chainable<string> {
+        return cy.get('#modifier-groups')
+            .find(selector)
+            .contains(displayName)
+            .closest(selector)
+            .invoke('attr', 'data-cy')
+            .then((dataCy) => dataCy?.replace('-display-name', '') || '');
+    }
+
+    // Add product modifier to modifier group
+    private addProductModifierToModifierGroup(mgId: string, productName: string, productDisplayName: string) {
+        cy.log(`➕ Expanding MG to add Product Modifier: ${productName}`);
+        productCreate.step_click_expand_button(mgId);
+        productCreate.step_add_modifier_first_level_override(mgId);
+        
+        cy.get('[data-cy="-input"]').type(productName);
+        cy.wait(2000);
+        
+        cy.get('[data-cy^="product-table-select-"]')
+            .filter(':visible')
+            .first()
+            .click({ force: true });
+        
+        // Click save button with force since it might be disabled initially
+        cy.get('.flex-col-reverse > .bg-button-primary-bg').click({ force: true });
+        cy.wait(2000);
+        
+        cy.log(`✅ Verifying Product Modifier added: ${productDisplayName}`);
+        cy.get('#modifier-groups').within(() => {
+            cy.contains(productDisplayName).should('be.visible');
+        });
+    }
+
+    // Add modifier group to product modifier
+    private addModifierGroupToProductModifier(productModifierId: string, modifierGroupName: string, modifierGroupDisplayName: string) {
+        cy.log(`➕ Adding Modifier Group to Product Modifier`);
+        productCreate.step_click_expand_button(productModifierId);
+        cy.wait(1000);
+        
+        cy.get(`[data-cy="add-modifier-group-button-${productModifierId}"]`).click({ force: true });
+        cy.wait(2000);
+        
+        cy.get('[data-cy="enter-search-modifier-group-name-input"]').clear().type(modifierGroupName);
+        cy.wait(2000);
+        
+        cy.get('[data-cy^="modifier-group-table-select-"]')
+            .filter(':visible')
+            .first()
+            .click({ force: true });
+        
+        productCreate.step_click_save_add_mg_modal_button();
+        cy.wait(2000);
+        
+        cy.log(`✅ Verifying Modifier Group added: ${modifierGroupDisplayName}`);
+        cy.contains(modifierGroupDisplayName).should('be.visible');
+    }
+
+    // Build a complete nested chain
+    private buildNestedChain(chain: any) {
+        cy.log(`📦 Building Complete Nested Chain ${chain.chainNumber}`);
+        cy.log('═══════════════════════════════════════════════════════════════');
+        cy.log(`Root Product: ${chain.rootProduct}`);
+        cy.log(`Level 1: → ${chain.level1.modifierGroupDisplayName} → ${chain.level1.productModifierDisplayName}`);
+        cy.log(`Level 2: → ${chain.level2.modifierGroupDisplayName} → ${chain.level2.productModifierDisplayName}`);
+
+        this.searchAndEditProduct(chain.rootProduct);
+        this.addModifierGroupToProduct(chain.level1.modifierGroupName, chain.level1.modifierGroupDisplayName);
+
+        this.getElementId(chain.level1.modifierGroupDisplayName).then((mg1Id) => {
+            cy.log(`✅ Level 1 MG ID: ${mg1Id}`);
+            this.addProductModifierToModifierGroup(mg1Id, chain.level1.productModifierName, chain.level1.productModifierDisplayName);
+
+            this.getElementId(chain.level1.productModifierDisplayName, '[data-cy*="-display-name"]').then((productModifierId) => {
+                cy.log(`✅ Product Modifier ID: ${productModifierId}`);
+                this.addModifierGroupToProductModifier(productModifierId, chain.level2.modifierGroupName, chain.level2.modifierGroupDisplayName);
+
+                this.getElementId(chain.level2.modifierGroupDisplayName).then((mg2Id) => {
+                    cy.log(`✅ Level 2 MG ID: ${mg2Id}`);
+                    this.addProductModifierToModifierGroup(mg2Id, chain.level2.productModifierName, chain.level2.productModifierDisplayName);
+
+                    cy.log(`💾 Saving product with complete nested chain`);
+                    productCreate.product_create_button_click();
+                    productHome.verify_toast_message("Product updated successfully");
+
+                    cy.log(`✅ CHAIN ${chain.chainNumber} COMPLETE!`);
+                    cy.log(`   ${chain.rootProduct}`);
+                    cy.log(`   → ${chain.level1.modifierGroupDisplayName}`);
+                    cy.log(`     → ${chain.level1.productModifierDisplayName}`);
+                    cy.log(`       → ${chain.level2.modifierGroupDisplayName}`);
+                    cy.log(`         → ${chain.level2.productModifierDisplayName}`);
+                    cy.wait(2000);
+                });
+            });
+        });
+    }
+
+    // Main method to create nested modifier group chains
+    public modifier_group_bulk_edit(chainCount?: number, productCount?: number, mgCount?: number) {
+        const chainsToCreate = chainCount || 1;
+        const productsCreated = productCount || 4; // Default to 4 if not specified
+        const modifierGroupsCreated = mgCount || 2; // Default to 2 if not specified
+        
+        navigator.navigate_to_product_page();
+
+        cy.fixture('bulk_products').then((productsData: any) => {
+            cy.fixture('bulk_product_modifier_groups').then((mgData: any) => {
+                const allProducts = productsData.products;
+                const allModifierGroups = mgData.productModifierGroups;
                 
-                cy.log(`📦 Building Complete Nested Chain ${chain.chainNumber}`);
+                const nestedChains = this.generateNestedChains(allProducts, allModifierGroups, chainsToCreate, productsCreated, modifierGroupsCreated);
+                
+                if (nestedChains.length === 0) {
+                    cy.log(`⚠️ No chains generated. Check that you have created at least 3 products and 2 modifier groups.`);
+                    return;
+                }
+                
+                cy.log(`📦 Creating ${nestedChains.length} nested modifier group chains`);
+                cy.log(`📊 Using ${productsCreated} created product(s) and ${modifierGroupsCreated} created modifier group(s)`);
                 cy.log('═══════════════════════════════════════════════════════════════');
-                cy.log(`Root Product: ${chain.rootProduct}`);
-                cy.log(`Level 1: → ${chain.level1.modifierGroupDisplayName} → ${chain.level1.productModifierDisplayName}`);
-                cy.log(`Level 2: → ${chain.level2.modifierGroupDisplayName} → ${chain.level2.productModifierDisplayName}`);
 
-                // ========== STEP 1: Search and Edit Root Product ==========
-                cy.log(`🔧 Step 1: Searching and editing root product: ${chain.rootProduct}`);
-                productHome.step_search_products(chain.rootProduct);
-                productHome.step_click_edit_product();
-                cy.wait(3000); // Wait for product edit page to fully load
-
-                // ========== STEP 2: Add Level 1 Modifier Group ==========
-                cy.log(`➕ Step 2: Adding Level 1 Modifier Group: ${chain.level1.modifierGroupName}`);
-                productCreate.step_click_modifier_group_select();
-                
-                cy.get('[data-cy="enter-search-modifier-group-name-input"]').type(chain.level1.modifierGroupName);
-                cy.wait(2000);
-                
-                cy.get('[data-cy^="modifier-group-table-select-"]')
-                    .filter(':visible')
-                    .first()
-                    .click({ force: true });
-                
-                productCreate.step_click_save_add_mg_modal_button();
-                cy.wait(2000);
-                
-                // Verify Level 1 MG was added
-                cy.log(`✅ Verifying Level 1 MG added: ${chain.level1.modifierGroupDisplayName}`);
-                cy.get('#modifier-groups').within(() => {
-                    cy.contains(chain.level1.modifierGroupDisplayName).should('be.visible');
+                nestedChains.forEach((chain: any) => {
+                    this.buildNestedChain(chain);
                 });
 
-                // ========== STEP 3: Add Level 1 Product Modifier ==========
-                // Get the MG1 ID from DOM
-                cy.get('#modifier-groups')
-                    .find('[data-cy$="-display-name"]')
-                    .contains(chain.level1.modifierGroupDisplayName)
-                    .closest('[data-cy$="-display-name"]')
-                    .invoke('attr', 'data-cy')
-                    .then((dataCy) => {
-                        const mg1Id = dataCy?.replace('-display-name', '') || '';
-                        cy.log(`✅ Level 1 MG ID: ${mg1Id}`);
-
-                        // Expand MG1
-                        cy.log(`➕ Step 3: Expanding MG1 to add Product Modifier: ${chain.level1.productModifierName}`);
-                        productCreate.step_click_expand_button(mg1Id);
-                        
-                        // Click Add Modifier button on MG1
-                        productCreate.step_add_modifier_first_level_override(mg1Id);
-                        
-                        // Search and select Product 2 by name
-                        cy.get('[data-cy="-input"]').type(chain.level1.productModifierName);
-                        cy.wait(2000);
-                        
-                        cy.get('[data-cy^="product-table-select-"]')
-                            .filter(':visible')
-                            .first()
-                            .click({ force: true });
-                        
-                        productCreate.step_click_save_first_level_override_modal_button();
-                        cy.wait(2000);
-
-                        // Verify Product 2 was added as modifier (by display name)
-                        cy.log(`✅ Verifying Product Modifier added: ${chain.level1.productModifierDisplayName}`);
-                        cy.get('#modifier-groups').within(() => {
-                            cy.contains(chain.level1.productModifierDisplayName).should('be.visible');
-                        });
-
-                        // ========== STEP 4: Expand Product 2 and Add Level 2 Modifier Group ==========
-                        // Get Product 2 ID from DOM (it should have a data-cy attribute)
-                        cy.log(`➕ Step 4: Expanding Product Modifier to add Level 2 MG`);
-                        
-                        // Find the product modifier row and get its ID (using display name)
-                        cy.get('#modifier-groups')
-                            .contains(chain.level1.productModifierDisplayName)
-                            .closest('[data-cy*="-display-name"]')
-                            .invoke('attr', 'data-cy')
-                            .then((productDataCy) => {
-                                const product2Id = productDataCy?.replace('-display-name', '') || '';
-                                cy.log(`✅ Product Modifier ID: ${product2Id}`);
-
-                                // Expand Product 2 (the product modifier)
-                                productCreate.step_click_expand_button(product2Id);
-                                cy.wait(1000);
-
-                                // Click "Add Modifier Groups" button on Product 2
-                                cy.log(`➕ Clicking Add Modifier Groups on Product Modifier`);
-                                cy.get(`[data-cy="add-modifier-group-button-${product2Id}"]`).click({ force: true });
-                                cy.wait(2000);
-
-                                // Search and select MG2
-                                cy.log(`➕ Adding Level 2 MG: ${chain.level2.modifierGroupName}`);
-                                cy.get('[data-cy="enter-search-modifier-group-name-input"]').clear().type(chain.level2.modifierGroupName);
-                                cy.wait(2000);
-                                
-                                cy.get('[data-cy^="modifier-group-table-select-"]')
-                                    .filter(':visible')
-                                    .first()
-                                    .click({ force: true });
-                                
-                                productCreate.step_click_save_add_mg_modal_button();
-                                cy.wait(2000);
-
-                                // Verify MG2 was added
-                                cy.log(`✅ Verifying Level 2 MG added: ${chain.level2.modifierGroupDisplayName}`);
-                                cy.contains(chain.level2.modifierGroupDisplayName).should('be.visible');
-
-                                // ========== STEP 5: Expand MG2 and Add Level 2 Product Modifier ==========
-                                // Get MG2 ID from DOM
-                                cy.get('#modifier-groups')
-                                    .contains(chain.level2.modifierGroupDisplayName)
-                                    .closest('[data-cy$="-display-name"]')
-                                    .invoke('attr', 'data-cy')
-                                    .then((mg2DataCy) => {
-                                        const mg2Id = mg2DataCy?.replace('-display-name', '') || '';
-                                        cy.log(`✅ Level 2 MG ID: ${mg2Id}`);
-
-                                        // Expand MG2
-                                        cy.log(`➕ Step 5: Expanding MG2 to add Product Modifier: ${chain.level2.productModifierName}`);
-                                        productCreate.step_click_expand_button(mg2Id);
-                                        cy.wait(1000);
-
-                                        // Click Add Modifier button on MG2
-                                        productCreate.step_add_modifier_first_level_override(mg2Id);
-                                        
-                                        // Search and select Product 3 by name
-                                        cy.get('[data-cy="-input"]').clear().type(chain.level2.productModifierName);
-                                        cy.wait(2000);
-                                        
-                                        cy.get('[data-cy^="product-table-select-"]')
-                                            .filter(':visible')
-                                            .first()
-                                            .click({ force: true });
-                                        
-                                        productCreate.step_click_save_first_level_override_modal_button();
-                                        cy.wait(2000);
-
-                                        // Verify Product 3 was added (by display name)
-                                        cy.log(`✅ Verifying Product Modifier added: ${chain.level2.productModifierDisplayName}`);
-                                        cy.get('#modifier-groups').within(() => {
-                                            cy.contains(chain.level2.productModifierDisplayName).should('be.visible');
-                                        });
-
-                                        // ========== STEP 6: Save Product ==========
-                                        cy.log(`💾 Step 6: Saving product with complete nested chain`);
-                                        productCreate.product_create_button_click();
-                                        
-                                        // Verify success toast
-                                        productHome.verify_toast_message("Product updated successfully");
-
-                                        cy.log(`✅ CHAIN ${chain.chainNumber} COMPLETE!`);
-                                        cy.log(`   ${chain.rootProduct}`);
-                                        cy.log(`   → ${chain.level1.modifierGroupDisplayName}`);
-                                        cy.log(`     → ${chain.level1.productModifierDisplayName}`);
-                                        cy.log(`       → ${chain.level2.modifierGroupDisplayName}`);
-                                        cy.log(`         → ${chain.level2.productModifierDisplayName}`);
-
-                                        cy.wait(2000);
-                                    });
-                            });
-                    });
+                cy.log('═══════════════════════════════════════════════════════════════');
+                cy.log(`✅ COMPLETE: Created ${nestedChains.length} nested chains`);
             });
         });
     }
 }
+
+
+// // Create 2 modifier groups first
+// mgLayer.modifier_group_bulk_create(2);
+
+// // Then create 1 chain using those 2 modifier groups
+// mgLayer.modifier_group_bulk_edit(1, 2); // 1 chain, using 2 created modifier groups
+
+// // Create 2 chains, reusing the 2 modifier groups
+// mgLayer.modifier_group_bulk_edit(2, 2); // 2 chains, reusing 2 modifier groups
+// // Chain 1: uses MG[0] and MG[1]
+// // Chain 2: reuses MG[0] and MG[1] (cycles back)

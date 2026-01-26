@@ -200,3 +200,18 @@ export class Sample {
         });
     }
 }
+
+
+// sample.logic(1, 2, 2); // 1 menu, 2 categories, 2 products each
+// // Category 1: Products 0-1
+// // Category 2: Products 2-3
+
+// // Reuse same products across all categories
+// sample.logic(1, 2, 2, true); // 1 menu, 2 categories, 2 products each, reuse products
+// // Category 1: Products 0-1
+// // Category 2: Products 0-1 (same as Category 1)
+
+// // Reuse products with more categories
+// sample.logic(1, 3, 2, true); // 1 menu, 3 categories, 2 products each, reuse products
+// // Category 1: Products 0-1
+// // Category 2: Products 0-1 (same)
