@@ -6,8 +6,11 @@ import { MenuMiddleLayer } from "cypress/page-objects/middle-layer/menu-middle-l
 import { MenuPublishLayer } from "cypress/page-objects/middle-layer/menu-publish-layer";
 import { GC2MiddleLayer } from "cypress/page-objects/middle-layer/gc2-middle-layer";
 import { GC2CleanupMethods } from "cypress/page-objects/pages/cleanup/gc2_cleanup_method";
+import { Sample } from "cypress/page-objects/middle-layer/sample";
+import { ModifierGroupMiddleLayer } from "cypress/page-objects/middle-layer/modifier-group-middle-layer";
 
-
+const modifierGroupMiddleLayer = new ModifierGroupMiddleLayer();
+const sample = new Sample();
 const menuMiddleLayer = new MenuMiddleLayer();
 const productMiddleLayer = new ProductMiddleLayer();
 const navigator = new PageNavigator();
@@ -16,25 +19,35 @@ const menuPublishLayer = new MenuPublishLayer();
 const gc2MiddleLayer = new GC2MiddleLayer();
 const gc2CleanupMethods = new GC2CleanupMethods();
 
-describe('fill only the mandatory fields and omit optional fields', () => {
+describe('4 product , 2 category , modifier groups (unique)  1 menu to 1 location  reuse', () => {
 
     after('Should cleanup all created products and modifier groups', function () {
         AuthenticationService.authenticate();
         cleanup.cleanup_menu(1);
-        cleanup.cleanup_product(1);
-        gc2CleanupMethods.cleanup_menu_item(1);
+        cleanup.cleanup_product(4);
+        cleanup.cleanup_modifier_group(2);
+        gc2CleanupMethods.cleanup_menu_item(9);
         gc2CleanupMethods.cleanup_menu(1);
         gc2CleanupMethods.cleanup_modifier_group(2);
     });
 
-    it('Should create all 1 products with all fields filled', function () {
+    it('Should create all 4 products with all fields filled', function () {
         navigator.navigate_to_product_page();
-        productMiddleLayer.product_create_with_mandatory_fields(1);
+        productMiddleLayer.product_create_with_mandatory_fields(4);
     });
 
-    it('Should create 1 menu with 1 category and 1 product', function () {
+    it('Should create 2 Product Modifier Groups', function () {
+        navigator.navigate_to_modifier_group_page();
+        modifierGroupMiddleLayer.modifier_group_bulk_create(2);
+    });
+
+    it('Should build Nested Modifier Chains', function () {
+        modifierGroupMiddleLayer.modifier_group_bulk_edit(1, 4, 2);
+    });
+
+    it('Should create 1 menu with 2 category and 2 product', function () {
         navigator.navigate_to_menu_page();
-        menuMiddleLayer.menu_create_with_mandatory_fields(1, 1, 1);
+        sample.logic(1, 2, 3, true);
     });
 
     it('Should publish the menu', function () {
@@ -48,7 +61,7 @@ describe('fill only the mandatory fields and omit optional fields', () => {
 
     it('Should verify Menu Items (Products) appear in GC2 Menu Management > Menu Items', function () {
         navigator.navigate_to_gc2_menu_items_page();
-        gc2MiddleLayer.gc2_menu_items_page_with_mandatory_fields_validation();
+        gc2MiddleLayer.gc2_menu_items_table_verification(3);
     });
 });
 

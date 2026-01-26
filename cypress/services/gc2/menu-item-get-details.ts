@@ -30,10 +30,17 @@ export class MenuItemGetDetailsService {
             
             if (recipe && recipe.recipe) {
                 const recipeId = recipe.recipe.id;
-                // Save recipe ID as RECIPE_ID
+                const version = recipe.recipe.version;
+                // Save recipe ID and version
                 Cypress.env('RECIPE_ID', recipeId);
+                if (version) {
+                    Cypress.env('RECIPE_VERSION', version);
+                }
                 cy.log(`Found recipe: ${recipeName} with ID: ${recipeId}`);
                 cy.log(`RECIPE_ID set to: ${recipeId}`);
+                if (version) {
+                    cy.log(`RECIPE_VERSION set to: ${version}`);
+                }
                 return cy.wrap(true); // Recipe found
             } else {
                 cy.log(`Recipe with name "${recipeName}" not found - nothing to clean up`);
