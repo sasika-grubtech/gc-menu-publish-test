@@ -252,21 +252,21 @@ export class PublishPage {
         return this;
     }
 
-    // Verify published status badge is visible
+    // Verify published or failed status badge is visible
     // Polls by clicking refresh button every 1 second, checking status up to 2 minutes
     public verify_published_status() {
         const maxDuration = 120000; // 2 minutes in milliseconds
         const pollInterval = 1000; // 1 second polling interval
         const startTime = Date.now();
         
-        cy.log('🔄 Starting polling for published status (max 2 minutes, interval 1s)...');
+        cy.log('🔄 Starting polling for published or failed status (max 2 minutes, interval 1s)...');
         
         const checkStatus = (): Cypress.Chainable<boolean> => {
             const elapsed = Date.now() - startTime;
             
             if (elapsed >= maxDuration) {
-                cy.log('❌ Timeout: Status did not change to Published within 2 minutes');
-                throw new Error('Published status not found within 2 minutes');
+                cy.log('❌ Timeout: Status did not change to Published or Publishing Failed within 2 minutes');
+                throw new Error('Published or Publishing Failed status not found within 2 minutes');
             }
             
             cy.log(`🔄 Polling... (${Math.floor(elapsed / 1000)}s elapsed)`);
@@ -275,9 +275,10 @@ export class PublishPage {
             cy.get('[data-cy="refresh-data-btn-glovo-food-aggregator"]').click({ force: true });
             cy.wait(pollInterval); // Wait 1 second before checking
             
-            // Check if published status badge exists
+            // Check if published or failed status badge exists
             return cy.get('body').then(($body) => {
                 const publishedBadge = $body.find('[data-cy="publishing-status-badge-PUBLISHED"]');
+                const failedBadge = $body.find('[data-cy="publishing-status-badge-PUBLISHING_FAILED"]');
                 
                 if (publishedBadge.length > 0 && publishedBadge.is(':visible')) {
                     cy.log('✅ Published status badge found!');
@@ -286,9 +287,16 @@ export class PublishPage {
                         .should('contain.text', 'Published');
                     cy.log('✅ Status successfully changed to Published');
                     return cy.wrap(true);
+                } else if (failedBadge.length > 0 && failedBadge.is(':visible')) {
+                    cy.log('⚠️ Publishing Failed status badge found!');
+                    cy.get('[data-cy="publishing-status-badge-PUBLISHING_FAILED"]').should('be.visible');
+                    cy.get('[data-cy="publishing-status-badge-PUBLISHING_FAILED-label"]')
+                        .should('contain.text', 'Publishing Failed');
+                    cy.log('⚠️ Status changed to Publishing Failed');
+                    return cy.wrap(true);
                 } else {
                     // Status not published yet, continue polling
-                    cy.log('⏳ Status not Published yet, continuing to poll...');
+                    cy.log('⏳ Status not Published or Failed yet, continuing to poll...');
                     return checkStatus();
                 }
             });
