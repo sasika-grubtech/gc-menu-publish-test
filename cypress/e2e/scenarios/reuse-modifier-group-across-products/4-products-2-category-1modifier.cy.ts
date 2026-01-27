@@ -24,16 +24,16 @@ describe('4 unique product , 2 category , modifier groups (unique)  1 menu to 1 
     after('Should cleanup all created products and modifier groups', function () {
         AuthenticationService.authenticate();
         cleanup.cleanup_menu(1);
-        cleanup.cleanup_product(4);
+        cleanup.cleanup_product(6);
         cleanup.cleanup_modifier_group(2);
-        gc2CleanupMethods.cleanup_menu_item(4);
+        gc2CleanupMethods.cleanup_menu_item(6);
         gc2CleanupMethods.cleanup_menu(1);
         gc2CleanupMethods.cleanup_modifier_group(2);
     });
 
     it('Should create all 4 products with all fields filled', function () {
         navigator.navigate_to_product_page();
-        productMiddleLayer.product_create_with_mandatory_fields(4);
+        productMiddleLayer.product_create_with_mandatory_fields(6);
     });
 
     it('Should create 2 Product Modifier Groups', function () {

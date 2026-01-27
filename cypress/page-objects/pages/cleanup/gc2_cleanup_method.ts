@@ -45,21 +45,49 @@ export class GC2CleanupMethods {
                                 if (version) {
                                     cy.log(`   ✓ Recipe version: ${version}`);
                                 }
-                                cy.log(`   🗑️ Deleting menu item (recipe): ${recipeName}`);
                                 
-                                // Delete the recipe and wait for completion
-                                return MenuItemDeleteService.deleteRecipe(recipeId, version)
-                                    .then((response: any) => {
-                                        // Verify deletion was successful
-                                        if (response && response.status && (response.status === 200 || response.status === 204)) {
-                                            cy.log(`   ✅ Successfully deleted menu item (recipe): ${recipeId}`);
-                                            cy.log(`   ✅ Successfully deleted: ${recipeName}`);
-                                        } else {
-                                            cy.log(`   ⚠️ Deletion may have failed for: ${recipeName} (status: ${response?.status || 'unknown'})`);
-                                        }
-                                        // Process next item after deletion completes
-                                        return cy.then(() => processNext(index + 1));
-                                    });
+                                // Retry deletion with verification
+                                const deleteWithRetry = (attempt: number, maxAttempts: number = 3): Cypress.Chainable<any> => {
+                                    cy.log(`   🗑️ Deleting menu item (recipe) (attempt ${attempt}/${maxAttempts}): ${recipeName}`);
+                                    
+                                    return MenuItemDeleteService.deleteRecipe(recipeId, version)
+                                        .then((response: any) => {
+                                            if (response && response.status && (response.status === 200 || response.status === 204)) {
+                                                cy.log(`   ✅ Delete request successful, verifying deletion...`);
+                                                // Wait for backend to process deletion
+                                                cy.wait(2000);
+                                                
+                                                // Verify item is actually deleted
+                                                return MenuItemGetDetailsService.findRecipeByName(partnerId, recipeName)
+                                                    .then((stillExists) => {
+                                                        if (stillExists && attempt < maxAttempts) {
+                                                            cy.log(`   ⚠️ Item still exists after deletion, retrying... (attempt ${attempt + 1}/${maxAttempts})`);
+                                                            return deleteWithRetry(attempt + 1, maxAttempts);
+                                                        } else if (stillExists) {
+                                                            cy.log(`   ❌ Item still exists after ${maxAttempts} deletion attempts: ${recipeName}`);
+                                                            return cy.wrap(null);
+                                                        } else {
+                                                            cy.log(`   ✅ Successfully deleted and verified: ${recipeName}`);
+                                                            return cy.wrap(null);
+                                                        }
+                                                    });
+                                            } else {
+                                                cy.log(`   ⚠️ Deletion request failed (status: ${response?.status || 'unknown'})`);
+                                                if (attempt < maxAttempts) {
+                                                    cy.log(`   🔄 Retrying deletion... (attempt ${attempt + 1}/${maxAttempts})`);
+                                                    cy.wait(1000);
+                                                    return deleteWithRetry(attempt + 1, maxAttempts);
+                                                } else {
+                                                    cy.log(`   ❌ Failed to delete after ${maxAttempts} attempts: ${recipeName}`);
+                                                    return cy.wrap(null);
+                                                }
+                                            }
+                                        });
+                                };
+                                
+                                return deleteWithRetry(1).then(() => {
+                                    return cy.then(() => processNext(index + 1));
+                                });
                             } else {
                                 cy.log(`   ⚠️ Menu item (recipe) not found: ${recipeName} - skipping`);
                                 // Process next item even if not found
@@ -101,19 +129,47 @@ export class GC2CleanupMethods {
                                 const menuId = Cypress.env('GC2_MENU_ID');
                                 const version = Cypress.env('GC2_MENU_VERSION');
                                 cy.log(`   ✓ Found GC2 menu ID: ${menuId}`);
-                                cy.log(`   🗑️ Deleting GC2 menu: ${menuName}`);
                                 
-                                // Delete the menu and wait for completion
-                                return MenuDeleteService.deleteMenu(menuId, version)
-                                    .then((response: any) => {
-                                        // Verify deletion was successful
-                                        if (response && response.status && (response.status === 200 || response.status === 204)) {
-                                            cy.log(`   ✅ Successfully deleted GC2 menu: ${menuId}`);
-                                            cy.log(`   ✅ Successfully deleted: ${menuName}`);
-                                        } else {
-                                            cy.log(`   ⚠️ Deletion may have failed for: ${menuName} (status: ${response?.status || 'unknown'})`);
-                                        }
-                                    });
+                                // Retry deletion with verification
+                                const deleteWithRetry = (attempt: number, maxAttempts: number = 3): Cypress.Chainable<any> => {
+                                    cy.log(`   🗑️ Deleting GC2 menu (attempt ${attempt}/${maxAttempts}): ${menuName}`);
+                                    
+                                    return MenuDeleteService.deleteMenu(menuId, version)
+                                        .then((response: any) => {
+                                            if (response && response.status && (response.status === 200 || response.status === 204)) {
+                                                cy.log(`   ✅ Delete request successful, verifying deletion...`);
+                                                // Wait for backend to process deletion
+                                                cy.wait(2000);
+                                                
+                                                // Verify item is actually deleted
+                                                return MenuGetDetailsService.findMenuByName(partnerId, menuName)
+                                                    .then((stillExists) => {
+                                                        if (stillExists && attempt < maxAttempts) {
+                                                            cy.log(`   ⚠️ Item still exists after deletion, retrying... (attempt ${attempt + 1}/${maxAttempts})`);
+                                                            return deleteWithRetry(attempt + 1, maxAttempts);
+                                                        } else if (stillExists) {
+                                                            cy.log(`   ❌ Item still exists after ${maxAttempts} deletion attempts: ${menuName}`);
+                                                            return cy.wrap(null);
+                                                        } else {
+                                                            cy.log(`   ✅ Successfully deleted and verified: ${menuName}`);
+                                                            return cy.wrap(null);
+                                                        }
+                                                    });
+                                            } else {
+                                                cy.log(`   ⚠️ Deletion request failed (status: ${response?.status || 'unknown'})`);
+                                                if (attempt < maxAttempts) {
+                                                    cy.log(`   🔄 Retrying deletion... (attempt ${attempt + 1}/${maxAttempts})`);
+                                                    cy.wait(1000);
+                                                    return deleteWithRetry(attempt + 1, maxAttempts);
+                                                } else {
+                                                    cy.log(`   ❌ Failed to delete after ${maxAttempts} attempts: ${menuName}`);
+                                                    return cy.wrap(null);
+                                                }
+                                            }
+                                        });
+                                };
+                                
+                                return deleteWithRetry(1);
                             } else {
                                 cy.log(`   ⚠️ GC2 menu not found: ${menuName} - skipping`);
                             }
@@ -160,21 +216,49 @@ export class GC2CleanupMethods {
                                 if (version) {
                                     cy.log(`   ✓ Modifier group version: ${version}`);
                                 }
-                                cy.log(`   🗑️ Deleting GC2 modifier group: ${modifierGroupName}`);
                                 
-                                // Delete the modifier group and wait for completion
-                                return ModifierGroupDeleteService.deleteModifierGroup(mgId, version)
-                                    .then((response: any) => {
-                                        // Verify deletion was successful
-                                        if (response && response.status && (response.status === 200 || response.status === 204)) {
-                                            cy.log(`   ✅ Successfully deleted GC2 modifier group template: ${mgId}`);
-                                            cy.log(`   ✅ Successfully deleted: ${modifierGroupName}`);
-                                        } else {
-                                            cy.log(`   ⚠️ Deletion may have failed for: ${modifierGroupName} (status: ${response?.status || 'unknown'})`);
-                                        }
-                                        // Process next item after deletion completes
-                                        return cy.then(() => processNext(index + 1));
-                                    });
+                                // Retry deletion with verification
+                                const deleteWithRetry = (attempt: number, maxAttempts: number = 3): Cypress.Chainable<any> => {
+                                    cy.log(`   🗑️ Deleting GC2 modifier group (attempt ${attempt}/${maxAttempts}): ${modifierGroupName}`);
+                                    
+                                    return ModifierGroupDeleteService.deleteModifierGroup(mgId, version)
+                                        .then((response: any) => {
+                                            if (response && response.status && (response.status === 200 || response.status === 204)) {
+                                                cy.log(`   ✅ Delete request successful, verifying deletion...`);
+                                                // Wait for backend to process deletion
+                                                cy.wait(2000);
+                                                
+                                                // Verify item is actually deleted
+                                                return ModifierGroupGetDetailsService.findModifierGroupByName(partnerId, modifierGroupName)
+                                                    .then((stillExists) => {
+                                                        if (stillExists && attempt < maxAttempts) {
+                                                            cy.log(`   ⚠️ Item still exists after deletion, retrying... (attempt ${attempt + 1}/${maxAttempts})`);
+                                                            return deleteWithRetry(attempt + 1, maxAttempts);
+                                                        } else if (stillExists) {
+                                                            cy.log(`   ❌ Item still exists after ${maxAttempts} deletion attempts: ${modifierGroupName}`);
+                                                            return cy.wrap(null);
+                                                        } else {
+                                                            cy.log(`   ✅ Successfully deleted and verified: ${modifierGroupName}`);
+                                                            return cy.wrap(null);
+                                                        }
+                                                    });
+                                            } else {
+                                                cy.log(`   ⚠️ Deletion request failed (status: ${response?.status || 'unknown'})`);
+                                                if (attempt < maxAttempts) {
+                                                    cy.log(`   🔄 Retrying deletion... (attempt ${attempt + 1}/${maxAttempts})`);
+                                                    cy.wait(1000);
+                                                    return deleteWithRetry(attempt + 1, maxAttempts);
+                                                } else {
+                                                    cy.log(`   ❌ Failed to delete after ${maxAttempts} attempts: ${modifierGroupName}`);
+                                                    return cy.wrap(null);
+                                                }
+                                            }
+                                        });
+                                };
+                                
+                                return deleteWithRetry(1).then(() => {
+                                    return cy.then(() => processNext(index + 1));
+                                });
                             } else {
                                 cy.log(`   ⚠️ GC2 modifier group not found: ${modifierGroupName} - skipping`);
                                 // Process next item even if not found
