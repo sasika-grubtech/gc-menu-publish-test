@@ -157,7 +157,7 @@ export class GC2MiddleLayer {
                 if (index < products.length - 1) {
                     gc2MenuItemsPage.step_clear_search();
                     gc2MenuItemsPage.step_click_first_view_button()
-                    cy.wait(4000);
+                    cy.wait(9000);
                     cy.get('#submit').click({ force: true });
                     cy.wait(2000);
                 }
