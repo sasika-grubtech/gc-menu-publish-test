@@ -19,35 +19,35 @@ const menuPublishLayer = new MenuPublishLayer();
 const gc2MiddleLayer = new GC2MiddleLayer();
 const gc2CleanupMethods = new GC2CleanupMethods();
 
-describe('4 unique product , 2 category , modifier groups (unique)  1 menu to 1 location', () => {
+describe('demo flow', () => {
 
-    after('Should cleanup all created products and modifier groups', function () {
+    it.only('Should cleanup all created products and modifier groups', function () {
         AuthenticationService.authenticate();
-        cleanup.cleanup_menu(1);
-        cleanup.cleanup_product(4);
-        cleanup.cleanup_modifier_group(2);
-        gc2CleanupMethods.cleanup_menu_item(4);
-        gc2CleanupMethods.cleanup_menu(1);
+        cleanup.cleanup_menu(2);
+        cleanup.cleanup_product(60);
+        cleanup.cleanup_modifier_group(5);
+        gc2CleanupMethods.cleanup_menu_item(50);
+        gc2CleanupMethods.cleanup_menu(2);
         gc2CleanupMethods.cleanup_modifier_group(2);
     });
 
-    it.skip('Should create all 4 products with all fields filled', function () {
+    it('Should create all 4 products with all fields filled', function () {
         navigator.navigate_to_product_page();
-        productMiddleLayer.product_create_with_mandatory_fields(4);
+        productMiddleLayer.product_create_with_mandatory_fields(20);
     });
 
-    it.skip('Should create 2 Product Modifier Groups', function () {
+    it('Should create 2 Product Modifier Groups', function () {
         navigator.navigate_to_modifier_group_page();
-        modifierGroupMiddleLayer.modifier_group_bulk_create(2);
+        modifierGroupMiddleLayer.modifier_group_bulk_create(5);
     });
 
     it('Should build Nested Modifier Chains', function () {
-        modifierGroupMiddleLayer.modifier_group_bulk_edit(1,4,2);
+        modifierGroupMiddleLayer.modifier_group_bulk_edit(1,10,2);
     });
 
     it('Should create 1 menu with 2 category and 2 product', function () {
         navigator.navigate_to_menu_page();
-        sample.logic(1, 2, 2);
+        sample.logic(2, 10, 5);
     });
 
     it('Should publish the menu', function () {
@@ -61,7 +61,7 @@ describe('4 unique product , 2 category , modifier groups (unique)  1 menu to 1 
 
     it('Should verify Menu Items (Products) appear in GC2 Menu Management > Menu Items', function () {
         navigator.navigate_to_gc2_menu_items_page();
-        gc2MiddleLayer.gc2_menu_items_table_verification(3);
+        gc2MiddleLayer.gc2_menu_items_table_verification(4);
     });
 });
 
