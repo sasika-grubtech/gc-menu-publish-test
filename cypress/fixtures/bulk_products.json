@@ -1,85 +1,345 @@
 {
-  "products": [
+  "products": [    {
+    "name": "Classic Margherita Pizza",
+    "displayName": "Margherita Pizza",
+    "description": "Traditional Italian pizza with fresh mozzarella, tomato sauce, and basil",
+    "price": "150",
+    "externalId": "EXT_MARG_001",
+    "category": "Pizza",
+    "tags": ["Vegetarian", "Popular"]
+  },
+  {
+    "name": "Chicken Burger Deluxe",
+    "displayName": "Deluxe Chicken Burger",
+    "description": "Grilled chicken breast with lettuce, tomato, and special sauce",
+    "price": "180",
+    "externalId": "EXT_BURG_002",
+    "category": "Burgers",
+    "tags": ["Best Seller"]
+  },
+  {
+    "name": "Caesar Salad Bowl",
+    "displayName": "Classic Caesar Salad",
+    "description": "Fresh romaine lettuce with parmesan cheese and caesar dressing",
+    "price": "120",
+    "externalId": "EXT_SALA_003",
+    "category": "Salads",
+    "tags": ["Healthy", "Vegetarian"]
+  },
+  {
+    "name": "Beef Pasta Carbonara",
+    "displayName": "Carbonara Pasta",
+    "description": "Creamy pasta with bacon, egg, and parmesan cheese",
+    "price": "200",
+    "externalId": "EXT_PAST_004",
+    "category": "Pasta",
+    "tags": ["Italian", "Popular"]
+  },
+  {
+    "name": "Chocolate Lava Cake",
+    "displayName": "Molten Chocolate Cake",
+    "description": "Warm chocolate cake with a gooey molten center, served with vanilla ice cream",
+    "price": "95",
+    "externalId": "EXT_DESS_005",
+    "category": "Desserts",
+    "tags": ["Sweet", "Popular"]
+  },
+  {
+    "name": "Grilled Salmon Fillet",
+    "displayName": "Atlantic Grilled Salmon",
+    "description": "Fresh Atlantic salmon grilled to perfection with lemon butter sauce",
+    "price": "320",
+    "externalId": "EXT_FISH_006",
+    "category": "Seafood",
+    "tags": ["Healthy", "Premium"]
+  },
+  {
+    "name": "Vegetable Spring Rolls",
+    "displayName": "Crispy Spring Rolls",
+    "description": "Golden fried spring rolls filled with fresh vegetables and served with sweet chili sauce",
+    "price": "85",
+    "externalId": "EXT_APPT_007",
+    "category": "Appetizers",
+    "tags": ["Vegetarian", "Starter"]
+  },
+  {
+    "name": "Iced Caramel Macchiato",
+    "displayName": "Caramel Macchiato",
+    "description": "Espresso with vanilla syrup, milk, and caramel drizzle served over ice",
+    "price": "65",
+    "externalId": "EXT_BVRG_008",
+    "category": "Beverages",
+    "tags": ["Coffee", "Cold Drink"]
+  },
+  {
+    "name": "BBQ Chicken Wings",
+    "displayName": "Spicy BBQ Wings",
+    "description": "Crispy chicken wings tossed in smoky BBQ sauce with a side of ranch",
+    "price": "140",
+    "externalId": "EXT_WING_009",
+    "category": "Appetizers",
+    "tags": ["Spicy", "Best Seller"]
+  },
     {
-      "name": "Classic Margherita Pizza",
-      "displayName": "Margherita Pizza",
-      "description": "Traditional Italian pizza with fresh mozzarella, tomato sauce, and basil",
-      "price": "150",
-      "externalId": "EXT_MARG_001",
-      "category": "Pizza",
-      "tags": ["Vegetarian", "Popular"]
-    },
-    {
-      "name": "Chicken Burger Deluxe",
-      "displayName": "Deluxe Chicken Burger",
-      "description": "Grilled chicken breast with lettuce, tomato, and special sauce",
-      "price": "180",
-      "externalId": "EXT_BURG_002",
-      "category": "Burgers",
-      "tags": ["Best Seller"]
-    },
-    {
-      "name": "Caesar Salad Bowl",
-      "displayName": "Classic Caesar Salad",
-      "description": "Fresh romaine lettuce with parmesan cheese and caesar dressing",
-      "price": "120",
-      "externalId": "EXT_SALA_003",
-      "category": "Salads",
-      "tags": ["Healthy", "Vegetarian"]
-    },
-    {
-      "name": "Beef Pasta Carbonara",
-      "displayName": "Carbonara Pasta",
-      "description": "Creamy pasta with bacon, egg, and parmesan cheese",
-      "price": "200",
-      "externalId": "EXT_PAST_004",
-      "category": "Pasta",
-      "tags": ["Italian", "Popular"]
-    },
-    {
-      "name": "Chocolate Lava Cake",
-      "displayName": "Molten Chocolate Cake",
-      "description": "Warm chocolate cake with a gooey molten center, served with vanilla ice cream",
+      "name": "Bruschetta Trio",
+      "displayName": "Italian Bruschetta",
+      "description": "Toasted bread topped with fresh tomatoes, basil, and mozzarella",
       "price": "95",
-      "externalId": "EXT_DESS_005",
-      "category": "Desserts",
-      "tags": ["Sweet", "Popular"]
-    },
-    {
-      "name": "Grilled Salmon Fillet",
-      "displayName": "Atlantic Grilled Salmon",
-      "description": "Fresh Atlantic salmon grilled to perfection with lemon butter sauce",
-      "price": "320",
-      "externalId": "EXT_FISH_006",
-      "category": "Seafood",
-      "tags": ["Healthy", "Premium"]
-    },
-    {
-      "name": "Vegetable Spring Rolls",
-      "displayName": "Crispy Spring Rolls",
-      "description": "Golden fried spring rolls filled with fresh vegetables and served with sweet chili sauce",
-      "price": "85",
-      "externalId": "EXT_APPT_007",
+      "externalId": "EXT_APPT_032",
       "category": "Appetizers",
-      "tags": ["Vegetarian", "Starter"]
+      "tags": ["Vegetarian", "Italian"]
     },
     {
-      "name": "Iced Caramel Macchiato",
-      "displayName": "Caramel Macchiato",
-      "description": "Espresso with vanilla syrup, milk, and caramel drizzle served over ice",
-      "price": "65",
-      "externalId": "EXT_BVRG_008",
+      "name": "Mango Smoothie",
+      "displayName": "Tropical Mango Smoothie",
+      "description": "Blended fresh mango with yogurt and honey",
+      "price": "75",
+      "externalId": "EXT_BVRG_033",
+      "category": "Beverages",
+      "tags": ["Fruity", "Cold Drink", "Healthy"]
+    },
+    {
+      "name": "Bacon Cheeseburger",
+      "displayName": "Loaded Bacon Burger",
+      "description": "Beef patty with crispy bacon, cheddar cheese, and special sauce",
+      "price": "210",
+      "externalId": "EXT_BURG_034",
+      "category": "Burgers",
+      "tags": ["Meat", "Best Seller"]
+    },
+    {
+      "name": "BBQ Chicken Pizza",
+      "displayName": "BBQ Chicken Pizza",
+      "description": "Pizza with BBQ sauce, grilled chicken, red onions, and cilantro",
+      "price": "180",
+      "externalId": "EXT_PIZZ_035",
+      "category": "Pizza",
+      "tags": ["BBQ", "Popular"]
+    },
+    {
+      "name": "Spinach and Feta Salad",
+      "displayName": "Mediterranean Spinach Salad",
+      "description": "Fresh spinach with feta cheese, walnuts, and balsamic vinaigrette",
+      "price": "125",
+      "externalId": "EXT_SALA_036",
+      "category": "Salads",
+      "tags": ["Vegetarian", "Healthy"]
+    },
+    {
+      "name": "Lasagna Classic",
+      "displayName": "Traditional Lasagna",
+      "description": "Layers of pasta, meat sauce, ricotta, and mozzarella cheese",
+      "price": "230",
+      "externalId": "EXT_PAST_037",
+      "category": "Pasta",
+      "tags": ["Italian", "Meat", "Popular"]
+    },
+    {
+      "name": "Apple Pie",
+      "displayName": "Homemade Apple Pie",
+      "description": "Warm apple pie with cinnamon and served with vanilla ice cream",
+      "price": "90",
+      "externalId": "EXT_DESS_038",
+      "category": "Desserts",
+      "tags": ["Classic", "Warm"]
+    },
+    {
+      "name": "Fish and Chips",
+      "displayName": "Beer Battered Fish",
+      "description": "Crispy beer-battered fish with golden fries and tartar sauce",
+      "price": "240",
+      "externalId": "EXT_FISH_039",
+      "category": "Seafood",
+      "tags": ["Fried", "Classic"]
+    },
+    {
+      "name": "Stuffed Mushrooms",
+      "displayName": "Baked Stuffed Mushrooms",
+      "description": "Large mushrooms stuffed with herbs, cheese, and breadcrumbs",
+      "price": "100",
+      "externalId": "EXT_APPT_040",
+      "category": "Appetizers",
+      "tags": ["Vegetarian", "Baked"]
+    },
+    {
+      "name": "Iced Americano",
+      "displayName": "Cold Americano",
+      "description": "Double shot of espresso over ice, served with water",
+      "price": "60",
+      "externalId": "EXT_BVRG_041",
       "category": "Beverages",
       "tags": ["Coffee", "Cold Drink"]
     },
     {
-      "name": "BBQ Chicken Wings",
-      "displayName": "Spicy BBQ Wings",
-      "description": "Crispy chicken wings tossed in smoky BBQ sauce with a side of ranch",
+      "name": "Turkey Avocado Burger",
+      "displayName": "Healthy Turkey Burger",
+      "description": "Lean turkey patty with avocado, sprouts, and chipotle mayo",
+      "price": "175",
+      "externalId": "EXT_BURG_042",
+      "category": "Burgers",
+      "tags": ["Healthy", "Lean"]
+    },
+    {
+      "name": "Meat Lovers Pizza",
+      "displayName": "Supreme Meat Pizza",
+      "description": "Pizza loaded with pepperoni, sausage, ham, and bacon",
+      "price": "195",
+      "externalId": "EXT_PIZZ_043",
+      "category": "Pizza",
+      "tags": ["Meat", "Best Seller"]
+    },
+    {
+      "name": "Asian Chicken Salad",
+      "displayName": "Oriental Chicken Salad",
+      "description": "Mixed greens with grilled chicken, mandarin oranges, and sesame dressing",
       "price": "140",
-      "externalId": "EXT_WING_009",
+      "externalId": "EXT_SALA_044",
+      "category": "Salads",
+      "tags": ["Asian", "Protein"]
+    },
+    {
+      "name": "Shrimp Scampi Pasta",
+      "displayName": "Garlic Shrimp Pasta",
+      "description": "Linguine pasta with shrimp in white wine and garlic sauce",
+      "price": "250",
+      "externalId": "EXT_PAST_045",
+      "category": "Pasta",
+      "tags": ["Seafood", "Garlic"]
+    },
+    {
+      "name": "Chocolate Brownie Sundae",
+      "displayName": "Warm Brownie Sundae",
+      "description": "Warm chocolate brownie topped with vanilla ice cream and hot fudge",
+      "price": "115",
+      "externalId": "EXT_DESS_046",
+      "category": "Desserts",
+      "tags": ["Sweet", "Popular"]
+    },
+    {
+      "name": "Crab Cakes",
+      "displayName": "Maryland Crab Cakes",
+      "description": "Pan-seared crab cakes with remoulade sauce and lemon",
+      "price": "290",
+      "externalId": "EXT_FISH_047",
+      "category": "Seafood",
+      "tags": ["Premium", "Crispy"]
+    },
+    {
+      "name": "Chicken Quesadilla",
+      "displayName": "Grilled Chicken Quesadilla",
+      "description": "Flour tortilla filled with chicken, cheese, and peppers, served with salsa",
+      "price": "110",
+      "externalId": "EXT_APPT_048",
       "category": "Appetizers",
-      "tags": ["Spicy", "Best Seller"]
+      "tags": ["Mexican", "Cheesy"]
+    },
+    {
+      "name": "Fresh Lemonade",
+      "displayName": "Classic Lemonade",
+      "description": "Freshly squeezed lemonade, sweetened and served over ice",
+      "price": "50",
+      "externalId": "EXT_BVRG_049",
+      "category": "Beverages",
+      "tags": ["Refreshing", "Cold Drink"]
+    },
+    {
+      "name": "Veggie Burger Supreme",
+      "displayName": "Ultimate Veggie Burger",
+      "description": "Plant-based patty with all the fixings and special vegan sauce",
+      "price": "155",
+      "externalId": "EXT_BURG_050",
+      "category": "Burgers",
+      "tags": ["Vegetarian", "Vegan"]
+    },
+    {
+      "name": "White Pizza",
+      "displayName": "Bianca Pizza",
+      "description": "Pizza with ricotta, mozzarella, garlic, and fresh herbs",
+      "price": "160",
+      "externalId": "EXT_PIZZ_051",
+      "category": "Pizza",
+      "tags": ["Vegetarian", "Garlic"]
+    },
+    {
+      "name": "Kale Caesar Salad",
+      "displayName": "Kale Caesar Salad",
+      "description": "Fresh kale with parmesan, croutons, and classic caesar dressing",
+      "price": "130",
+      "externalId": "EXT_SALA_052",
+      "category": "Salads",
+      "tags": ["Healthy", "Vegetarian"]
+    },
+    {
+      "name": "Penne Vodka",
+      "displayName": "Penne alla Vodka",
+      "description": "Penne pasta in creamy tomato vodka sauce with parmesan",
+      "price": "190",
+      "externalId": "EXT_PAST_053",
+      "category": "Pasta",
+      "tags": ["Creamy", "Popular"]
+    },
+    {
+      "name": "Key Lime Pie",
+      "displayName": "Florida Key Lime Pie",
+      "description": "Tangy key lime pie with graham cracker crust and whipped cream",
+      "price": "95",
+      "externalId": "EXT_DESS_054",
+      "category": "Desserts",
+      "tags": ["Tart", "Classic"]
+    },
+    {
+      "name": "Grilled Octopus",
+      "displayName": "Mediterranean Octopus",
+      "description": "Tender grilled octopus with olive oil, lemon, and herbs",
+      "price": "310",
+      "externalId": "EXT_FISH_055",
+      "category": "Seafood",
+      "tags": ["Premium", "Mediterranean"]
+    },
+    {
+      "name": "Onion Rings",
+      "displayName": "Crispy Onion Rings",
+      "description": "Golden fried onion rings served with spicy dipping sauce",
+      "price": "80",
+      "externalId": "EXT_APPT_056",
+      "category": "Appetizers",
+      "tags": ["Vegetarian", "Fried"]
+    },
+    {
+      "name": "Cappuccino",
+      "displayName": "Italian Cappuccino",
+      "description": "Espresso with steamed milk foam and a dusting of cocoa",
+      "price": "70",
+      "externalId": "EXT_BVRG_057",
+      "category": "Beverages",
+      "tags": ["Coffee", "Hot Drink"]
+    },
+    {
+      "name": "Double Cheese Burger",
+      "displayName": "Double Stack Burger",
+      "description": "Two beef patties with double cheese, lettuce, and special sauce",
+      "price": "225",
+      "externalId": "EXT_BURG_058",
+      "category": "Burgers",
+      "tags": ["Meat", "Filling"]
+    },
+    {
+      "name": "Veggie Delight Pizza",
+      "displayName": "Garden Fresh Pizza",
+      "description": "Pizza topped with bell peppers, mushrooms, onions, olives, and tomatoes",
+      "price": "170",
+      "externalId": "EXT_PIZZ_059",
+      "category": "Pizza",
+      "tags": ["Vegetarian", "Healthy"]
+    },
+    {
+      "name": "Waldorf Salad",
+      "displayName": "Classic Waldorf Salad",
+      "description": "Mixed greens with apples, walnuts, grapes, and creamy dressing",
+      "price": "120",
+      "externalId": "EXT_SALA_060",
+      "category": "Salads",
+      "tags": ["Fruity", "Vegetarian"]
     }
   ]
 }

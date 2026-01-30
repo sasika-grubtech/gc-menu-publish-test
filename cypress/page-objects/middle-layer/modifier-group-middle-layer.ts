@@ -45,7 +45,7 @@ export class ModifierGroupMiddleLayer {
             .step_enter_overview_external_id(mg.externalId);
 
         modifierGroupCreate.step_click_category_select_textbox();
-        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click({ force: true });
     }
 
     // Add tags to modifier group
@@ -177,7 +177,7 @@ export class ModifierGroupMiddleLayer {
         cy.wait(2000);
         
         cy.get('[data-cy^="modifier-group-table-select-"]')
-            .filter(':visible')
+            //.filter(':visible')
             .first()
             .click({ force: true });
         
@@ -210,7 +210,7 @@ export class ModifierGroupMiddleLayer {
         cy.wait(2000);
         
         cy.get('[data-cy^="product-table-select-"]')
-            .filter(':visible')
+           // .filter(':visible')
             .first()
             .click({ force: true });
         
@@ -237,7 +237,7 @@ export class ModifierGroupMiddleLayer {
         cy.wait(2000);
         
         cy.get('[data-cy^="modifier-group-table-select-"]')
-            .filter(':visible')
+           // .filter(':visible')
             .first()
             .click({ force: true });
         

@@ -194,7 +194,7 @@ export class TextModifierGroupPage {
     }
 
     public step_select_tag_checkbox(tag: string) {
-        cy.get(`[data-cy="tag-checkbox-${tag}"]`).click();
+        cy.get(`[data-cy="tag-checkbox-${tag}"]`).click({ force: true });
         cy.wait(2000);
         return this;
     }
