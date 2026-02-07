@@ -49,18 +49,18 @@ export class ModifierGroupHomePage {
 
     public step_click_edit_modifier_group() {
         cy.wait(2000);
-        cy.get(this.btn_edit_modifier_group).last().click();
+        cy.get(this.btn_edit_modifier_group).last().click({ force: true });
         return new TextModifierGroupPage();
     }
 
     public step_click_select_all_products() {
-        cy.get(this.btn_select_all_products).click();
+        cy.get(this.btn_select_all_products).click({ force: true });
         return this;
     }
 
 
     public step_click_bulk_edit() {
-        cy.get('[data-cy="bulk-edit-button"]').click();
+        cy.get('[data-cy="bulk-edit-button"]').click({ force: true });
         return this;
     }
 

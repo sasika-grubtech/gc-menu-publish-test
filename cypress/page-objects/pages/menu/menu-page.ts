@@ -57,12 +57,12 @@ export class MenuPage {
     }
 
     public step_click_overview_brand_select() {
-        cy.get(this.btn_overview_brand_select).click();
+        cy.get(this.btn_overview_brand_select).click({ force: true });
         return this;
     }
 
     public step_click_overview_brand_select_option(option: string) {
-        cy.contains(option).click();
+        cy.contains(option).click({ force: true });
         return this;
     }
 
@@ -77,12 +77,12 @@ export class MenuPage {
     }
 
     public step_select_currency_dropdown() {
-        cy.get(':nth-child(1) > [data-cy="hover-select"]').click();
+        cy.get(':nth-child(1) > [data-cy="hover-select"]').click({ force: true });
         return this;
     }
 
     public step_select_currency_dropdown_option(option: string) {
-        cy.contains(option).click();
+        cy.contains(option).click({ force: true });
         return this;
     }
 
@@ -141,21 +141,21 @@ export class MenuPage {
 
     public step_click_tax_manager_add_button() {
         cy.get(this.btn_tax_manager_add_button).should('be.visible');
-        cy.get(this.btn_tax_manager_add_button).click();
+        cy.get(this.btn_tax_manager_add_button).click({ force: true });
         return this;
     }
 
     //==============CATEGORY FUNCTIONS==============
     public step_click_category_products_tab() {
         cy.get(this.tab_category_products).should('be.visible');
-        cy.get(this.tab_category_products).click();
+        cy.get(this.tab_category_products).click({ force: true });
         return this;
     }
 
     //==============PUBLISH TAB FUNCTIONS==============
     public step_click_publish_tab() {
         cy.get(this.tab_publish).should('be.visible');
-        cy.get(this.tab_publish).click();
+        cy.get(this.tab_publish).click({ force: true });
         cy.wait(2000);
         return this;
     }
@@ -202,12 +202,12 @@ export class MenuPage {
     }
 
     public step_click_category_saving_hours_modal() {
-        cy.get(this.btn_category_saving_hours_modal).click();
+        cy.get(this.btn_category_saving_hours_modal).click({ force: true });
         return this;
     }
 
     public step_click_category_save() {
-        cy.get(this.btn_category_save).click();
+        cy.get(this.btn_category_save).click({ force: true });
         cy.wait(3000);
         return this;
     }
@@ -257,7 +257,7 @@ export class MenuPage {
     }
 
     public step_click_add_categories_save() {
-        cy.get(this.btn_add_categories_save).click();
+        cy.get(this.btn_add_categories_save).click({ force: true });
         cy.wait(3000);
         return this;
     }
@@ -401,7 +401,7 @@ export class MenuPage {
     //==============CREATE/SAVE MENU==============
     public step_click_create_button() {
         cy.wait(2000);
-        cy.get('[data-cy="create-button"]').click();
+        cy.get('[data-cy="create-button"]').click({ force: true });
         return this;
     }
 

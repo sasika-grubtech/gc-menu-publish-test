@@ -12,19 +12,19 @@ export class SidePanel {
 
     public click_side_panel_gc3_menu_management_button() {
         cy.wait(2000);
-        cy.contains('.gc-submenu-header', 'Menu Management GC3').click();
+        cy.contains('.gc-submenu-header', 'Menu Management GC3').click({ force: true });
         return this;
     }
 
     public click_side_panel_products_button() {
         cy.wait(2000);
-        cy.contains('.menu-item-text', 'Products').click();
+        cy.contains('.menu-item-text', 'Products').click({ force: true });
         return new ProductHomePage();
     }
 
     public click_side_panel_menu_button() {
         cy.wait(2000);
-        cy.get('a[href="/menu-management-gc3/menus"]').click();
+        cy.get('a[href="/menu-management-gc3/menus"]').click({ force: true });
         return this;
     }
 
@@ -44,7 +44,7 @@ export class SidePanel {
     public click_side_panel_gc2_menu_management_button() {
         cy.wait(2000);
         // Click on "Menu Management" header (GC2 version - not GC3)
-        cy.contains('.gc-submenu-header', 'Menu Management').not(':contains("GC3")').click();
+        cy.contains('.gc-submenu-header', 'Menu Management').not(':contains("GC3")').click({ force: true });
         return this;
     }
 

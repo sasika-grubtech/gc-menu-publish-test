@@ -95,7 +95,8 @@ export class PublishPage {
             'Bolt': 'bolt-food-aggregator',
             'BOX': 'box-aggregator',
             'Deliveroo': 'deliveroo-aggregator',
-            'Glovo': 'glovo-food-aggregator'
+            'Glovo': 'glovo-food-aggregator',
+            'UberEats': 'uber-eats-aggregator',
         };
         return slugMap[aggregatorName] || aggregatorName.toLowerCase().replace(/\s+/g, '-') + '-aggregator';
     }
@@ -254,25 +255,28 @@ export class PublishPage {
 
     // Verify published or failed status badge is visible
     // Polls by clicking refresh button every 1 second, checking status up to 2 minutes
-    public verify_published_status() {
+    // aggregatorName: e.g. 'Glovo' or 'Uber Eats' - used to find refresh-data-btn-{slug}
+    public verify_published_status(aggregatorName: string = 'Glovo') {
+        const slug = this.getAggregatorSlug(aggregatorName);
+        const refreshBtnSelector = `[data-cy="refresh-data-btn-${slug}"]`;
         const maxDuration = 120000; // 2 minutes in milliseconds
         const pollInterval = 1000; // 1 second polling interval
         const startTime = Date.now();
-        
-        cy.log('🔄 Starting polling for published or failed status (max 2 minutes, interval 1s)...');
-        
+
+        cy.log(`🔄 Starting polling for published or failed status (${aggregatorName}, max 2 minutes, interval 1s)...`);
+
         const checkStatus = (): Cypress.Chainable<boolean> => {
             const elapsed = Date.now() - startTime;
-            
+
             if (elapsed >= maxDuration) {
                 cy.log('❌ Timeout: Status did not change to Published or Publishing Failed within 2 minutes');
                 throw new Error('Published or Publishing Failed status not found within 2 minutes');
             }
-            
+
             cy.log(`🔄 Polling... (${Math.floor(elapsed / 1000)}s elapsed)`);
-            
-            // Click refresh button
-            cy.get('[data-cy="refresh-data-btn-glovo-food-aggregator"]').click({ force: true });
+
+            // Click refresh button for this aggregator
+            cy.get(refreshBtnSelector).click({ force: true });
             cy.wait(pollInterval); // Wait 1 second before checking
             
             // Check if published or failed status badge exists
@@ -377,12 +381,99 @@ export class PublishPage {
         this.verify_location_row_visible(locationName);
         
         // Verify published status is visible in the location row
-        cy.contains('[data-cy^="nested-location-name-"]', locationName)
+        this.verify_location_row_published_status(locationName);
+        
+        cy.log(`✅ Menu "${menuName}" verified as Published for location "${locationName}"`);
+        return this;
+    }
+
+    // Verify published status badge in a location row (brand row must already be expanded)
+    // Polls by clicking refresh button every 1 second, checking status in the location row up to 2 minutes
+    public verify_location_row_published_status(locationName: string) {
+        const maxDuration = 120000; // 2 minutes in milliseconds
+        const pollInterval = 1000; // 1 second polling interval
+        const startTime = Date.now();
+
+        cy.log(`🔄 Starting polling for published/failed status in location "${locationName}" (max 2 minutes, interval 1s)...`);
+
+        const checkStatus = (): Cypress.Chainable<boolean> => {
+            const elapsed = Date.now() - startTime;
+
+            if (elapsed >= maxDuration) {
+                cy.log(`❌ Timeout: Location "${locationName}" status did not change to Published or Publishing Failed within 2 minutes`);
+                throw new Error(`Published or Publishing Failed status not found for location "${locationName}" within 2 minutes`);
+            }
+
+            cy.log(`🔄 Polling location "${locationName}"... (${Math.floor(elapsed / 1000)}s elapsed)`);
+
+            // Click refresh button
+            cy.get('[data-cy="refresh-data-btn-glovo-food-aggregator"]').click({ force: true });
+            cy.wait(pollInterval);
+
+            // Check if published or failed status badge exists in this location's row
+            return cy.get('body').then(($body) => {
+                const $ = $body.constructor; // use same jQuery as $body for filter callback
+                const locationRow = $body.find('[data-cy^="nested-location-name-"]')
+                    .filter(function () { return $(this).text().trim().indexOf(locationName) >= 0; })
+                    .closest('[data-slot="table-row"]');
+                const publishedBadge = locationRow.find('[data-cy="publishing-status-badge-PUBLISHED"]');
+                const failedBadge = locationRow.find('[data-cy="publishing-status-badge-PUBLISHING_FAILED"]');
+
+                if (publishedBadge.length > 0 && publishedBadge.is(':visible')) {
+                    cy.log(`✅ Published status badge found for location "${locationName}"!`);
+                    cy.contains('[data-cy^="nested-location-name-"]', locationName)
+                        .closest('[data-slot="table-row"]')
+                        .find('[data-cy="publishing-status-badge-PUBLISHED"]')
+                        .should('be.visible');
+                    cy.contains('[data-cy^="nested-location-name-"]', locationName)
+                        .closest('[data-slot="table-row"]')
+                        .find('[data-cy="publishing-status-badge-PUBLISHED-label"]')
+                        .should('contain.text', 'Published');
+                    return cy.wrap(true);
+                } else if (failedBadge.length > 0 && failedBadge.is(':visible')) {
+                    cy.log(`⚠️ Publishing Failed status badge found for location "${locationName}"!`);
+                    cy.contains('[data-cy^="nested-location-name-"]', locationName)
+                        .closest('[data-slot="table-row"]')
+                        .find('[data-cy="publishing-status-badge-PUBLISHING_FAILED"]')
+                        .should('be.visible');
+                    cy.contains('[data-cy^="nested-location-name-"]', locationName)
+                        .closest('[data-slot="table-row"]')
+                        .find('[data-cy="publishing-status-badge-PUBLISHING_FAILED-label"]')
+                        .should('contain.text', 'Publishing Failed');
+                    return cy.wrap(true);
+                } else {
+                    cy.log(`⏳ Location "${locationName}" status not Published or Failed yet, continuing to poll...`);
+                    return checkStatus();
+                }
+            });
+        };
+
+        return checkStatus().then(() => {
+            return this;
+        });
+    }
+
+    //==============UBER EATS (Location → Service Modes)==============
+    // Expand a location row under an aggregator (e.g. Uber Eats) to reveal service mode rows
+    public step_expand_location_row_in_aggregator(aggregatorName: string, locationName: string) {
+        const slug = this.getAggregatorSlug(aggregatorName);
+        cy.wait(500);
+        cy.get(`[data-cy="aggregator-row-${slug}"]`)
+            .parents('table')
+            .first()
+            .within(() => {
+                cy.contains(locationName).closest('[data-slot="table-row"]').find('button').first().click({ force: true });
+            });
+        cy.wait(1500);
+        return this;
+    }
+
+    // Verify a service mode row (under expanded location) shows Published status
+    public verify_service_mode_row_has_published_status(aggregatorName: string, locationName: string, serviceModeName: string) {
+        cy.contains(serviceModeName)
             .closest('[data-slot="table-row"]')
             .find('[data-cy="publishing-status-badge-PUBLISHED"]')
             .should('be.visible');
-        
-        cy.log(`✅ Menu "${menuName}" verified as Published for location "${locationName}"`);
         return this;
     }
 

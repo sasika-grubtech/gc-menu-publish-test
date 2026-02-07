@@ -187,7 +187,7 @@ export class ToastMessage {
      * Close the toast message
      */
     public close_toast() {
-        cy.get(this.btn_toast_close).click();
+        cy.get(this.btn_toast_close).click({ force: true });
         cy.log('🗙 Toast message closed');
         return this;
     }

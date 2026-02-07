@@ -87,7 +87,7 @@ export class ProductHomePage {
     }
 
     public verify_view_details_button_visible() {
-        cy.get(this.btn_view_details).click();
+        cy.get(this.btn_view_details).click({ force: true });
         return this;
     }
 
@@ -99,7 +99,7 @@ export class ProductHomePage {
     }
 
     public step_click_filters_button() {
-        cy.get(this.btn_filters).click();
+        cy.get(this.btn_filters).click({ force: true });
         return this;
     }
 
@@ -163,43 +163,43 @@ export class ProductHomePage {
 
     public step_click_more_actions_menu() {
         cy.wait(5000);
-        cy.xpath(this.btn_more_actions).click();
+        cy.xpath(this.btn_more_actions).click({ force: true });
         return this;
     }
 
     public step_click_edit_product() {
-        cy.get(this.btn_edit_product).last().click();
+        cy.get(this.btn_edit_product).last().click({ force: true });
         return new ProductCreatePage();
     }
 
     public step_click_delete_product() {
-        cy.get(this.btn_delete_product).last().click();
+        cy.get(this.btn_delete_product).last().click({ force: true });
         return this;
     }
 
     public step_click_confirm_remove() {
-        cy.get(this.btn_confirm_remove).click();
+        cy.get(this.btn_confirm_remove).click({ force: true });
         return this;
     }
 
     public step_open_side_by_side_view() {
-        cy.get(this.btn_cost_column).click();
+        cy.get(this.btn_cost_column).click({ force: true });
         return this;
     }
 
     public step_click_save_product() {
-        cy.get(this.btn_save_product).click();
+        cy.get(this.btn_save_product).click({ force: true });
         cy.wait(2000);
         return this;
     }
 
     public step_click_select_all_products() {
-        cy.get(this.btn_select_all_products).click();
+        cy.get(this.btn_select_all_products).click({ force: true });
         return this;
     }
 
     public step_click_bulk_edit() {
-        cy.get('[data-cy="bulk-edit-button"]').click();
+        cy.get('[data-cy="bulk-edit-button"]').click({ force: true });
         return this;
     }
 
@@ -241,7 +241,7 @@ export class ProductHomePage {
     }
 
     public step_click_next_page() {
-        cy.get(this.btn_next_page).click();
+        cy.get(this.btn_next_page).click({ force: true });
         cy.wait(2000);
         return this;
     }

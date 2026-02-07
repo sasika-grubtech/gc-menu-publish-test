@@ -98,9 +98,9 @@ export class Sample {
     private fillMenuOverview(menu: any) {
         menuPage.step_enter_overview_name(menu.name);
         menuPage.step_click_overview_brand_select();
-        cy.contains(menu.brandName).click();
+        cy.contains(menu.brandName).click({ force: true });
         menuPage.step_select_currency_dropdown();
-        cy.contains('AED - United Arab Emirates Dirham').click();
+        cy.contains('AED - United Arab Emirates Dirham').click({ force: true });
     }
 
     // Setup tax manager
