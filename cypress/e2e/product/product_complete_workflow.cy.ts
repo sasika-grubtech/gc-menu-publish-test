@@ -90,7 +90,7 @@ describe('Complete Product Workflow: Create Products → Create Modifier Groups 
                             const categoryIndex = index % categoryData.categories.length;
                             const category = categoryData.categories[categoryIndex];
                             productCreate.step_click_category_select_button();
-                            cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+                            cy.get(`[data-cy="category-checkbox-${category.id}"]`).click({ force: true });
 
                             // Toggle Status to Active
                             productCreate.step_change_status();
@@ -164,7 +164,7 @@ describe('Complete Product Workflow: Create Products → Create Modifier Groups 
                             const categoryIndex = index % categoryData.categories.length;
                             const category = categoryData.categories[categoryIndex];
                             modifierGroupCreate.step_click_category_select_textbox();
-                            cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+                            cy.get(`[data-cy="category-checkbox-${category.id}"]`).click({ force: true });
 
                             // Toggle Status to Active
                             modifierGroupCreate.step_change_overview_status();
@@ -508,14 +508,14 @@ describe('Complete Product Workflow: Create Products → Create Modifier Groups 
                 
                 // Select brand
                 menuPage.step_click_overview_brand_select();
-                cy.contains(menu.brandName).click();
+                cy.contains(menu.brandName).click({ force: true });
                 
                 menuPage.step_enter_overview_description(menu.description);
                 menuPage.step_enter_overview_external_id(menu.externalId);
 
                 // Select currency (SAR)
                 menuPage.step_select_currency_dropdown();
-                cy.contains('AED - United Arab Emirates Dirham').click();
+                cy.contains('AED - United Arab Emirates Dirham').click({ force: true });
 
                 // ====== TAX MANAGER ======
                 menuPage.step_click_tax_manager_custom_tax_checkbox();

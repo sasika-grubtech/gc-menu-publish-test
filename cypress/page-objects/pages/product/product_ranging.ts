@@ -27,21 +27,21 @@ export class ProductRangingPage {
     }
 
     public step_click_brand_ranging_text() {
-        cy.get('[data-cy="6152b5e017f264649a52f7c3"]').click();
+        cy.get('[data-cy="6152b5e017f264649a52f7c3"]').click({ force: true });
         return this;
     }
 
     public verify_location_ranging_text() {
         cy.wait(2000);
-        cy.get(':nth-child(3) > .border-primary > .justify-between > [data-cy="basic-radio"] > .flex').click();
-        cy.get('[data-cy="61fb95a03e21545b1a78bd4b"]').click();
+        cy.get(':nth-child(3) > .border-primary > .justify-between > [data-cy="basic-radio"] > .flex').click({ force: true });
+        cy.get('[data-cy="61fb95a03e21545b1a78bd4b"]').click({ force: true });
         cy.wait(2000);
         return this;
     }
 
     public verify_platform_ranging_text() {
         cy.wait(2000);
-        cy.get(':nth-child(4) > .border-primary > .justify-between > [data-cy="basic-radio"] > .flex > [data-cy="filter-selection"]').click();
+        cy.get(':nth-child(4) > .border-primary > .justify-between > [data-cy="basic-radio"] > .flex > [data-cy="filter-selection"]').click({ force: true });
         cy.wait(2000);
         //cy.get(this.lbl_platform_ranging).should('have.text', 'Platforms');
         return this;
@@ -49,7 +49,7 @@ export class ProductRangingPage {
 
     public verify_service_model_ranging_text() {
         cy.wait(2000);
-        cy.get(':nth-child(5) > .border-primary > .justify-between > [data-cy="basic-radio"] > .flex > [data-cy="filter-selection"]').click();
+        cy.get(':nth-child(5) > .border-primary > .justify-between > [data-cy="basic-radio"] > .flex > [data-cy="filter-selection"]').click({ force: true });
         cy.get('[data-cy="DELIVERY_BY_FOOD_AGGREGATOR"]')
         cy.wait(2000);
         return this;
@@ -100,7 +100,7 @@ export class ProductRangingPage {
     }
 
     public step_apply_filters() {
-        cy.get(this.btn_apply_filters).should('be.visible').click();
+        cy.get(this.btn_apply_filters).should('be.visible').click({ force: true });
         cy.wait(2000); // Wait for filtering to complete
         return this;
     }

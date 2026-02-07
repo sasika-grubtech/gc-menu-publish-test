@@ -186,7 +186,7 @@ export class ModifierGroupMiddleLayer {
         
         cy.log(`✅ Verifying Modifier Group added: ${modifierGroupDisplayName}`);
         cy.get('#modifier-groups').within(() => {
-            cy.contains(modifierGroupDisplayName).should('be.visible');
+            cy.contains(modifierGroupDisplayName).scrollIntoView().should('be.visible');
         });
     }
 
@@ -220,7 +220,7 @@ export class ModifierGroupMiddleLayer {
         
         cy.log(`✅ Verifying Product Modifier added: ${productDisplayName}`);
         cy.get('#modifier-groups').within(() => {
-            cy.contains(productDisplayName).should('be.visible');
+            cy.contains(productDisplayName).scrollIntoView().should('be.visible');
         });
     }
 
@@ -245,7 +245,7 @@ export class ModifierGroupMiddleLayer {
         cy.wait(2000);
         
         cy.log(`✅ Verifying Modifier Group added: ${modifierGroupDisplayName}`);
-        cy.contains(modifierGroupDisplayName).should('be.visible');
+        cy.contains(modifierGroupDisplayName).scrollIntoView().should('be.visible');
     }
 
     // Build a complete nested chain
@@ -317,6 +317,52 @@ export class ModifierGroupMiddleLayer {
 
                 cy.log('═══════════════════════════════════════════════════════════════');
                 cy.log(`✅ COMPLETE: Created ${nestedChains.length} nested chains`);
+            });
+        });
+    }
+
+    /**
+     * Build one nested chain with the same hierarchy as the default (root → MG1 → product1 → MG2 → product2),
+     * but use a custom product at level 2 (deepest level) instead of the default from the fixture cycle.
+     * Example: Classic Margherita Pizza → Premium Burger Add-ons → Deluxe Chicken Burger → Pizza Size Selection → Beef Pasta Carbonara.
+     */
+    public modifier_group_bulk_edit_chain_with_level2_product(level2ProductName: string, level2ProductDisplayName: string) {
+        navigator.navigate_to_product_page();
+
+        cy.fixture('bulk_products').then((productsData: any) => {
+            cy.fixture('bulk_product_modifier_groups').then((mgData: any) => {
+                const products = productsData.products.slice(0, 4);
+                const modifierGroups = mgData.productModifierGroups.slice(0, 2);
+
+                if (modifierGroups.length < 2 || products.length < 3) {
+                    throw new Error('Need at least 3 products and 2 modifier groups in fixtures.');
+                }
+
+                const rootProduct = products[0];
+                const product1 = products[1];
+                const mg1 = modifierGroups[0];
+                const mg2 = modifierGroups[1];
+
+                const chain = {
+                    chainNumber: 1,
+                    rootProduct: rootProduct.name,
+                    level1: {
+                        modifierGroupName: mg1.name,
+                        modifierGroupDisplayName: mg1.displayName,
+                        productModifierName: product1.name,
+                        productModifierDisplayName: product1.displayName,
+                    },
+                    level2: {
+                        modifierGroupName: mg2.name,
+                        modifierGroupDisplayName: mg2.displayName,
+                        productModifierName: level2ProductName,
+                        productModifierDisplayName: level2ProductDisplayName,
+                    },
+                };
+
+                cy.log(`📦 Building nested chain with custom level 2 product: ${level2ProductDisplayName}`);
+                this.buildNestedChain(chain);
+                cy.log(`✅ COMPLETE: Chain created with ${level2ProductDisplayName} at deepest level`);
             });
         });
     }

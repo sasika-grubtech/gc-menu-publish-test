@@ -1,12 +1,12 @@
 import { GC2MenusPage } from "cypress/page-objects/pages/gc2/gc2-menus-page";
 import { PageNavigator } from "cypress/page-objects/pages/navigator/page_navigator";
 import { GC2MenuItemsPage } from "../pages/gc2/gc2-menu-items-page";
-
-
+import { GC2ModifierGroupsPage } from "../pages/gc2/gc2-modifier-groups-page";
 
 const navigator = new PageNavigator();
 const gc2MenusPage = new GC2MenusPage();
 const gc2MenuItemsPage = new GC2MenuItemsPage();
+const gc2ModifierGroupsPage = new GC2ModifierGroupsPage();
 
 
 
@@ -14,7 +14,7 @@ const gc2MenuItemsPage = new GC2MenuItemsPage();
 export class GC2MiddleLayer {
 
     public gc2_menus_page() {
-        cy.log('🔍 STEP 7: Verify Backward Compatibility (GC2 Menu Management)');
+        cy.log('🔍 STEP 7: Verify Backward Compatibility (GC2 Menu Management)'); 
         cy.log('═══════════════════════════════════════════════════════════════');
         cy.log('📋 Verifying menus in GC2 Menu Management section...');
 
@@ -48,6 +48,61 @@ export class GC2MiddleLayer {
             gc2MenusPage.step_click_save_button_for_menu();
 
             cy.log('✅ Menus verified in GC2 Menu Management');
+            cy.log('═══════════════════════════════════════════════════════════════');
+        });
+    }
+
+    /**
+     * Verify the published menu appears in GC2 Menu Management once per location (e.g. 2 menus for 2 locations).
+     * Reads menu name from generated_menu_names.json and asserts at least expectedLocationCount rows exist for that menu.
+     * When options.locations and options.brandName are provided, also verifies each row has menu + brand + location,
+     * then opens View and Save for each location's menu row to ensure data is not corrupted.
+     */
+    public gc2_menus_page_verify_menu_per_location(
+        expectedLocationCount: number,
+        options?: { locations?: string[]; brandName?: string }
+    ) {
+        cy.log('🔍 Verify menu(s) in GC2 Menu Management (one per location)...');
+        cy.log('═══════════════════════════════════════════════════════════════');
+
+        cy.readFile('cypress/fixtures/generated_menu_names.json').then((data: any) => {
+            if (!data || !data.menuNames || data.menuNames.length === 0) {
+                throw new Error('No menu names found in generated file. Please create menus first.');
+            }
+            const menuName = data.menuNames[0];
+
+            navigator.navigate_to_gc2_menus_page();
+            gc2MenusPage.verify_page_loaded();
+
+            cy.log(`🔍 Verifying menu "${menuName}" appears at least ${expectedLocationCount} time(s) (one per location)...`);
+            gc2MenusPage.verify_menu_count_at_least(menuName, expectedLocationCount);
+            cy.log(`✅ Menu verified: ${expectedLocationCount} menu row(s) found in GC2 (one per location)`);
+
+            if (options?.locations?.length && options?.brandName) {
+                const { locations, brandName } = options;
+                locations.forEach((locationName) => {
+                    cy.log(`🔍 Verifying row: menu "${menuName}", brand "${brandName}", location "${locationName}"`);
+                    gc2MenusPage.verify_menu_row_has_brand_and_location(menuName, brandName, locationName);
+                    cy.log(`✅ Row verified for location: ${locationName}`);
+                });
+
+                // View + Save for each location to ensure data is not corrupted
+                locations.forEach((locationName, index) => {
+                    cy.log(`📝 Opening View for menu "${menuName}" at location "${locationName}" and validating (View + Save)...`);
+                    gc2MenusPage.step_click_view_button_for_menu_row_with_location(menuName, locationName);
+                    gc2MenusPage.step_click_save_button_for_menu();
+                    cy.log(`✅ View + Save validated for location: ${locationName}`);
+
+                    if (index < locations.length - 1) {
+                        navigator.navigate_to_gc2_menus_page();
+                        gc2MenusPage.verify_page_loaded();
+                        gc2MenusPage.step_search_menu(menuName);
+                        cy.wait(2000);
+                    }
+                });
+                cy.log('✅ All menu rows (per location) validated with View + Save');
+            }
+
             cy.log('═══════════════════════════════════════════════════════════════');
         });
     }
@@ -166,6 +221,37 @@ export class GC2MiddleLayer {
                 cy.log('═══════════════════════════════════════════════════════════════');
             });
 
+        });
+    }
+
+    /**
+     * Verify modifier groups appear in GC2 Menu Management > Modifier Groups.
+     * Reads modifier group names from bulk_product_modifier_groups fixture (first `count` by displayName).
+     */
+    public gc2_modifier_groups_page_verify(count: number) {
+        cy.log('📋 Verifying Modifier Groups in GC2 Menu Management section...');
+        cy.fixture('bulk_product_modifier_groups').then((bulkData: any) => {
+            const modifierGroups = (bulkData.productModifierGroups || []).slice(0, count);
+            if (modifierGroups.length === 0) {
+                throw new Error('No modifier groups in fixture. Check bulk_product_modifier_groups.json.');
+            }
+
+            navigator.navigate_to_gc2_modifier_groups_page();
+            gc2ModifierGroupsPage.verify_page_loaded();
+
+            cy.log(`🔍 Verifying ${modifierGroups.length} modifier group(s) from fixture...`);
+            modifierGroups.forEach((mg: any, index: number) => {
+                const displayName = mg.displayName || mg.name;
+                cy.log(`🔍 Verifying modifier group ${index + 1}/${modifierGroups.length}: ${displayName}`);
+                gc2ModifierGroupsPage.search_and_verify_modifier_group(displayName);
+                cy.log(`✅ Modifier group ${index + 1} found: ${displayName}`);
+                if (index < modifierGroups.length - 1) {
+                    gc2ModifierGroupsPage.step_clear_search();
+                }
+            });
+
+            cy.log('✅ All modifier groups verified in GC2');
+            cy.log('═══════════════════════════════════════════════════════════════');
         });
     }
 }

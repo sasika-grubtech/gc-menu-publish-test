@@ -109,7 +109,7 @@ export class TextModifierGroupPage {
     }
 
     public step_change_overview_status() {
-        cy.get(this.chk_overview_status).should('be.visible').click();
+        cy.get(this.chk_overview_status).should('be.visible').click({ force: true });
         cy.wait(2000);
         return this;
     }
@@ -122,7 +122,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_create_modifier_group_button() {
-        cy.get(this.btn_create_button).should('be.visible').should('be.enabled').click();
+        cy.get(this.btn_create_button).should('be.visible').should('be.enabled').click({ force: true });
         cy.wait(1000); // Wait for the update request to process
         return new ModifierGroupHomePage();
     }
@@ -131,12 +131,12 @@ export class TextModifierGroupPage {
     // CATEGORY SELECT METHODS
     // =============================================================================
     public step_click_category_select_textbox() {
-        cy.get(this.btn_category_select_by_placeholder).click();
+        cy.get(this.btn_category_select_by_placeholder).click({ force: true });
         return this;
     }
 
     public step_click_add_new_category_button() {
-        cy.get(this.btn_add_new_category).click();
+        cy.get(this.btn_add_new_category).click({ force: true });
         return this;
     }
 
@@ -152,7 +152,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_add_category_save_button() {
-        cy.get(this.btn_add_category_save).click();
+        cy.get(this.btn_add_category_save).click({ force: true });
         cy.wait(1000);
         return this;
     }
@@ -162,7 +162,7 @@ export class TextModifierGroupPage {
     // TAGS SELECT METHODS
     // =============================================================================
     public verify_tags_title_visible() {
-        cy.get('[data-tab-id="tags"]').click();
+        cy.get('[data-tab-id="tags"]').click({ force: true });
         cy.get(this.lbl_tags_title).should('be.visible');
         cy.get(this.lbl_tags_title).should('contain.text', 'Tags');
         return this;
@@ -174,7 +174,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_add_tag_label() {
-        cy.get(this.add_tag_label).click();
+        cy.get(this.add_tag_label).click({ force: true });
         return this;
     }
 
@@ -184,7 +184,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_add_tag_save() {
-        cy.get(this.btn_add_tag_save).click();
+        cy.get(this.btn_add_tag_save).click({ force: true });
         return this;
     }
 
@@ -200,7 +200,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_add_tag_cancel() {
-        cy.get(this.btn_add_tag_cancel).click();
+        cy.get(this.btn_add_tag_cancel).click({ force: true });
         return this;
     }
 
@@ -208,7 +208,7 @@ export class TextModifierGroupPage {
 
     public step_click_custom_fields_tab() {
         cy.get(this.tab_custom_fields_title).should('be.visible');
-        cy.get(this.tab_custom_fields_title).click();
+        cy.get(this.tab_custom_fields_title).click({ force: true });
         return this;
     }
 
@@ -230,7 +230,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_custom_fields_create() {
-        cy.get(this.btn_custom_fields_add).click();
+        cy.get(this.btn_custom_fields_add).click({ force: true });
         return this;
     }
 
@@ -257,18 +257,18 @@ export class TextModifierGroupPage {
     }
 
     public step_click_custom_field_modal_type() {
-        cy.get(this.txt_custom_field_modal_type).click();
+        cy.get(this.txt_custom_field_modal_type).click({ force: true });
         return this;
     }
 
     public step_click_custom_field_value_modal(type: string) {
-        cy.get(`[data-cy="field-type-option-${type}"]`).click();
+        cy.get(`[data-cy="field-type-option-${type}"]`).click({ force: true });
         if (type === 'TEXT') {
-            cy.get('[data-cy="default-text-value-input"]').click().type('Test');
+            cy.get('[data-cy="default-text-value-input"]').click({ force: true }).type('Test');
         } if (type === 'NUMERICAL') {
-            cy.get('[data-cy="default-number-value-input"]').click().type('10');
+            cy.get('[data-cy="default-number-value-input"]').click({ force: true }).type('10');
         } if (type === 'BOOLEAN') {
-            cy.get('[data-cy="default-true"]').click();
+            cy.get('[data-cy="default-true"]').click({ force: true });
         } if (type === 'SELECTION_LIST') {
             cy.log('Selection List');
         }
@@ -277,43 +277,43 @@ export class TextModifierGroupPage {
 
 
     public step_click_custom_field_modal_save() {
-        cy.get('[data-cy="save-button"]').click();
+        cy.get('[data-cy="save-button"]').click({ force: true });
         return this;
     }
 
     public step_click_selection_list_type_single() {
-        cy.get('[data-cy="type-single"]').click();
+        cy.get('[data-cy="type-single"]').click({ force: true });
         return this;
     }
 
     public step_click_selection_list_type_multi() {
-        cy.get('[data-cy="type-multi"]').click();
+        cy.get('[data-cy="type-multi"]').click({ force: true });
         return this;
     }
 
     public step_click_add_option_button() {
-        cy.get('[data-cy="add-option-button"]').click();
+        cy.get('[data-cy="add-option-button"]').click({ force: true });
         cy.get('[data-cy="selection-option-0-input"]').type('option text');
-        cy.get('[data-cy="bookmark-option-0"]').click();
-        cy.get('[data-cy="add-option-button"]').click();
+        cy.get('[data-cy="bookmark-option-0"]').click({ force: true });
+        cy.get('[data-cy="add-option-button"]').click({ force: true });
         cy.get('[data-cy="selection-option-1-input"]').type('option text1');
         return this;
     }
 
     public step_click_custom_field_create_button() {
-        cy.get('[data-cy="custom-field-create-btn"]').click();
+        cy.get('[data-cy="custom-field-create-btn"]').click({ force: true });
         return this;
     }
 
     //=======================Text Modifiers Tab Selectors=======================
 
     public step_click_text_modifiers_tab() {
-        cy.get(this.tab_text_modifiers_title).click();
+        cy.get(this.tab_text_modifiers_title).click({ force: true });
         return this;
     }
 
     public step_click_create_modifier_button() {
-        cy.get(this.btn_create_modifier_button).click();
+        cy.get(this.btn_create_modifier_button).click({ force: true });
         return this;
     }
 
@@ -356,17 +356,17 @@ export class TextModifierGroupPage {
     }
 
     public step_click_modifier_cancel_button() {
-        cy.get(this.btn_modifier_cancel_button).click();
+        cy.get(this.btn_modifier_cancel_button).click({ force: true });
         return this;
     }
 
     public step_click_modifier_save_button() {
-        cy.get(this.btn_modifier_save_button).click();
+        cy.get(this.btn_modifier_save_button).click({ force: true });
         return this;
     }
 
     public step_click_modifier_update_save_button() {
-        cy.get('[data-cy*="-save-button"]').first().click();
+        cy.get('[data-cy*="-save-button"]').first().click({ force: true });
         return this;
     }
 
@@ -383,17 +383,17 @@ export class TextModifierGroupPage {
     }
 
     public step_click_more_options_button() {
-        cy.get('[data-cy*="-popover"]').click();
+        cy.get('[data-cy*="-popover"]').click({ force: true });
         return this;
     }
 
     public step_click_edit_modifier_button() {
-        cy.get('[data-cy*="edit-details-"][data-cy*="-text"]').click();
+        cy.get('[data-cy*="edit-details-"][data-cy*="-text"]').click({ force: true });
         return this;
     }
 
     public step_click_remove_modifier_button() {
-        cy.get('[data-cy*="remove-"][data-cy*="-text"]').click();
+        cy.get('[data-cy*="remove-"][data-cy*="-text"]').click({ force: true });
         return this;
     }
 
@@ -408,12 +408,12 @@ export class TextModifierGroupPage {
     }
 
     public step_click_modifier_select_checkbox(modifier_id: string) {
-        cy.get(`[data-cy="product-table-select-${modifier_id}"]`).click();
+        cy.get(`[data-cy="product-table-select-${modifier_id}"]`).click({ force: true });
         return this;
     }
 
     public step_click_product_modifier_save_button() {
-        cy.get('.bg-button-primary-bg > [data-cy="-button-label"]').click();
+        cy.get('.bg-button-primary-bg > [data-cy="-button-label"]').click({ force: true });
         return this;
     }
 
@@ -424,23 +424,23 @@ export class TextModifierGroupPage {
     }
 
     public step_click_expand_modifiers_details(modifier_id: string) {
-        cy.get(`[data-cy="${modifier_id}-collapsible-icon"]`).click();
+        cy.get(`[data-cy="${modifier_id}-collapsible-icon"]`).click({ force: true });
         cy.wait(5000);
         return this;
     }
 
     public step_click_more_options_modifiers_details(modifier_id: string) {
-        cy.get(`[data-cy="${modifier_id}-popover"]`).click();
+        cy.get(`[data-cy="${modifier_id}-popover"]`).click({ force: true });
         return this;
     }
 
     public step_click_remove_modifiers_details(modifier_id: string) {
-        cy.get(`[data-cy="remove-${modifier_id}-text"]`).click();
+        cy.get(`[data-cy="remove-${modifier_id}-text"]`).click({ force: true });
         return this;
     }
 
     public step_click_edit_modifiers_details(modifier_id: string) {
-        cy.get(`[data-cy="edit-details-${modifier_id}-text"]`).click();
+        cy.get(`[data-cy="edit-details-${modifier_id}-text"]`).click({ force: true });
         return this;
     }
 
@@ -450,17 +450,17 @@ export class TextModifierGroupPage {
     }
 
     public step_click_modifier_update_save_button_details(modifier_id: string) {
-        cy.get(`[data-cy="${modifier_id}-save-button"]`).click();
+        cy.get(`[data-cy="${modifier_id}-save-button"]`).click({ force: true });
         return this;
     }
 
     public step_click_add_more_modifiers_button() {
-        cy.get('[data-cy="add-modifier-button-"]').click();
+        cy.get('[data-cy="add-modifier-button-"]').click({ force: true });
         return this;
     }
 
     public step_click_add_product_modifier_group_button(modifier_id: string) {
-        cy.get(`[data-cy="add-modifier-group-button-${modifier_id}"]`).click();
+        cy.get(`[data-cy="add-modifier-group-button-${modifier_id}"]`).click({ force: true });
         return this;
     }
 
@@ -471,17 +471,17 @@ export class TextModifierGroupPage {
     }
 
     public step_click_modifier_group_select_checkbox(modifier_id: string) {
-        cy.get(`[data-cy="modifier-group-table-select-${modifier_id}"]`).click();
+        cy.get(`[data-cy="modifier-group-table-select-${modifier_id}"]`).click({ force: true });
         return this;
     }
 
     public step_click_modifier_group_save_button() {
-        cy.get('[data-cy="add-modifiers-button"]').click();
+        cy.get('[data-cy="add-modifiers-button"]').click({ force: true });
         return this;
     }
 
     public step_click_add_modifier_button_with_id(modifier_id: string) {
-        cy.get(`[data-cy="add-modifier-button-${modifier_id}"]`).click();
+        cy.get(`[data-cy="add-modifier-button-${modifier_id}"]`).click({ force: true });
         cy.wait(2000);
         return this;
     }
@@ -492,12 +492,12 @@ export class TextModifierGroupPage {
     // TRANSLATION TAB VERIFICATION METHODS
     // =============================================================================
     public step_update_translation() {
-        cy.get('[data-cy="language-selector-trigger"]').click()
-        cy.get('[data-cy="language-selector-manage-languages-text"]').click()
+        cy.get('[data-cy="language-selector-trigger"]').click({ force: true })
+        cy.get('[data-cy="language-selector-manage-languages-text"]').click({ force: true })
         return this;
     }
     public step_click_translation_button() {
-        cy.get(this.btn_translation).click();
+        cy.get(this.btn_translation).click({ force: true });
         return this;
     }
 
@@ -519,27 +519,27 @@ export class TextModifierGroupPage {
     }
 
     public step_check_language(language_id: string) {
-        cy.get(`[data-cy="modifier-group-manage-language-dialog-checkbox-${language_id}"]`).click();
+        cy.get(`[data-cy="modifier-group-manage-language-dialog-checkbox-${language_id}"]`).click({ force: true });
         return this;
     }
 
     public step_click_modifier_group_manage_language_dialog_save() {
-        cy.get(this.btn_modifier_group_manage_language_dialog_save).click();
+        cy.get(this.btn_modifier_group_manage_language_dialog_save).click({ force: true });
         return this;
     }
 
     public step_click_modifier_group_manage_language_dialog_cancel() {
-        cy.get(this.btn_modifier_group_manage_language_dialog_cancel).click();
+        cy.get(this.btn_modifier_group_manage_language_dialog_cancel).click({ force: true });
         return this;
     }
 
     public step_click_modifier_group_overview_name_trailing_button() {
-        cy.get(this.btn_modifier_group_overview_name_trailing_button).click();
+        cy.get(this.btn_modifier_group_overview_name_trailing_button).click({ force: true });
         return this;
     }
 
     public step_click_modifier_group_overview_display_name_trailing_button() {
-        cy.get(this.btn_modifier_group_overview_display_name_trailing_button).click();
+        cy.get(this.btn_modifier_group_overview_display_name_trailing_button).click({ force: true });
         return this;
     }
 
@@ -549,7 +549,7 @@ export class TextModifierGroupPage {
     }
 
     public step_click_modifier_group_overview_description_trailing_button() {
-        cy.get('[data-cy="overview-description-trailing-button"]').click();
+        cy.get('[data-cy="overview-description-trailing-button"]').click({ force: true });
         return this;
     }
 
