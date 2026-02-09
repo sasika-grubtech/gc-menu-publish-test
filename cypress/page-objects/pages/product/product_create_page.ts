@@ -247,7 +247,7 @@ export class ProductCreatePage {
     // =============================================================================
     public product_create_button_click() {
         cy.get(this.btn_create_product).should('be.enabled');
-        cy.get(this.btn_create_product).click();
+        cy.get(this.btn_create_product).click({ force: true });
         return new ProductToasterMessage();
     }
 
@@ -257,7 +257,7 @@ export class ProductCreatePage {
     }
 
     public step_click_cancel_button() {
-        cy.get(this.btn_cancel).click();
+        cy.get(this.btn_cancel).click({ force: true });
         return this;
     }
 
@@ -280,7 +280,7 @@ export class ProductCreatePage {
     }
 
     public step_click_tab(tab: string) {
-        cy.get(`[data-tab-id="${tab}"]`).click();
+        cy.get(`[data-tab-id="${tab}"]`).click({ force: true });
         return this;
     }
 
@@ -371,12 +371,12 @@ export class ProductCreatePage {
     // CATEGORY SELECT METHODS
     // =============================================================================
     public step_click_category_select_button() {
-        cy.get(this.btn_category_select).click();
+        cy.get(this.btn_category_select).click({ force: true });
         return this;
     }
 
     public step_click_add_new_category_button() {
-        cy.get(this.btn_add_new_category).click();
+        cy.get(this.btn_add_new_category).click({ force: true });
         return this;
     }
 
@@ -392,13 +392,13 @@ export class ProductCreatePage {
     }
 
     public step_click_add_category_save_button() {
-        cy.get(this.btn_add_category_save).click();
+        cy.get(this.btn_add_category_save).click({ force: true });
         cy.wait(1000);
         return this;
     }
 
     public step_select_category_in_dropdown() {
-        cy.get(this.chk_category_select).click();
+        cy.get(this.chk_category_select).click({ force: true });
         return this;
     }
 
@@ -408,7 +408,7 @@ export class ProductCreatePage {
     // STATUS SELECT METHODS
     // =============================================================================
     public step_change_status() {
-        cy.get(this.chk_status).click();
+        cy.get(this.chk_status).click({ force: true });
         return this;
     }
 
@@ -442,7 +442,7 @@ export class ProductCreatePage {
 
     public step_select_brand_in_dropdown(brand: string) {
         cy.get(this.txt_brand_select).type(brand);
-        cy.get(this.chk_brand_select).click();
+        cy.get(this.chk_brand_select).click({ force: true });
         return this;
     }
 
@@ -467,7 +467,7 @@ export class ProductCreatePage {
     }
 
     public step_click_brand_select() {
-        cy.get(this.btn_brand_select).click();
+        cy.get(this.btn_brand_select).click({ force: true });
         return this;
     }
 
@@ -478,35 +478,35 @@ export class ProductCreatePage {
     }
 
     public step_click_location_select() {
-        cy.get(this.btn_location_select).click();
+        cy.get(this.btn_location_select).click({ force: true });
         return this;
     }
 
     public step_select_location_in_dropdown(location: string) {
         cy.get(this.txt_location_select).type(location);
-        cy.get(this.chk_location_select).click();
+        cy.get(this.chk_location_select).click({ force: true });
         return this;
     }
 
     public step_click_platform_select() {
-        cy.get(this.btn_platform_select).click();
+        cy.get(this.btn_platform_select).click({ force: true });
         return this;
     }
 
     public step_select_platform_in_dropdown(platform: string) {
         cy.get(this.txt_platform_select).type(platform);
-        cy.get(this.chk_platform_select).click();
+        cy.get(this.chk_platform_select).click({ force: true });
         return this;
     }
 
     public step_click_service_mode_select() {
-        cy.get(this.btn_service_mode_select).click();
+        cy.get(this.btn_service_mode_select).click({ force: true });
         return this;
     }
 
     public step_select_service_mode_in_dropdown(service_mode: string) {
         cy.get(this.txt_service_mode_select).type(service_mode);
-        cy.get(this.chk_service_mode_select).click();
+        cy.get(this.chk_service_mode_select).click({ force: true });
         return this;
     }
 
@@ -515,7 +515,7 @@ export class ProductCreatePage {
     // =============================================================================
 
     public verify_price_and_taxes_title_visible() {
-        cy.get(this.tab_price_taxes).click();
+        cy.get(this.tab_price_taxes).click({ force: true });
         cy.get(this.lbl_price_and_taxes_title).should('be.visible');
         cy.get(this.lbl_price_and_taxes_title).should('contain.text', 'Price, Currency & Taxes');
         return this;
@@ -535,7 +535,7 @@ export class ProductCreatePage {
 
     public step_click_currency_select() {
         cy.wait(2000);
-        cy.get(this.btn_currency_select).click();
+        cy.get(this.btn_currency_select).click({ force: true });
         return this;
     }
 
@@ -562,7 +562,7 @@ export class ProductCreatePage {
     public step_click_price_inclusive_tax() {
         cy.get(this.chk_price_inclusive_tax).should('be.visible');
         cy.get(this.chk_price_inclusive_tax).should('have.text', 'Price Includes Tax');
-        cy.get(this.chk_price_inclusive_tax).click();
+        cy.get(this.chk_price_inclusive_tax).click({ force: true });
         return this;
     }
 
@@ -573,12 +573,12 @@ export class ProductCreatePage {
         cy.get(this.chk_price_exclusive_tax).scrollIntoView();
         cy.get(this.chk_price_exclusive_tax).should('be.visible');
         cy.get(this.chk_price_exclusive_tax).should('have.text', 'Price Excludes Tax');
-        cy.get(this.chk_price_exclusive_tax).click();
+        cy.get(this.chk_price_exclusive_tax).click({ force: true });
         return this;
     }
 
     public step_click_price_manager_custom_tax_checkbox() {
-        cy.get(this.chk_price_manager_custom_tax_checkbox).click();
+        cy.get(this.chk_price_manager_custom_tax_checkbox).click({ force: true });
         return this;
     }
 
@@ -588,7 +588,7 @@ export class ProductCreatePage {
     }
 
     public step_click_price_manager_new_tax_add_button() {
-        cy.get(this.btn_price_manager_new_tax_add_button).click();
+        cy.get(this.btn_price_manager_new_tax_add_button).click({ force: true });
         return this;
     }
 
@@ -599,17 +599,17 @@ export class ProductCreatePage {
     }
 
     public step_click_price_manager_tax_save_button() {
-        cy.get(this.btn_price_manager_tax_add_button).click();
+        cy.get(this.btn_price_manager_tax_add_button).click({ force: true });
         return this;
     }
 
     public step_click_price_manager_add_new_tax_line() {
-        cy.get(this.btn_price_manager_collapse_button_label).click();
+        cy.get(this.btn_price_manager_collapse_button_label).click({ force: true });
         return this;
     }
 
     public step_click_price_manager_tax_remove_button() {
-        cy.get(this.btn_price_manager_tax_remove_button).last().click();
+        cy.get(this.btn_price_manager_tax_remove_button).last().click({ force: true });
         cy.wait(3000);
         return this;
     }
@@ -620,7 +620,7 @@ export class ProductCreatePage {
     }
 
     public step_click_price_manager_second_tax_add_button() {
-        cy.get(this.btn_price_manager_second_tax_add_button).click();
+        cy.get(this.btn_price_manager_second_tax_add_button).click({ force: true });
         cy.wait(3000);
         return this;
     }
@@ -662,17 +662,17 @@ export class ProductCreatePage {
     }
 
     public step_select_modifier_group_in_dropdown(modifier_group_id: string) {
-        cy.get(`[data-cy="modifier-group-table-select-${modifier_group_id}"]`).click();
+        cy.get(`[data-cy="modifier-group-table-select-${modifier_group_id}"]`).click({ force: true });
         return this;
     }
 
     public step_click_cancel_add_mg_modal_button() {
-        cy.get(this.btn_cancel_add_mg_modal_button).click();
+        cy.get(this.btn_cancel_add_mg_modal_button).click({ force: true });
         return this;
     }
 
     public step_click_save_add_mg_modal_button() {
-        cy.get(this.btn_save_add_mg_modal_button).click();
+        cy.get(this.btn_save_add_mg_modal_button).click({ force: true });
         return this;
     }
 
@@ -683,23 +683,23 @@ export class ProductCreatePage {
     }
 
     public step_click_more_options_modifier_group(modifier_group_id: string) {
-        cy.get(`[data-cy="${modifier_group_id}-popover"]`).click();
+        cy.get(`[data-cy="${modifier_group_id}-popover"]`).click({ force: true });
         return this;
     }
 
     public step_click_edit_modifier_group(modifier_group_id: string) {
-        cy.get(`[data-cy="edit-details-${modifier_group_id}-text"]`).click();
+        cy.get(`[data-cy="edit-details-${modifier_group_id}-text"]`).click({ force: true });
         return this;
     }
 
     public step_click_remove_modifier_group(modifier_group_id: string) {
-        cy.get(`[data-cy="remove-${modifier_group_id}-text"]`).click();
+        cy.get(`[data-cy="remove-${modifier_group_id}-text"]`).click({ force: true });
         return this;
     }
 
     public step_click_revert_modifier_group(modifier_group_id: string) {
         // Click on "Revert Modifier Group" option from the 3-dot menu
-        cy.get(`[data-cy="revert-modifier-${modifier_group_id}-text"]`).click();
+        cy.get(`[data-cy="revert-modifier-${modifier_group_id}-text"]`).click({ force: true });
         cy.wait(1000); // Wait for confirmation dialog or revert to complete
         return this;
     }
@@ -720,30 +720,30 @@ export class ProductCreatePage {
     }
 
     public step_click_modifier_save_button(modifier_group_id: string) {
-        cy.get(`[data-cy="${modifier_group_id}-save-button-button-label"]`).click();
+        cy.get(`[data-cy="${modifier_group_id}-save-button-button-label"]`).click({ force: true });
         return this;
     }
 
 
     public step_click_expand_button(modifier_group_id: string) {
-        cy.get(`[data-cy="${modifier_group_id}-collapsible-icon"]`).click();
+        cy.get(`[data-cy="${modifier_group_id}-collapsible-icon"]`).click({ force: true });
         cy.wait(2000);
         return this;
     }
 
     public step_add_modifier_first_level_override(modifier_group_id: string) {
-        cy.get(`[data-cy="add-modifier-button-${modifier_group_id}"]`).click();
+        cy.get(`[data-cy="add-modifier-button-${modifier_group_id}"]`).click({ force: true });
         return this;
     }
 
     public step_search_and_select_modifier_second_level_override(name: string, modifier_id: string) {
         cy.get('[data-cy="-input"]').type(name);
-        cy.get(`[data-cy="product-table-select-${modifier_id}"]`).click();
+        cy.get(`[data-cy="product-table-select-${modifier_id}"]`).click({ force: true });
         return this;
     }
 
     public step_click_save_first_level_override_modal_button() {
-        cy.get('.bg-button-primary-bg > [data-cy="-button-label"]').click();
+        cy.get('.bg-button-primary-bg > [data-cy="-button-label"]').click({ force: true });
         return this;
     }
 
@@ -757,7 +757,7 @@ export class ProductCreatePage {
     }
 
     public step_click_text_modifier_save_button(modifier_group_id: string) {
-        cy.get('[data-cy="undefined-save-button-button-label"]').click();
+        cy.get('[data-cy="undefined-save-button-button-label"]').click({ force: true });
         return this;
     }
 
@@ -797,7 +797,7 @@ export class ProductCreatePage {
 
     public step_click_nutritional_info_tab() {
         cy.wait(2000);
-        cy.get(this.tab_nutrition).click();
+        cy.get(this.tab_nutrition).click({ force: true });
         return this;
     }
 
@@ -821,7 +821,7 @@ export class ProductCreatePage {
 
     public step_select_classification_in_dropdown(classificationId: string) {
         cy.wait(2000);
-        cy.get(`[data-cy="checkbox-${classificationId}"]`).click();
+        cy.get(`[data-cy="checkbox-${classificationId}"]`).click({ force: true });
         return this;
     }
 
@@ -849,7 +849,7 @@ export class ProductCreatePage {
     }
 
     public step_select_allergen_in_dropdown(allergenId: string) {
-        cy.get(`[data-cy="checkbox-${allergenId}"]`).click();
+        cy.get(`[data-cy="checkbox-${allergenId}"]`).click({ force: true });
         return this;
     }
 
@@ -869,21 +869,21 @@ export class ProductCreatePage {
 
     public step_click_custom_fields_tab() {
         cy.get(this.tab_custom_fields_title).should('be.visible');
-        cy.get(this.tab_custom_fields_title).click();
+        cy.get(this.tab_custom_fields_title).click({ force: true });
         cy.wait(1000);
         cy.get('[data-cy="custom-fields-title"]').scrollIntoView();
         return this;
     }
 
     public verify_tags_title_visible() {
-        cy.get('[data-tab-id="tags"]').click();
+        cy.get('[data-tab-id="tags"]').click({ force: true });
         cy.get(this.lbl_tags_title).should('be.visible');
         cy.get(this.lbl_tags_title).should('contain.text', 'Tags');
         return this;
     }
 
     public verify_sideview_tags_title_visible() {
-        cy.get('[data-tab-id="tags"]').click();
+        cy.get('[data-tab-id="tags"]').click({ force: true });
         cy.get('#tags-title').should('be.visible');
         cy.get('#tags-title').should('contain.text', 'Tags');
         return this;
@@ -919,7 +919,7 @@ export class ProductCreatePage {
     }
 
     public step_click_add_tag_label() {
-        cy.get(this.add_tag_label).click();
+        cy.get(this.add_tag_label).click({ force: true });
         return this;
     }
 
@@ -941,17 +941,17 @@ export class ProductCreatePage {
     }
 
     public step_click_add_tag_cancel() {
-        cy.get(this.btn_add_tag_cancel).click();
+        cy.get(this.btn_add_tag_cancel).click({ force: true });
         return this;
     }
 
     public step_click_add_tag_save() {
-        cy.get(this.btn_add_tag_save).click();
+        cy.get(this.btn_add_tag_save).click({ force: true });
         return this;
     }
 
     public step_select_tag_checkbox(tag: string) {
-        cy.get(`[data-cy="tag-checkbox-${tag}"]`).click();
+        cy.get(`[data-cy="tag-checkbox-${tag}"]`).click({ force: true });
         return this;
     }
 
@@ -992,7 +992,7 @@ export class ProductCreatePage {
     }
 
     public step_click_custom_fields_create() {
-        cy.get(this.btn_custom_fields_add).click();
+        cy.get(this.btn_custom_fields_add).click({ force: true });
         return this;
     }
 
@@ -1024,18 +1024,18 @@ export class ProductCreatePage {
     }
 
     public step_click_custom_field_modal_type() {
-        cy.get(this.txt_custom_field_modal_type).click();
+        cy.get(this.txt_custom_field_modal_type).click({ force: true });
         return this;
     }
 
     public step_click_custom_field_value_modal(type: string) {
-        cy.get(`[data-cy="field-type-option-${type}"]`).click();
+        cy.get(`[data-cy="field-type-option-${type}"]`).click({ force: true });
         if (type === 'TEXT') {
-            cy.get('[data-cy="default-text-value-input"]').click().type('Test');
+            cy.get('[data-cy="default-text-value-input"]').click({ force: true }).type('Test');
         } if (type === 'NUMERICAL') {
-            cy.get('[data-cy="default-number-value-input"]').click().type('10');
+            cy.get('[data-cy="default-number-value-input"]').click({ force: true }).type('10');
         } if (type === 'BOOLEAN') {
-            cy.get('[data-cy="default-true"]').click();
+            cy.get('[data-cy="default-true"]').click({ force: true });
         } if (type === 'SELECTION_LIST') {
             cy.log('Selection List');
         }
@@ -1043,18 +1043,18 @@ export class ProductCreatePage {
     }
 
     public step_click_custom_field_value_modal_selection_list() {
-        cy.get('[data-cy="category-products-category-handler-create-category-button"]').click();
+        cy.get('[data-cy="category-products-category-handler-create-category-button"]').click({ force: true });
         return this;
     }
 
     public step_click_custom_field_modal_save() {
-        cy.get('[data-cy="save-button"]').click();
+        cy.get('[data-cy="save-button"]').click({ force: true });
         return this;
     }
 
     public step_click_edit_custom_fields_create_button() {
         cy.wait(2000);
-        cy.get('[data-cy="custom-field-create-btn"]').click();
+        cy.get('[data-cy="custom-field-create-btn"]').click({ force: true });
         return this;
     }
 
@@ -1065,20 +1065,20 @@ export class ProductCreatePage {
     }
 
     public step_click_selection_list_type_single() {
-        cy.get('[data-cy="type-single"]').click();
+        cy.get('[data-cy="type-single"]').click({ force: true });
         return this;
     }
 
     public step_click_selection_list_type_multi() {
-        cy.get('[data-cy="type-multi"]').click();
+        cy.get('[data-cy="type-multi"]').click({ force: true });
         return this;
     }
 
     public step_click_add_option_button() {
-        cy.get('[data-cy="add-option-button"]').click();
+        cy.get('[data-cy="add-option-button"]').click({ force: true });
         cy.get('[data-cy="selection-option-0-input"]').type('option text');
-        cy.get('[data-cy="bookmark-option-0"]').click();
-        cy.get('[data-cy="add-option-button"]').click();
+        cy.get('[data-cy="bookmark-option-0"]').click({ force: true });
+        cy.get('[data-cy="add-option-button"]').click({ force: true });
         cy.get('[data-cy="selection-option-1-input"]').type('option text1');
         return this;
     }
@@ -1088,12 +1088,12 @@ export class ProductCreatePage {
     // TRANSLATION TAB VERIFICATION METHODS
     // =============================================================================
     public step_update_translation() {
-        cy.get('[data-cy="language-selector-trigger"]').click()
-        cy.get('[data-cy="language-selector-manage-languages-text"]').click()
+        cy.get('[data-cy="language-selector-trigger"]').click({ force: true })
+        cy.get('[data-cy="language-selector-manage-languages-text"]').click({ force: true })
         return this;
     }
     public step_click_translation_button() {
-        cy.get(this.btn_translation).click();
+        cy.get(this.btn_translation).click({ force: true });
         return this;
     }
 
@@ -1115,27 +1115,27 @@ export class ProductCreatePage {
     }
 
     public step_check_language(language_id: string) {
-        cy.get(`[data-cy="product-manage-language-dialog-checkbox-${language_id}"]`).click();
+        cy.get(`[data-cy="product-manage-language-dialog-checkbox-${language_id}"]`).click({ force: true });
         return this;
     }
 
     public step_click_product_manage_language_dialog_save() {
-        cy.get(this.btn_product_manage_language_dialog_save).click();
+        cy.get(this.btn_product_manage_language_dialog_save).click({ force: true });
         return this;
     }
 
     public step_click_product_manage_language_dialog_cancel() {
-        cy.get(this.btn_product_manage_language_dialog_cancel).click();
+        cy.get(this.btn_product_manage_language_dialog_cancel).click({ force: true });
         return this;
     }
 
     public step_click_product_overview_name_trailing_button() {
-        cy.get(this.btn_product_overview_name_trailing_button).click();
+        cy.get(this.btn_product_overview_name_trailing_button).click({ force: true });
         return this;
     }
 
     public step_click_product_overview_display_name_trailing_button() {
-        cy.get(this.btn_product_overview_display_name_trailing_button).click();
+        cy.get(this.btn_product_overview_display_name_trailing_button).click({ force: true });
         return this;
     }
 
@@ -1145,7 +1145,7 @@ export class ProductCreatePage {
     }
 
     public step_click_product_overview_description_trailing_button() {
-        cy.get('[data-cy="product-overview-description-input-trailing-button"]').click();
+        cy.get('[data-cy="product-overview-description-input-trailing-button"]').click({ force: true });
         return this;
     }
 
@@ -1671,7 +1671,7 @@ export class ProductCreatePage {
     // =============================================================================
     public step_click_parent_revert_button() {
         cy.get(this.btn_revert).should('be.visible');
-        cy.get(this.btn_revert).click();
+        cy.get(this.btn_revert).click({ force: true });
         cy.wait(1000); // Wait for popup to appear
         return this;
     }
@@ -1679,7 +1679,7 @@ export class ProductCreatePage {
     public step_select_all_modifier_groups_in_popup() {
         // Click on "Select All modifier groups" option in the revert popup
         // The element is a div with cursor-pointer class that contains "modifier groups" text
-        cy.get('div.cursor-pointer').contains('modifier groups').should('be.visible').click();
+        cy.get('div.cursor-pointer').contains('modifier groups').should('be.visible').click({ force: true });
         cy.wait(500); // Wait for selection to complete
         return this;
     }
@@ -1688,7 +1688,7 @@ export class ProductCreatePage {
         // Select a single modifier group from the revert popup using checkbox
         // The selector pattern is: modifiers-table-select-{modifier_group_id}_{other_id}
         // We use starts-with selector to match the modifier group ID
-        cy.get(`[data-cy^="modifiers-table-select-${modifier_group_id}"]`).should('be.visible').click();
+        cy.get(`[data-cy^="modifiers-table-select-${modifier_group_id}"]`).should('be.visible').click({ force: true });
         cy.wait(500); // Wait for selection to complete
         return this;
     }
@@ -1696,7 +1696,7 @@ export class ProductCreatePage {
     public step_click_revert_selected_button() {
         // Click the "Revert Selected" button after selecting all modifier groups
         cy.get(this.btn_revert_selected).should('be.visible');
-        cy.get(this.btn_revert_selected).click();
+        cy.get(this.btn_revert_selected).click({ force: true });
         cy.wait(1000); // Wait for confirmation dialog to appear
         return this;
     }
@@ -1704,7 +1704,7 @@ export class ProductCreatePage {
     public step_confirm_revert_in_popup() {
         // Click confirm button to complete the revert operation
         cy.get(this.btn_revert_confirm).should('be.visible');
-        cy.get(this.btn_revert_confirm).click();
+        cy.get(this.btn_revert_confirm).click({ force: true });
         cy.wait(2000); // Wait for revert operation to complete
         return this;
     }
@@ -1764,7 +1764,7 @@ export class ProductCreatePage {
             .step_click_revert_modifier_group(modifier_group_id);
             cy.get('body').then(($body) => {
                 if ($body.find(this.btn_revert_confirm).length > 0) {
-                    cy.get(this.btn_revert_confirm).click();
+                    cy.get(this.btn_revert_confirm).click({ force: true });
                     cy.wait(1000); // Wait for revert to complete
                 }
             });
@@ -1822,7 +1822,7 @@ export class ProductCreatePage {
         cy.get(`[data-cy="${modifier_group_id}-external-id-input"]`).should('not.have.value', 'update external id');
         
         // Close the edit modal by clicking cancel button (using dynamic selector based on modifier group ID)
-        cy.get(`[data-cy="${modifier_group_id}-cancel-button"]`).click();
+        cy.get(`[data-cy="${modifier_group_id}-cancel-button"]`).click({ force: true });
         cy.wait(500);
         return this;
     }

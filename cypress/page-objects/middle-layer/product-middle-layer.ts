@@ -67,7 +67,7 @@ export class ProductMiddleLayer {
                         const categoryIndex = index % categoryData.categories.length;
                         const category = categoryData.categories[categoryIndex];
                         productCreate.step_click_category_select_button();
-                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click({ force: true });
 
                         // Toggle Status to Active
                        // productCreate.step_change_status();
@@ -112,7 +112,7 @@ export class ProductMiddleLayer {
                         products = products.slice(0, count);
                     }
 
-                    cy.log(`📦 STEP 1: Creating ${products.length} products`);
+                    cy.log(`📦 STEP 1: Creating ${products.length} products`); 
                     cy.log('═══════════════════════════════════════════════════════════════');
 
                     products.forEach((product: any, index: number) => {

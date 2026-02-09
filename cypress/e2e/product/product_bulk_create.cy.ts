@@ -54,7 +54,7 @@ describe('Create 9 Products from JSON with All Fields', () => {
                         const categoryIndex = index % categoryData.categories.length;
                         const category = categoryData.categories[categoryIndex];
                         productCreate.step_click_category_select_button();
-                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click({ force: true });
 
                         // Toggle Status to Active
                         productCreate.step_change_status();

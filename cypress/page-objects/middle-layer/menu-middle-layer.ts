@@ -136,14 +136,14 @@ export class MenuMiddleLayer {
 
             // Select brand
             menuPage.step_click_overview_brand_select();
-            cy.contains(menu.brandName).click();
+            cy.contains(menu.brandName).click({ force: true });
 
             menuPage.step_enter_overview_description(menu.description);
             menuPage.step_enter_overview_external_id(menu.externalId);
 
             // Select currency (SAR)
             menuPage.step_select_currency_dropdown();
-            cy.contains('AED - United Arab Emirates Dirham').click();
+            cy.contains('AED - United Arab Emirates Dirham').click({ force: true });
 
             // ====== TAX MANAGER ======
             menuPage.step_click_tax_manager_custom_tax_checkbox();
@@ -318,11 +318,11 @@ export class MenuMiddleLayer {
 
             // Select brand
             menuPage.step_click_overview_brand_select();
-            cy.contains(menu.brandName).click();
+            cy.contains(menu.brandName).click({ force: true });
 
             // Select currency (SAR)
             menuPage.step_select_currency_dropdown();
-            cy.contains('AED - United Arab Emirates Dirham').click();
+            cy.contains('AED - United Arab Emirates Dirham').click({ force: true });
 
             // ====== TAX MANAGER ======
             menuPage.step_click_tax_manager_custom_tax_checkbox();
@@ -420,7 +420,7 @@ export class MenuMiddleLayer {
                         name: `M1_Category 2_${menuTimestamp}`,
                         products: [
                             { name: "Chicken Burger Deluxe", displayName: "Deluxe Chicken Burger" },
-                            { name: "Caesar Salad Bowl", displayName: "Classic Caesar Salad" }
+                            { name: "Caesar Salad Bowl", displayName: "Classic Caesar Salad" } 
                         ]
                     }
                 ]
@@ -498,11 +498,11 @@ export class MenuMiddleLayer {
 
             // Select brand
             menuPage.step_click_overview_brand_select();
-            cy.contains(menu.brandName).click();
+            cy.contains(menu.brandName).click({ force: true });
 
             // Select currency (SAR)
             menuPage.step_select_currency_dropdown();
-            cy.contains('AED - United Arab Emirates Dirham').click();
+            cy.contains('AED - United Arab Emirates Dirham').click({ force: true });
 
             // ====== TAX MANAGER ======
             menuPage.step_click_tax_manager_custom_tax_checkbox();

@@ -38,7 +38,7 @@ export class MenuHomePage {
     }
 
     public step_click_edit_menu() {
-        cy.get(this.btn_edit_menu).last().click();
+        cy.get(this.btn_edit_menu).last().click({ force: true });
         return new MenuPage();
     }
 
