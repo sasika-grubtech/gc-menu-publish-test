@@ -63,7 +63,7 @@ export class ModifierGroupMiddleLayer {
                         const categoryIndex = index % categoryData.categories.length;
                         const category = categoryData.categories[categoryIndex];
                         modifierGroupCreate.step_click_category_select_textbox();
-                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click();
+                        cy.get(`[data-cy="category-checkbox-${category.id}"]`).click({ force: true });
 
                         // Toggle Status to Active
                        // modifierGroupCreate.step_change_overview_status();
