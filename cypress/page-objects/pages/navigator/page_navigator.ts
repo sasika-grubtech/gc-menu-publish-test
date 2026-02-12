@@ -53,9 +53,10 @@ export class PageNavigator {
     }
 
     // ============== GC2 MENU MANAGEMENT (Backward Compatibility) ==============
+    // Load GC2 entry URL with mode=gc2WriteAdmin before GC2 validation so GC2 components display (permissions).
     public navigate_to_gc2_menu_items_page() {
         AuthenticationService.authenticate().then(() => {
-            cy.visit("/login", { failOnStatusCode: false, timeout: 60000 }).then(() => {
+            cy.visit(Cypress.env('GC2_ENTRY_URL'), { failOnStatusCode: false, timeout: 60000 }).then(() => {
                 cy.url().should('include', 'grubcenter.staging.grubtech.io');
                 sidePanel.click_side_panel_gc2_menu_management_button()
                     .click_side_panel_gc2_menu_items_button();
@@ -66,7 +67,7 @@ export class PageNavigator {
 
     public navigate_to_gc2_modifier_groups_page() {
         AuthenticationService.authenticate().then(() => {
-            cy.visit("/login", { failOnStatusCode: false, timeout: 60000 }).then(() => {
+            cy.visit(Cypress.env('GC2_ENTRY_URL'), { failOnStatusCode: false, timeout: 60000 }).then(() => {
                 cy.url().should('include', 'grubcenter.staging.grubtech.io');
                 sidePanel.click_side_panel_gc2_menu_management_button()
                     .click_side_panel_gc2_modifier_groups_button();
@@ -77,7 +78,7 @@ export class PageNavigator {
 
     public navigate_to_gc2_menus_page() {
         AuthenticationService.authenticate().then(() => {
-            cy.visit("/login", { failOnStatusCode: false, timeout: 60000 }).then(() => {
+            cy.visit(Cypress.env('GC2_ENTRY_URL'), { failOnStatusCode: false, timeout: 60000 }).then(() => {
                 cy.url().should('include', 'grubcenter.staging.grubtech.io');
                 sidePanel.click_side_panel_gc2_menu_management_button()
                     .click_side_panel_gc2_menus_button();

@@ -59,6 +59,13 @@ export class GC2MenusPage {
     }
 
     public step_click_save_button_for_menu() {
+        // Ensure write permission: set mode=gc2WriteAdmin on current URL before save
+        cy.url().then((url) => {
+            const hasMode = url.includes('mode=gc2WriteAdmin');
+            const urlWithMode = hasMode ? url : (url.includes('?') ? `${url}&mode=gc2WriteAdmin` : `${url}?mode=gc2WriteAdmin`);
+            cy.visit(urlWithMode);
+        });
+        cy.wait(2000);
         cy.get('#submit').click({ force: true });
         cy.wait(2000);
         cy.get('.Toastify__toast-body').should('be.visible').and('contain', 'Successfully updated the menu');

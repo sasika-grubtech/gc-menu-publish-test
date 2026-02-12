@@ -1,5 +1,5 @@
 export class GC2MenuItemsPage {
-    // Search field
+    // Search field (input may have placeholder "Search" or "Search..."; prefer placeholder match, fallback to any input in container)
     private search_container = '#search-summary';
     private search_input = '#search-summary input[placeholder="Search"]';
     
