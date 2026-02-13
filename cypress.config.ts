@@ -29,6 +29,8 @@ export default defineConfig({
     // Increase page load timeout
     pageLoadTimeout: 60000,
     env: {
+      // GC2 backward compatibility: load this URL before GC2 validation so GC2 components display (permissions)
+      GC2_ENTRY_URL: "/menu-management/menu-items?mode=gc2WriteAdmin",
       // Authentication credentials
       LOGIN_USERNAME: "kakinof852@mustaer.com",
       LOGIN_PASSWORD: "Test@123",

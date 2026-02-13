@@ -7,6 +7,13 @@ export class GC2ModifierGroupsPage {
     public verify_page_loaded() {
         cy.url().should('include', '/menu-management/modifier-groups');
         cy.wait(2000);
+        // Ensure write permission: set mode=gc2WriteAdmin on current URL so GC2 components display
+        cy.url().then((url) => {
+            const hasMode = url.includes('mode=gc2WriteAdmin');
+            const urlWithMode = hasMode ? url : (url.includes('?') ? `${url}&mode=gc2WriteAdmin` : `${url}?mode=gc2WriteAdmin`);
+            cy.visit(urlWithMode);
+        });
+        cy.wait(2000);
         return this;
     }
 

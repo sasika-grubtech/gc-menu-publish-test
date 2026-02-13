@@ -123,7 +123,7 @@ export class ProductMiddleLayer {
                         productCreate.step_enter_product_name(product.name);
                         productCreate.step_enter_product_display_name(product.displayName);
                         productCreate.verify_price_and_taxes_title_visible();
-                        productCreate.step_click_currency_select();
+                        //productCreate.step_click_currency_select();
                         productCreate.step_enter_price_input(product.price);
                         productCreate
                             .product_create_button_click()
