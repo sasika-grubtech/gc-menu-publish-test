@@ -140,4 +140,39 @@ export class ProductMiddleLayer {
         });
 
     }
+
+    /**
+     * Open product by name, remove the given modifier group (by display name), and save.
+     * Use product name as in GC3 (e.g. "Classic Margherita Pizza").
+     */
+    public product_remove_modifier_group_and_save(productName: string, modifierGroupDisplayName: string) {
+        navigator.navigate_to_product_page();
+        cy.wait(2000);
+        productHome.step_search_products(productName);
+        cy.wait(2000);
+        productHome.step_click_edit_product();
+        cy.wait(3000);
+        productCreate.step_click_tab('modifier-groups');
+        cy.wait(1000);
+        productCreate.step_remove_modifier_group_by_display_name(modifierGroupDisplayName);
+        productCreate.product_create_button_click();
+        productHome.verify_toast_message('Product updated successfully');
+    }
+
+    /**
+     * Open product by name, add the given modifier group (by search name, e.g. "Burger Additions_PMG001"), and save.
+     */
+    public product_add_modifier_group_and_save(productName: string, modifierGroupName: string) {
+        navigator.navigate_to_product_page();
+        cy.wait(2000);
+        productHome.step_search_products(productName);
+        cy.wait(2000);
+        productHome.step_click_edit_product();
+        cy.wait(3000);
+        productCreate.step_click_tab('modifier-groups');
+        cy.wait(1000);
+        productCreate.step_add_modifier_group_by_search_name(modifierGroupName);
+        productCreate.product_create_button_click();
+        productHome.verify_toast_message('Product updated successfully');
+    }
 }
