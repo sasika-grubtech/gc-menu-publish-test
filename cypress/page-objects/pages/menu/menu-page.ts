@@ -405,6 +405,40 @@ export class MenuPage {
         return this;
     }
 
+    /** Click Update/Save when editing an existing menu (same button as create). */
+    public step_click_update_menu_button() {
+        cy.wait(2000);
+        cy.get('[data-cy="create-button"]').click({ force: true });
+        return this;
+    }
+
+    /**
+     * Edit the price of a product within a category on the menu edit page.
+     * Call after navigating to menu edit and opening the Category & Products tab.
+     * Expands the category if needed, finds the product row by display name, and sets the price input.
+     */
+    public step_edit_product_price_in_category(categoryName: string, productDisplayName: string, newPrice: string) {
+        cy.log(`✏️ Editing price for "${productDisplayName}" in category "${categoryName}" to ${newPrice}`);
+        cy.contains(categoryName).closest('[data-slot="collapsible"]').then(($section) => {
+            const $trigger = $section.find('[data-slot="collapsible-trigger"][data-state="closed"]');
+            if ($trigger.length > 0) {
+                cy.wrap($trigger).first().click({ force: true });
+                cy.wait(1000);
+            }
+        });
+        cy.contains(categoryName)
+            .closest('[data-slot="collapsible"]')
+            .contains(productDisplayName)
+            .closest('tr')
+            .within(() => {
+                cy.get('input[type="number"], input.gt-currency-input, input[placeholder*="price" i]').first()
+                    .clear()
+                    .type(newPrice);
+            });
+        cy.wait(1000);
+        return this;
+    }
+
     public verify_menu_toast_message(message: string) {
         cy.get('[data-cy="title"]').should('have.text', message);
         return this;
