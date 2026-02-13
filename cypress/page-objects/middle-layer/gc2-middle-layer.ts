@@ -183,6 +183,13 @@ export class GC2MiddleLayer {
         cy.log('✅ Currency verified: AED - United Arab Emirates Dirham');
         gc2MenuItemsPage.verify_price_on_edit_page('150.00');
         cy.log('✅ Price verified: 150.00');
+        // Ensure write permission: set mode=gc2WriteAdmin on current URL before save
+        cy.url().then((url) => {
+            const hasMode = url.includes('mode=gc2WriteAdmin');
+            const urlWithMode = hasMode ? url : (url.includes('?') ? `${url}&mode=gc2WriteAdmin` : `${url}?mode=gc2WriteAdmin`);
+            cy.visit(urlWithMode);
+        });
+        cy.wait(2000);
         cy.get('#submit').click({ force: true });
         cy.log('✅ All Menu Item details verified successfully');
         cy.log('═══════════════════════════════════════════════════════════════');
@@ -211,8 +218,15 @@ export class GC2MiddleLayer {
                 // Clear search before next iteration
                 if (index < products.length - 1) {
                     gc2MenuItemsPage.step_clear_search();
-                    gc2MenuItemsPage.step_click_first_view_button()
+                    gc2MenuItemsPage.step_click_first_view_button();
                     cy.wait(9000);
+                    // Ensure write permission: set mode=gc2WriteAdmin on current URL before save
+                    cy.url().then((url) => {
+                        const hasMode = url.includes('mode=gc2WriteAdmin');
+                        const urlWithMode = hasMode ? url : (url.includes('?') ? `${url}&mode=gc2WriteAdmin` : `${url}?mode=gc2WriteAdmin`);
+                        cy.visit(urlWithMode);
+                    });
+                    cy.wait(2000);
                     cy.get('#submit').click({ force: true });
                     cy.wait(2000);
                 }
