@@ -73,6 +73,7 @@ describe('Same product in 5 categories: change price one by one, GC2 count up th
         gc2CleanupMethods.cleanup_menu_item(3);
         gc2CleanupMethods.cleanup_menu(1);
         gc2CleanupMethods.cleanup_modifier_group(2);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it('Should create 3 products (for chain: 1 root + 2 in modifier levels)', function () {

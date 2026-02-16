@@ -37,15 +37,16 @@ const OVERRIDE_PRICE = '999.00';
 
 describe('Same product in 2 categories: price override in GC3, GC2 merge/dedupe', () => {
 
-    // after('Should cleanup all created products, modifier groups and menus', function () {
-    //     AuthenticationService.authenticate();
-    //     cleanup.cleanup_menu(1);
-    //     cleanup.cleanup_product(3);
-    //     cleanup.cleanup_modifier_group(2);
-    //     gc2CleanupMethods.cleanup_menu_item(3);
-    //     gc2CleanupMethods.cleanup_menu(1);
-    //     gc2CleanupMethods.cleanup_modifier_group(2);
-    // });
+    after('Should cleanup all created products, modifier groups and menus', function () {
+        AuthenticationService.authenticate();
+        cleanup.cleanup_menu(1);
+        cleanup.cleanup_product(3);
+        cleanup.cleanup_modifier_group(2);
+        gc2CleanupMethods.cleanup_menu_item(3);
+        gc2CleanupMethods.cleanup_menu(1);
+        gc2CleanupMethods.cleanup_modifier_group(2);
+        cleanup.cleanup_hierarchy_mapping_clearance();
+    });
 
     it('Should create 3 products (for chain: 1 root + 2 in modifier levels)', function () {
         navigator.navigate_to_product_page();

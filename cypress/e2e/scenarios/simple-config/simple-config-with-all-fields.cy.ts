@@ -24,6 +24,7 @@ describe('1 product , 1 category , 1 menu to 1 location', () => {
         cleanup.cleanup_product(2);
         gc2CleanupMethods.cleanup_menu_item(1);
         gc2CleanupMethods.cleanup_menu(1);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it('Should create all 1 products with all fields filled', function () {

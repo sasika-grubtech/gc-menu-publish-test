@@ -29,6 +29,7 @@ describe('demo flow', () => {
         gc2CleanupMethods.cleanup_menu_item(50);
         gc2CleanupMethods.cleanup_menu(2);
         gc2CleanupMethods.cleanup_modifier_group(2);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it('Should create all 4 products with all fields filled', function () {

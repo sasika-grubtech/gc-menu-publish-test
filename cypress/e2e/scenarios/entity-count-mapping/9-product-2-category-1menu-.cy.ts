@@ -25,6 +25,7 @@ describe('Verify entity count mapping - 4 unique products , 2 categories , 1 men
         cleanup.cleanup_product(9);
         gc2CleanupMethods.cleanup_menu_item(9);
         gc2CleanupMethods.cleanup_menu(1);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it('Should create all 9 products with all fields filled', function () {
