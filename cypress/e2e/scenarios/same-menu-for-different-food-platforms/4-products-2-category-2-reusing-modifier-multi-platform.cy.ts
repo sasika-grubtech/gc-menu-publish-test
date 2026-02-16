@@ -34,6 +34,7 @@ describe('4 products, 2 categories, modifier reuse, 1 menu to multiple platforms
         gc2CleanupMethods.cleanup_menu_item(9);
         gc2CleanupMethods.cleanup_menu(1);
         gc2CleanupMethods.cleanup_modifier_group(2);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it('Should create all 4 products with all fields filled', function () {
