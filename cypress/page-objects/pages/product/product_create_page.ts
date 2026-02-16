@@ -697,6 +697,42 @@ export class ProductCreatePage {
         return this;
     }
 
+    /**
+     * Remove a modifier group from the product by its display name (e.g. "Premium Burger Add-ons").
+     * Finds the modifier group in #modifier-groups, opens more options, clicks remove, and handles confirmation if present.
+     */
+    public step_remove_modifier_group_by_display_name(displayName: string) {
+        cy.get('#modifier-groups')
+            .find('[data-cy$="-display-name"]')
+            .contains(displayName)
+            .closest('[data-cy$="-display-name"]')
+            .invoke('attr', 'data-cy')
+            .then((dataCy) => {
+                const id = (dataCy || '').replace('-display-name', '');
+                this.step_click_more_options_modifier_group(id).step_click_remove_modifier_group(id);
+            });
+        cy.get('body').then(($body) => {
+            if ($body.find(this.btn_revert_confirm).length > 0) {
+                cy.get(this.btn_revert_confirm).click({ force: true });
+                cy.wait(1000);
+            }
+        });
+        return this;
+    }
+
+    /**
+     * Add a modifier group to the product by searching by name in the add-modifier-group modal (e.g. "Burger Additions_PMG001").
+     */
+    public step_add_modifier_group_by_search_name(modifierGroupName: string) {
+        this.step_click_modifier_group_select();
+        cy.get('[data-cy="enter-search-modifier-group-name-input"]').clear().type(modifierGroupName);
+        cy.wait(2000);
+        cy.get('[data-cy^="modifier-group-table-select-"]').first().click({ force: true });
+        this.step_click_save_add_mg_modal_button();
+        cy.wait(2000);
+        return this;
+    }
+
     public step_click_revert_modifier_group(modifier_group_id: string) {
         // Click on "Revert Modifier Group" option from the 3-dot menu
         cy.get(`[data-cy="revert-modifier-${modifier_group_id}-text"]`).click({ force: true });

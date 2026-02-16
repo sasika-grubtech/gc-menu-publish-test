@@ -4,10 +4,18 @@ import { ModifierGroupGetDetailsService } from "cypress/services/modifier-group/
 import { ModifierGroupDeleteService } from "cypress/services/modifier-group/modifier-group-delete";
 import { MenuGetDetailsService } from "cypress/services/menu/menu-get-details";
 import { MenuDeleteService } from "cypress/services/menu/menu-delete";
+import { HierarchyClearanceService } from "cypress/services/mapping/hierarchy-clearance";
 
 const partnerId = Cypress.env('PARTNER_ID') || '60ad435d39f1600f7cce8f37';
 
 export class Cleanup {
+
+    public cleanup_hierarchy_mapping_clearance() {
+        cy.log('🧹 Calling hierarchy mapping clearance...');
+        return HierarchyClearanceService.clearHierarchyMapping(partnerId).then(() => {
+            cy.log('✅ Hierarchy mapping clearance complete');
+        });
+    }
 
     public cleanup_product(count?: number) {
         cy.fixture('bulk_products').then((bulkData) => {

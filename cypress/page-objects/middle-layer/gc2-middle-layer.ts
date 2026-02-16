@@ -226,9 +226,9 @@ export class GC2MiddleLayer {
                         const urlWithMode = hasMode ? url : (url.includes('?') ? `${url}&mode=gc2WriteAdmin` : `${url}?mode=gc2WriteAdmin`);
                         cy.visit(urlWithMode);
                     });
-                    cy.wait(2000);
+                    cy.wait(10000);
                     cy.get('#submit').click({ force: true });
-                    cy.wait(2000);
+                    cy.wait(10000);
                 }
             }).then(() => {
                 cy.log('✅ All menu items verified successfully');
@@ -267,5 +267,65 @@ export class GC2MiddleLayer {
             cy.log('✅ All modifier groups verified in GC2');
             cy.log('═══════════════════════════════════════════════════════════════');
         });
+    }
+
+    /**
+     * Verify that exactly expectedCount menu items with the given displayName exist in GC2 (after search).
+     */
+    public gc2_verify_menu_item_count_for_name(displayName: string, expectedCount: number) {
+        cy.log(`📋 Verifying exactly ${expectedCount} menu item(s) with name "${displayName}" in GC2...`);
+        navigator.navigate_to_gc2_menu_items_page();
+        gc2MenuItemsPage.verify_page_loaded();
+        gc2MenuItemsPage.step_search_menu_item(displayName);
+        gc2MenuItemsPage.verify_menu_item_row_count_after_search(displayName, expectedCount);
+        cy.log(`✅ Found ${expectedCount} menu item(s): ${displayName}`);
+    }
+
+    /**
+     * Verify two menu items with the same displayName exist and have the two given prices (order may vary).
+     */
+    public gc2_verify_two_menu_items_same_name_different_prices(
+        displayName: string,
+        price1: string,
+        price2: string
+    ) {
+        cy.log(`📋 Verifying 2 menu items "${displayName}" with prices ${price1} and ${price2}...`);
+        navigator.navigate_to_gc2_menu_items_page();
+        gc2MenuItemsPage.verify_page_loaded();
+        gc2MenuItemsPage.step_search_menu_item(displayName);
+        gc2MenuItemsPage.verify_menu_item_row_count_after_search(displayName, 2);
+
+        // Open first row, get price, store as alias
+        gc2MenuItemsPage.step_click_view_button_for_row_index(displayName, 0);
+        gc2MenuItemsPage.verify_edit_page_loaded();
+        cy.get('input.gt-currency-input').first().invoke('val').as('firstPrice');
+        cy.go('back');
+        cy.wait(2000);
+        navigator.navigate_to_gc2_menu_items_page();
+        gc2MenuItemsPage.verify_page_loaded();
+        gc2MenuItemsPage.step_search_menu_item(displayName);
+        gc2MenuItemsPage.step_click_view_button_for_row_index(displayName, 1);
+        gc2MenuItemsPage.verify_edit_page_loaded();
+        cy.get('input.gt-currency-input').first().invoke('val').as('secondPrice');
+        cy.get('@firstPrice').then((first: unknown) => {
+            cy.get('@secondPrice').then((second: unknown) => {
+                const a = String(first);
+                const b = String(second);
+                expect([a, b].sort()).to.deep.eq([price1, price2].sort());
+            });
+        });
+        cy.log(`✅ Both prices verified: ${price1}, ${price2}`);
+    }
+
+    /**
+     * Verify that a modifier group with the given display name does not appear in GC2 (e.g. after removing it from the product).
+     */
+    public gc2_verify_modifier_group_not_exists(displayName: string) {
+        cy.log(`📋 Verifying modifier group "${displayName}" does NOT exist in GC2...`);
+        navigator.navigate_to_gc2_modifier_groups_page();
+        gc2ModifierGroupsPage.verify_page_loaded();
+        gc2ModifierGroupsPage.step_search_modifier_group(displayName);
+        gc2ModifierGroupsPage.verify_modifier_group_not_exists(displayName);
+        cy.log(`✅ Modifier group not found (as expected): ${displayName}`);
     }
 }

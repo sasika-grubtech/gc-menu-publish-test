@@ -129,6 +129,38 @@ export class GC2MenuItemsPage {
         return this;
     }
 
+    /**
+     * After searching, verify the number of table rows that contain the menu item name.
+     * Use for scenarios where same product name can appear multiple times (e.g. different prices).
+     */
+    public verify_menu_item_row_count_after_search(menuItemName: string, expectedCount: number) {
+        cy.get('[role="row"]').then(($rows) => {
+            const $ = $rows.constructor as JQueryStatic;
+            const matching = $rows.filter(function () {
+                return $(this).text().includes(menuItemName);
+            });
+            expect(matching.length, `Menu items with name "${menuItemName}"`).to.eq(expectedCount);
+        });
+        return this;
+    }
+
+    /**
+     * Click View on the nth row (0-based) that contains the given name. Use after search when multiple rows match.
+     */
+    public step_click_view_button_for_row_index(menuItemName: string, rowIndex: number) {
+        cy.get('[role="row"]').then(($rows) => {
+            const $ = $rows.constructor as JQueryStatic;
+            const matching = $rows.filter(function () {
+                return $(this).text().includes(menuItemName);
+            });
+            expect(matching.length).to.be.at.least(rowIndex + 1);
+            cy.wrap(matching.eq(rowIndex)).trigger('mouseover');
+            cy.wrap(matching.eq(rowIndex)).find(this.view_button).click({ force: true });
+        });
+        cy.wait(2000);
+        return this;
+    }
+
     //==============COMBINED ACTIONS==============
     public search_and_verify_menu_item(menuItemName: string) {
         this.step_search_menu_item(menuItemName);
