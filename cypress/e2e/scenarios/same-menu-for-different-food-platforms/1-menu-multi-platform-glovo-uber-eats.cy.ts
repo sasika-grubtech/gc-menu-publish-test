@@ -30,6 +30,7 @@ describe('1 menu published to multiple platforms (Glovo + Uber Eats)', () => {
         cleanup.cleanup_product(1);
         gc2CleanupMethods.cleanup_menu_item(1);
         gc2CleanupMethods.cleanup_menu(1);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it('Should create 1 product with all fields filled', function () {

@@ -29,6 +29,7 @@ describe('4 unique product , 2 category , modifier groups (unique)  1 menu to 1 
         gc2CleanupMethods.cleanup_menu_item(4);
         gc2CleanupMethods.cleanup_menu(1);
         gc2CleanupMethods.cleanup_modifier_group(2);
+        cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
     it.skip('Should create all 4 products with all fields filled', function () {
