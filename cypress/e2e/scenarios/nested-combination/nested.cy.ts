@@ -21,7 +21,7 @@ const gc2CleanupMethods = new GC2CleanupMethods();
 
 describe('demo flow', () => {
 
-    it.only('Should cleanup all created products and modifier groups', function () {
+    after('Should cleanup all created products and modifier groups', function () {
         AuthenticationService.authenticate();
         cleanup.cleanup_menu(1);
         cleanup.cleanup_product(3);
