@@ -96,7 +96,7 @@ export class PublishPage {
             'BOX': 'box-aggregator',
             'Deliveroo': 'deliveroo-aggregator',
             'Glovo': 'glovo-food-aggregator',
-            'UberEats': 'uber-eats-aggregator',
+            'UberEats': 'uber-food-aggregator',
         };
         return slugMap[aggregatorName] || aggregatorName.toLowerCase().replace(/\s+/g, '-') + '-aggregator';
     }

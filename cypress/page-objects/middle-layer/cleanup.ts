@@ -4,7 +4,7 @@ import { ModifierGroupGetDetailsService } from "cypress/services/modifier-group/
 import { ModifierGroupDeleteService } from "cypress/services/modifier-group/modifier-group-delete";
 import { MenuGetDetailsService } from "cypress/services/menu/menu-get-details";
 import { MenuDeleteService } from "cypress/services/menu/menu-delete";
-import { HierarchyClearanceService } from "cypress/services/mapping/hierarchy-clearance";
+import { HierarchyClearanceService } from "../../services/mapping/hierarchy-clearance";
 
 const partnerId = Cypress.env('PARTNER_ID') || '60ad435d39f1600f7cce8f37';
 

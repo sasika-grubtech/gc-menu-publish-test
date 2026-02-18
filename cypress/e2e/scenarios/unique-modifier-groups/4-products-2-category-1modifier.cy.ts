@@ -32,12 +32,12 @@ describe('4 unique product , 2 category , modifier groups (unique)  1 menu to 1 
         cleanup.cleanup_hierarchy_mapping_clearance();
     });
 
-    it.skip('Should create all 4 products with all fields filled', function () {
+    it('Should create all 4 products with all fields filled', function () {
         navigator.navigate_to_product_page();
         productMiddleLayer.product_create_with_mandatory_fields(4);
     });
 
-    it.skip('Should create 2 Product Modifier Groups', function () {
+    it('Should create 2 Product Modifier Groups', function () {
         navigator.navigate_to_modifier_group_page();
         modifierGroupMiddleLayer.modifier_group_bulk_create(2);
     });

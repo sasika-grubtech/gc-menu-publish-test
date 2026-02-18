@@ -1,6 +1,7 @@
 node_modules/
 cypress/videos/
 cypress/screenshots/
+cypress/browser-profile/
 .env
 .DS_Store
 dist/

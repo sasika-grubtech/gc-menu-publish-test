@@ -276,10 +276,10 @@ export class MenuPublishLayer {
         publishPage.step_verify_brand_selected(brandName);
 
         cy.log('📂 Expanding Uber Eats aggregator section');
-        publishPage.step_expand_aggregator_section('Uber Eats');
+        publishPage.step_expand_aggregator_section('UberEats');
 
         cy.log('🔄 Clicking Change Menu button for Uber Eats');
-        publishPage.step_click_change_menu_button('Uber Eats');
+        publishPage.step_click_change_menu_button('UberEats');
 
         const menuNamePromise = createdMenuNames.length > 0
             ? cy.wrap(createdMenuNames[0])
@@ -295,20 +295,20 @@ export class MenuPublishLayer {
             cy.get('[data-cy="confirmation-dialog-confirm-button"]').click({ force: true });
 
             cy.log('🚀 Clicking Publish all for Uber Eats');
-            publishPage.step_click_publish_all_for_aggregator('Uber Eats');
+            publishPage.step_click_publish_all_for_aggregator('UberEats');
             cy.log('✅ Clicking Validate & Publish');
             publishPage.step_click_validate_and_publish();
 
             cy.log('🔍 Verifying Uber Eats publish status...');
             cy.wait(3000);
-            publishPage.verify_published_status('Uber Eats');
+            publishPage.verify_published_status('UberEats');
 
             cy.log(`📂 Expanding location row: ${locationName}`);
-            publishPage.step_expand_location_row_in_aggregator('Uber Eats', locationName);
+            publishPage.step_expand_location_row_in_aggregator('UberEats', locationName);
 
             serviceModeNames.forEach((serviceModeName) => {
                 cy.log(`📋 Verifying service mode "${serviceModeName}" is Published`);
-                publishPage.verify_service_mode_row_has_published_status('Uber Eats', locationName, serviceModeName);
+                publishPage.verify_service_mode_row_has_published_status('UberEats', locationName, serviceModeName);
                 cy.log(`✅ Service mode verified: ${serviceModeName}`);
             });
 
