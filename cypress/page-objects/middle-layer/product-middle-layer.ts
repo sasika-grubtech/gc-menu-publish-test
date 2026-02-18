@@ -74,7 +74,7 @@ export class ProductMiddleLayer {
 
                         // ====== PRICE & TAXES TAB ======
                         productCreate.verify_price_and_taxes_title_visible();
-                        productCreate.step_click_currency_select();
+                        // productCreate.step_click_currency_select();
                         productCreate.step_enter_price_input(product.price);
 
                         // ====== NUTRITION TAB ======
