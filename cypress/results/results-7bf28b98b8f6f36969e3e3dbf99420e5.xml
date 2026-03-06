@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.235" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-03-06T16:47:42" tests="0" file="cypress\e2e\scenarios-v2\framework-verification.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Framework Verification" timestamp="2026-03-06T16:47:42" tests="2" time="0.233" failures="0">
+    <testcase name="Framework Verification should load scenario configuration" time="0.135" classname="should load scenario configuration">
+    </testcase>
+    <testcase name="Framework Verification should have test builder functions available" time="0.043" classname="should have test builder functions available">
+    </testcase>
+  </testsuite>
+</testsuites>

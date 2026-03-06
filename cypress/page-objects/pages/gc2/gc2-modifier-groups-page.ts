@@ -50,4 +50,89 @@ export class GC2ModifierGroupsPage {
         this.verify_modifier_group_exists(modifierGroupName);
         return this;
     }
+
+    //==============COMPREHENSIVE VERIFICATION METHODS==============
+
+    /**
+     * Get total modifier group count from the table
+     */
+    public get_total_modifier_group_count() {
+        return cy.get('[role="row"]').then(($rows) => {
+            const count = $rows.length - 1; // Subtract header row
+            cy.log(`📊 Total modifier groups found: ${count}`);
+            return cy.wrap(count);
+        });
+    }
+
+    /**
+     * Verify exact count of modifier groups
+     */
+    public verify_modifier_group_count_exact(expectedCount: number) {
+        return this.get_total_modifier_group_count().then((actualCount) => {
+            expect(actualCount).to.equal(expectedCount, `Modifier group count should be exactly ${expectedCount}`);
+            cy.log(`✅ Modifier group count matches: ${expectedCount}`);
+        });
+    }
+
+    /**
+     * Extract all modifier group names from the table
+     */
+    public extract_all_modifier_group_names() {
+        return cy.get('[role="row"]').then(($rows) => {
+            const names: string[] = [];
+            $rows.each((index, row) => {
+                if (index > 0) { // Skip header row
+                    const name = Cypress.$(row).find('td').first().text().trim();
+                    if (name) names.push(name);
+                }
+            });
+            cy.log(`📋 Found ${names.length} modifier groups: ${names.join(', ')}`);
+            return cy.wrap(names);
+        });
+    }
+
+    /**
+     * Verify modifier group exists with exact name match
+     */
+    public verify_modifier_group_exact_name(modifierGroupName: string) {
+        return this.extract_all_modifier_group_names().then((names) => {
+            const found = names.includes(modifierGroupName);
+            expect(found).to.be.true;
+            cy.log(`✅ Modifier group found: ${modifierGroupName}`);
+        });
+    }
+
+    /**
+     * Compare modifier groups with expected GC3 data
+     */
+    public compare_modifier_groups_with_gc3_data(gc3ModifierGroups: string[]) {
+        return this.extract_all_modifier_group_names().then((gc2Names) => {
+            cy.log('═══════════════════════════════════════════════════════════════');
+            cy.log('🔍 GC3 vs GC2 Modifier Groups Comparison');
+            cy.log('═══════════════════════════════════════════════════════════════');
+            
+            const differences: string[] = [];
+            
+            // Check each GC3 modifier group exists in GC2
+            gc3ModifierGroups.forEach((gc3Name) => {
+                const found = gc2Names.some(gc2Name => gc2Name.includes(gc3Name));
+                if (!found) {
+                    differences.push(`Missing in GC2: ${gc3Name}`);
+                    cy.log(`❌ Missing: ${gc3Name}`);
+                } else {
+                    cy.log(`✅ Found: ${gc3Name}`);
+                }
+            });
+            
+            cy.log('═══════════════════════════════════════════════════════════════');
+            
+            if (differences.length > 0) {
+                cy.log(`⚠️ Found ${differences.length} missing modifier group(s)`);
+            } else {
+                cy.log('✅ All modifier groups match!');
+            }
+            
+            return cy.wrap({ match: differences.length === 0, differences });
+        });
+    }
 }

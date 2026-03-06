@@ -134,4 +134,135 @@ export class GC2MenusPage {
         cy.wait(2000);
         return this;
     }
+
+    //==============COMPREHENSIVE VERIFICATION METHODS==============
+
+    /**
+     * Extract all menu data from the current menu page
+     */
+    public extract_menu_data() {
+        const menuData: any = {};
+        
+        cy.log('🔍 Extracting menu data from GC2...');
+        
+        // Extract menu name (from URL or page title)
+        return cy.url().then((url) => {
+            menuData.url = url;
+            return cy.get('input[e2e="menu-name"]').invoke('val');
+        }).then((name) => {
+            menuData.name = name;
+            cy.log(`📋 Menu name: ${name}`);
+            
+            // Extract brand
+            return cy.get('#brand.gc-routing-label-widget').invoke('text');
+        }).then((brand) => {
+            menuData.brand = brand?.trim();
+            cy.log(`🏢 Brand: ${brand}`);
+            
+            // Extract currency
+            return cy.get('.search-input__single-value').first().invoke('text');
+        }).then((currency) => {
+            menuData.currency = currency?.trim();
+            cy.log(`💰 Currency: ${currency}`);
+            
+            // Extract categories count
+            return cy.get('[data-test="category-row"]').then(($cats) => {
+                menuData.categoriesCount = $cats.length;
+                cy.log(`📁 Categories: ${$cats.length}`);
+                return cy.wrap(menuData);
+            });
+        });
+    }
+
+    /**
+     * Compare menu details with expected GC3 data
+     */
+    public compare_menu_with_gc3_data(gc3MenuData: any) {
+        return this.extract_menu_data().then((gc2Data) => {
+            cy.log('═══════════════════════════════════════════════════════════════');
+            cy.log('🔍 GC3 vs GC2 Menu Comparison');
+            cy.log('═══════════════════════════════════════════════════════════════');
+            
+            const differences: string[] = [];
+            
+            // Compare menu name
+            if (gc2Data.name !== gc3MenuData.name) {
+                differences.push(`Menu Name: GC3="${gc3MenuData.name}" vs GC2="${gc2Data.name}"`);
+                cy.log(`❌ Menu name mismatch`);
+            } else {
+                cy.log(`✅ Menu name matches: ${gc2Data.name}`);
+            }
+            
+            // Compare brand
+            if (gc2Data.brand && gc3MenuData.brandName && !gc2Data.brand.includes(gc3MenuData.brandName)) {
+                differences.push(`Brand: GC3="${gc3MenuData.brandName}" not in GC2="${gc2Data.brand}"`);
+                cy.log(`❌ Brand mismatch`);
+            } else {
+                cy.log(`✅ Brand matches`);
+            }
+            
+            // Compare categories count
+            if (gc3MenuData.categoriesCount && gc2Data.categoriesCount !== gc3MenuData.categoriesCount) {
+                differences.push(`Categories: GC3="${gc3MenuData.categoriesCount}" vs GC2="${gc2Data.categoriesCount}"`);
+                cy.log(`❌ Categories count mismatch`);
+            } else {
+                cy.log(`✅ Categories count matches`);
+            }
+            
+            cy.log('═══════════════════════════════════════════════════════════════');
+            
+            if (differences.length > 0) {
+                cy.log(`⚠️ Found ${differences.length} difference(s)`);
+                differences.forEach(diff => cy.log(`  - ${diff}`));
+            } else {
+                cy.log('✅ All menu fields match perfectly!');
+            }
+            
+            return cy.wrap({ match: differences.length === 0, differences });
+        });
+    }
+
+    /**
+     * Verify menu details exactly match expected values
+     */
+    public verify_menu_details_exact_match(expectedData: {
+        name: string;
+        brand: string;
+        currency: string;
+        categoriesCount?: number;
+    }) {
+        cy.log('🔍 Verifying menu details match exactly...');
+        
+        // Verify menu name
+        cy.get('input[e2e="menu-name"]').should('have.value', expectedData.name);
+        cy.log(`✅ Menu name matches: ${expectedData.name}`);
+        
+        // Verify brand
+        cy.get('#brand.gc-routing-label-widget').should('contain.text', expectedData.brand);
+        cy.log(`✅ Brand matches: ${expectedData.brand}`);
+        
+        // Verify currency
+        cy.get('.search-input__single-value').first().should('contain.text', expectedData.currency);
+        cy.log(`✅ Currency matches: ${expectedData.currency}`);
+        
+        // Verify categories count if provided
+        if (expectedData.categoriesCount) {
+            cy.get('[data-test="category-row"]').should('have.length', expectedData.categoriesCount);
+            cy.log(`✅ Categories count matches: ${expectedData.categoriesCount}`);
+        }
+        
+        cy.log('✅ All menu details verified!');
+        return this;
+    }
+
+    /**
+     * Get total menu count from the table
+     */
+    public get_total_menu_count() {
+        return cy.get('.gt-tr').then(($rows) => {
+            const count = $rows.length - 1; // Subtract header row
+            cy.log(`📊 Total menus found: ${count}`);
+            return cy.wrap(count);
+        });
+    }
 }

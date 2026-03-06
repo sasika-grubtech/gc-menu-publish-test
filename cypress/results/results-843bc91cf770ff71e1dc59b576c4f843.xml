@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="560.609" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-03-06T16:41:10" tests="0" file="cypress\e2e\scenarios-v2\example-product-reuse.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Product Reuse Between Categories Without Overrides" timestamp="2026-03-06T16:41:10" tests="6" time="560.608" failures="0">
+    <testcase name="Product Reuse Between Categories Without Overrides Should create 4 product(s)" time="73.690" classname="Should create 4 product(s)">
+    </testcase>
+    <testcase name="Product Reuse Between Categories Without Overrides Should create 2 modifier group(s)" time="42.464" classname="Should create 2 modifier group(s)">
+    </testcase>
+    <testcase name="Product Reuse Between Categories Without Overrides Should build nested modifier chain(s)" time="57.563" classname="Should build nested modifier chain(s)">
+    </testcase>
+    <testcase name="Product Reuse Between Categories Without Overrides Should create 1 menu(s) with 2 categories and 3 products per category (reusing products)" time="162.842" classname="Should create 1 menu(s) with 2 categories and 3 products per category (reusing products)">
+    </testcase>
+    <testcase name="Product Reuse Between Categories Without Overrides Should publish the menu" time="61.724" classname="Should publish the menu">
+    </testcase>
+    <testcase name="Product Reuse Between Categories Without Overrides Should verify all expected outcomes in GC2" time="126.105" classname="Should verify all expected outcomes in GC2">
+    </testcase>
+  </testsuite>
+</testsuites>

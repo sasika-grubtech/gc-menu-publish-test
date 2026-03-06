@@ -17,7 +17,7 @@ export default defineConfig({
     viewportWidth: 1920,  // Default width
     viewportHeight: 2080, // Default height
     // Only run test files from e2e/scenarios folder
-    specPattern: "cypress/e2e/scenarios/**/*.cy.{js,jsx,ts,tsx}",
+    //specPattern: "cypress/e2e/scenarios/**/*.cy.{js,jsx,ts,tsx}",
     // Prevent tests from being skipped when one fails
     experimentalRunAllSpecs: true,
     // Increase default command timeout for network operations
