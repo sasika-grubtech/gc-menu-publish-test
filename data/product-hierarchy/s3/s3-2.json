@@ -1,0 +1,2815 @@
+[
+    {
+        "id": "971abee2-605c-4d70-937e-2cf3c02ddb89",
+        "instanceId": "60c1b4b8-d0d4-4607-bc81-fa7a46357ab8",
+        "variationId": "d5ecd7f3-ec91-4385-8ec4-9d7e77066d17",
+        "name": "Product 5",
+        "displayName": "Product 5",
+        "description": "5",
+        "translatedNames": [
+            {
+                "translation": "Product 5",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDisplayNames": [
+            {
+                "translation": "Product 5",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDescriptions": [
+            {
+                "translation": "5",
+                "locale": "en-us"
+            }
+        ],
+        "image": {
+            "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_c5c585ff-95fe-4ead-ac93-b313320bcf49.png",
+            "crop": "{\"x\":196,\"y\":38,\"width\":242,\"height\":242}"
+        },
+        "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_c5c585ff-95fe-4ead-ac93-b313320bcf49.png?width=242&height=242&x=196&y=38",
+        "externalId": "5",
+        "tags": [
+            {
+                "id": "69859f0b0a66916712d1eb75",
+                "name": "123"
+            },
+            {
+                "id": "69d37cab215ca46ffcc1cedb",
+                "name": "tag1"
+            }
+        ],
+        "customFields": [
+            {
+                "id": "699d8018464d5f30853706b5",
+                "value": "P",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8027464d5f30853706b6",
+                "value": "121",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d803f464d5f30853706b7",
+                "value": "true",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d805a464d5f30853706b8",
+                "value": "Select2",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8070464d5f30853706b9",
+                "value": "P",
+                "name": "Global Product"
+            }
+        ],
+        "status": "ACTIVE",
+        "categoryId": "699dd5360ce81557ed4c1b05",
+        "classifications": [
+            {
+                "id": "635fb84d36487b3529ea9d50",
+                "name": "Combo Item"
+            },
+            {
+                "id": "63564508e38a5346558bd1ed",
+                "name": "Contains Pork"
+            }
+        ],
+        "allergens": [
+            {
+                "id": "690196ca00f228251990bee6",
+                "name": "Cheese Allergen"
+            },
+            {
+                "id": "6389a97f3903242be12efbb8",
+                "name": "Cereal Allergen"
+            }
+        ],
+        "nutritionInfo": {
+            "count": 50,
+            "unit": "KCAL"
+        },
+        "prices": [
+            {
+                "price": {
+                    "currencyId": "5f7ac8e08088545d96024089",
+                    "amount": 10000,
+                    "taxInclusive": true
+                },
+                "taxPercentages": []
+            }
+        ],
+        "hashKey": "0cbcbffab0ea5c6edd7d90ddcd717e90a3b2d05a040e34af38878b0168fc0429"
+    },
+    {
+        "id": "db897cc8-a334-4894-83a1-6b68bed31a65",
+        "instanceId": "98c30ed0-e9e5-4d0e-b595-c1a3533285ed",
+        "variationId": "62934b0d-0a94-47b3-9f90-1c25bf361f61",
+        "name": "Product Modifier 1",
+        "displayName": "Product Modifier 1",
+        "description": "PM1",
+        "translatedNames": [
+            {
+                "translation": "Product Modifier 1",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDisplayNames": [
+            {
+                "translation": "Product Modifier 1",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDescriptions": [
+            {
+                "translation": "PM1",
+                "locale": "en-us"
+            }
+        ],
+        "image": {
+            "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+            "crop": "{\"x\":45,\"y\":110,\"width\":362,\"height\":362}"
+        },
+        "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png?width=362&height=362&x=45&y=110",
+        "externalId": "PM1",
+        "tags": [
+            {
+                "id": "69859f0b0a66916712d1eb75",
+                "name": "123"
+            }
+        ],
+        "customFields": [
+            {
+                "id": "699d8018464d5f30853706b5",
+                "value": "P",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8027464d5f30853706b6",
+                "value": "121",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d803f464d5f30853706b7",
+                "value": "true",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d805a464d5f30853706b8",
+                "value": "Select2",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8070464d5f30853706b9",
+                "value": "P",
+                "name": "Global Product"
+            }
+        ],
+        "status": "ACTIVE",
+        "categoryId": "699dd5360ce81557ed4c1b05",
+        "classifications": [
+            {
+                "id": "672dd750a3d3ee7d8696b598",
+                "name": "Alcoholic"
+            }
+        ],
+        "allergens": [
+            {
+                "id": "670599b41efb9b5621220253",
+                "name": "Cereal - Barley Allergen"
+            }
+        ],
+        "nutritionInfo": {
+            "count": 1,
+            "unit": "KCAL"
+        },
+        "prices": [
+            {
+                "price": {
+                    "currencyId": "5f7ac8e08088545d96024089",
+                    "amount": 1000,
+                    "taxInclusive": true
+                },
+                "taxPercentages": []
+            }
+        ],
+        "hashKey": "325e1130561f5a0ca6087fe7f562c0984e3eb4d875db35b16f33ace00ed9dab2"
+    },
+    {
+        "id": "88be128b-1846-46c0-8cae-f7a72c5bb7ba",
+        "instanceId": "bf1bae82-234c-4782-8489-2e6627be8984",
+        "variationId": "5cbd11d5-7ff6-41d8-bdf5-051b3daf1153",
+        "name": "Product 1",
+        "displayName": "Product 1",
+        "description": "Product 1 Des",
+        "translatedNames": [
+            {
+                "translation": "Product 1",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDisplayNames": [
+            {
+                "translation": "Product 1",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDescriptions": [
+            {
+                "translation": "Product 1 Des",
+                "locale": "en-us"
+            }
+        ],
+        "image": {
+            "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+            "crop": null
+        },
+        "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+        "externalId": "Product 1 Ext",
+        "tags": [
+            {
+                "id": "69859f0b0a66916712d1eb75",
+                "name": "123"
+            },
+            {
+                "id": "69d37cab215ca46ffcc1cedb",
+                "name": "tag1"
+            }
+        ],
+        "customFields": [
+            {
+                "id": "699d8018464d5f30853706b5",
+                "value": "P",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8027464d5f30853706b6",
+                "value": "121",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d803f464d5f30853706b7",
+                "value": "true",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d805a464d5f30853706b8",
+                "value": "Select2",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8070464d5f30853706b9",
+                "value": "P",
+                "name": "Global Product"
+            }
+        ],
+        "status": "ACTIVE",
+        "categoryId": "699dd5360ce81557ed4c1b05",
+        "modifierGroups": [
+            {
+                "id": "e2753bea-5215-45a9-9dc1-9e5551496b86",
+                "instanceId": "44f84421-d973-4d08-93d6-9cd0a39f0ccb",
+                "variationId": "6e03d15d-a58b-4b95-93f1-ef2598baecd8",
+                "name": "Product Modifier Group 1",
+                "displayName": "Product Modifier Group 1",
+                "translatedNames": [
+                    {
+                        "translation": "Product Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Product Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "1f7edb57-ffef-40f5-b75d-40f56c81662f",
+                        "modifier": {
+                            "id": "db897cc8-a334-4894-83a1-6b68bed31a65",
+                            "instanceId": "7d40a4e5-26c2-41af-b76c-03e149dd1eb5",
+                            "variationId": "11735526-b6d5-4885-a1d0-824de5dd5b77",
+                            "name": "Product Modifier 1",
+                            "displayName": "Product Modifier 1",
+                            "description": "PM1",
+                            "translatedNames": [
+                                {
+                                    "translation": "Product Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDisplayNames": [
+                                {
+                                    "translation": "Product Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDescriptions": [
+                                {
+                                    "translation": "PM1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "image": {
+                                "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                "crop": "{\"x\":45,\"y\":110,\"width\":362,\"height\":362}"
+                            },
+                            "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png?width=362&height=362&x=45&y=110",
+                            "externalId": "PM1",
+                            "tags": [
+                                {
+                                    "id": "69859f0b0a66916712d1eb75",
+                                    "name": "123"
+                                }
+                            ],
+                            "customFields": [
+                                {
+                                    "id": "699d8018464d5f30853706b5",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8027464d5f30853706b6",
+                                    "value": "121",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d803f464d5f30853706b7",
+                                    "value": "true",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d805a464d5f30853706b8",
+                                    "value": "Select2",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8070464d5f30853706b9",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "categoryId": "699dd5360ce81557ed4c1b05",
+                            "modifierGroups": [
+                                {
+                                    "id": "185a8fbe-c74d-4c86-adaa-8d41b3f35721",
+                                    "instanceId": "48dce007-44a3-471a-b3f8-829fe8443f09",
+                                    "variationId": "3396c721-9415-41b9-9757-1089af77a9b0",
+                                    "name": "Product Modifier Group 2",
+                                    "displayName": "Product Modifier Group 2",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Product Modifier Group 2",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Product Modifier Group 2",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "7523bb12-64af-4d2b-a96a-62cef96d1ed1",
+                                            "modifier": {
+                                                "id": "c4e11139-6e08-444c-9bca-e8c740f959e0",
+                                                "instanceId": "d5874509-ade1-41b2-a31e-4149c38e76f3",
+                                                "variationId": "706adcb2-cb61-4a25-aa9d-5315173ab439",
+                                                "name": "Product Modifier 2",
+                                                "displayName": "Product Modifier 2",
+                                                "description": "PM2",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Product Modifier 2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDisplayNames": [
+                                                    {
+                                                        "translation": "Product Modifier 2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDescriptions": [
+                                                    {
+                                                        "translation": "PM2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "image": {
+                                                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png",
+                                                    "crop": "{\"x\":60,\"y\":130,\"width\":365,\"height\":365}"
+                                                },
+                                                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png?width=365&height=365&x=60&y=130",
+                                                "externalId": "PM2",
+                                                "tags": [
+                                                    {
+                                                        "id": "69859f0b0a66916712d1eb75",
+                                                        "name": "123"
+                                                    }
+                                                ],
+                                                "customFields": [
+                                                    {
+                                                        "id": "699d8018464d5f30853706b5",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8027464d5f30853706b6",
+                                                        "value": "121",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d803f464d5f30853706b7",
+                                                        "value": "true",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d805a464d5f30853706b8",
+                                                        "value": "Select2",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8070464d5f30853706b9",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "categoryId": "699dd5360ce81557ed4c1b05",
+                                                "classifications": [
+                                                    {
+                                                        "id": "672dd750a3d3ee7d8696b598",
+                                                        "name": "Alcoholic"
+                                                    },
+                                                    {
+                                                        "id": "69a03eb67baf316badc917cf",
+                                                        "name": "CBD Products"
+                                                    }
+                                                ],
+                                                "allergens": [
+                                                    {
+                                                        "id": "670598bc1efb9b5621220250",
+                                                        "name": "Cereal - Kamut Allergen"
+                                                    },
+                                                    {
+                                                        "id": "670599b41efb9b5621220253",
+                                                        "name": "Cereal - Barley Allergen"
+                                                    }
+                                                ],
+                                                "nutritionInfo": {
+                                                    "count": 2,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 10000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ],
+                                                "hashKey": "39875d6122eb6bd6e2cb628f37e3e0cf1ed5b2a68052464cc36cc749ab903787"
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        },
+                                        {
+                                            "id": "7cfdfec4-40e7-4186-ab32-d97d23eab982",
+                                            "modifier": {
+                                                "id": "cd7d4f42-4f10-4f39-bd01-d7bc67fe3510",
+                                                "instanceId": "9d604614-4645-4bfe-807f-7ec7cfc1c1d6",
+                                                "variationId": "d77b62ed-ca7e-46b0-bf59-b639f5142616",
+                                                "name": "Product Modifier 3",
+                                                "displayName": "Product Modifier 3",
+                                                "description": "PM3",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Product Modifier 3",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDisplayNames": [
+                                                    {
+                                                        "translation": "Product Modifier 3",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDescriptions": [
+                                                    {
+                                                        "translation": "PM3",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "image": {
+                                                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6af562e3-f99e-4c19-8006-2bdf95532876.png",
+                                                    "crop": null
+                                                },
+                                                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6af562e3-f99e-4c19-8006-2bdf95532876.png",
+                                                "externalId": "PM3",
+                                                "tags": [
+                                                    {
+                                                        "id": "69859f0b0a66916712d1eb75",
+                                                        "name": "123"
+                                                    }
+                                                ],
+                                                "customFields": [
+                                                    {
+                                                        "id": "699d8018464d5f30853706b5",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8027464d5f30853706b6",
+                                                        "value": "121",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d803f464d5f30853706b7",
+                                                        "value": "true",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d805a464d5f30853706b8",
+                                                        "value": "Select2",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8070464d5f30853706b9",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "categoryId": "699dd5360ce81557ed4c1b05",
+                                                "classifications": [
+                                                    {
+                                                        "id": "63564560e38a5346558bd1ee",
+                                                        "name": "Dairy Free"
+                                                    }
+                                                ],
+                                                "allergens": [
+                                                    {
+                                                        "id": "670599bc1efb9b5621220254",
+                                                        "name": "Cereal - Spelt Allergen"
+                                                    }
+                                                ],
+                                                "nutritionInfo": {
+                                                    "count": 3,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ],
+                                                "hashKey": "a9b8d42ba8c4b3cbc3b37b3e4cdd27a0ffe278f7d98e88c35d5e0eb2b564ac5a"
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                },
+                                {
+                                    "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                                    "instanceId": "e73ec056-0517-4928-9490-6ad44ba637ec",
+                                    "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                                    "name": "Text Modifier Group 1",
+                                    "displayName": "Text Modifier Group 1",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                                            "modifier": {
+                                                "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                                                "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                                                "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                                                "name": "Text Modifier 1",
+                                                "displayName": "Text Modifier 1",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Text Modifier 1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "nutritionInfo": {
+                                                    "count": 0,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ]
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                }
+                            ],
+                            "classifications": [
+                                {
+                                    "id": "672dd750a3d3ee7d8696b598",
+                                    "name": "Alcoholic"
+                                }
+                            ],
+                            "allergens": [
+                                {
+                                    "id": "670599b41efb9b5621220253",
+                                    "name": "Cereal - Barley Allergen"
+                                }
+                            ],
+                            "nutritionInfo": {
+                                "count": 1,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ],
+                            "hashKey": "8ffc5a53c78591726cd68488618077f0281321364cfe2606d2dd805eae3f3547"
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            },
+            {
+                "id": "185a8fbe-c74d-4c86-adaa-8d41b3f35721",
+                "instanceId": "041e0289-ef46-4d18-baa6-fef4be5247d9",
+                "variationId": "6ad5def5-5362-4b22-bfcd-1f51b1c9c393",
+                "name": "Product Modifier Group 2",
+                "displayName": "Product Modifier Group 2",
+                "translatedNames": [
+                    {
+                        "translation": "Product Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Product Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "1fc4d08a-03e1-49c2-84de-7eb5be2e1b3e",
+                        "modifier": {
+                            "id": "c4e11139-6e08-444c-9bca-e8c740f959e0",
+                            "instanceId": "79a24f92-3d95-4838-9844-869da963d627",
+                            "variationId": "8004fbb0-e0f1-4e32-8e84-2cbeaa3cb95e",
+                            "name": "Product Modifier 2",
+                            "displayName": "Product Modifier 2",
+                            "description": "PM2",
+                            "translatedNames": [
+                                {
+                                    "translation": "Product Modifier 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDisplayNames": [
+                                {
+                                    "translation": "Product Modifier 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDescriptions": [
+                                {
+                                    "translation": "PM2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "image": {
+                                "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png",
+                                "crop": "{\"x\":60,\"y\":130,\"width\":365,\"height\":365}"
+                            },
+                            "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png?width=365&height=365&x=60&y=130",
+                            "externalId": "PM2",
+                            "tags": [
+                                {
+                                    "id": "69859f0b0a66916712d1eb75",
+                                    "name": "123"
+                                }
+                            ],
+                            "customFields": [
+                                {
+                                    "id": "699d8018464d5f30853706b5",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8027464d5f30853706b6",
+                                    "value": "121",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d803f464d5f30853706b7",
+                                    "value": "true",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d805a464d5f30853706b8",
+                                    "value": "Select2",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8070464d5f30853706b9",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "categoryId": "699dd5360ce81557ed4c1b05",
+                            "modifierGroups": [
+                                {
+                                    "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                                    "instanceId": "6e2c6226-78d3-42d7-9307-b9b1d3a48fb1",
+                                    "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                                    "name": "Text Modifier Group 1",
+                                    "displayName": "Text Modifier Group 1",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                                            "modifier": {
+                                                "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                                                "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                                                "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                                                "name": "Text Modifier 1",
+                                                "displayName": "Text Modifier 1",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Text Modifier 1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "nutritionInfo": {
+                                                    "count": 0,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ]
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                }
+                            ],
+                            "classifications": [
+                                {
+                                    "id": "672dd750a3d3ee7d8696b598",
+                                    "name": "Alcoholic"
+                                },
+                                {
+                                    "id": "69a03eb67baf316badc917cf",
+                                    "name": "CBD Products"
+                                }
+                            ],
+                            "allergens": [
+                                {
+                                    "id": "670598bc1efb9b5621220250",
+                                    "name": "Cereal - Kamut Allergen"
+                                },
+                                {
+                                    "id": "670599b41efb9b5621220253",
+                                    "name": "Cereal - Barley Allergen"
+                                }
+                            ],
+                            "nutritionInfo": {
+                                "count": 2,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 10000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ],
+                            "hashKey": "8e19276d259d31e7db325a8d3dd87ed929daa7f33f3eb65219f93a425f3f9601"
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    },
+                    {
+                        "id": "dd3f7476-8a72-405c-8af8-610dba708d51",
+                        "modifier": {
+                            "id": "33b1ce54-a7b4-48b6-a40c-7a128d006a98",
+                            "instanceId": "29117bea-9587-4c0d-a1f2-c6aea612b7a6",
+                            "variationId": "66412ead-629f-41bd-8247-b28ccf8d72bf",
+                            "name": "Product 2",
+                            "displayName": "Product 2",
+                            "description": "Des",
+                            "translatedNames": [
+                                {
+                                    "translation": "Product 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDisplayNames": [
+                                {
+                                    "translation": "Product 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDescriptions": [
+                                {
+                                    "translation": "Des",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "image": {
+                                "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6173fc16-b3f6-4823-afcd-bf73228572fe.png",
+                                "crop": null
+                            },
+                            "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6173fc16-b3f6-4823-afcd-bf73228572fe.png",
+                            "externalId": "Ext",
+                            "tags": [
+                                {
+                                    "id": "69859f0b0a66916712d1eb75",
+                                    "name": "123"
+                                },
+                                {
+                                    "id": "69d37cab215ca46ffcc1cedb",
+                                    "name": "tag1"
+                                }
+                            ],
+                            "customFields": [
+                                {
+                                    "id": "699d8018464d5f30853706b5",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8027464d5f30853706b6",
+                                    "value": "121",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d803f464d5f30853706b7",
+                                    "value": "true",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d805a464d5f30853706b8",
+                                    "value": "Select2",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8070464d5f30853706b9",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "categoryId": "699dd5360ce81557ed4c1b05",
+                            "modifierGroups": [
+                                {
+                                    "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                                    "instanceId": "94649053-6a4b-40ff-b043-7eb01d2d72f4",
+                                    "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                                    "name": "Text Modifier Group 1",
+                                    "displayName": "Text Modifier Group 1",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                                            "modifier": {
+                                                "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                                                "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                                                "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                                                "name": "Text Modifier 1",
+                                                "displayName": "Text Modifier 1",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Text Modifier 1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "nutritionInfo": {
+                                                    "count": 0,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ]
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                }
+                            ],
+                            "classifications": [
+                                {
+                                    "id": "672dd750a3d3ee7d8696b598",
+                                    "name": "Alcoholic"
+                                },
+                                {
+                                    "id": "69a03eb67baf316badc917cf",
+                                    "name": "CBD Products"
+                                }
+                            ],
+                            "allergens": [
+                                {
+                                    "id": "6901961b00f228251990bee5",
+                                    "name": "Beef Allergen"
+                                },
+                                {
+                                    "id": "66fd1a536a3e17145ca7564a",
+                                    "name": "Caffeine Allergen"
+                                }
+                            ],
+                            "nutritionInfo": {
+                                "count": 100,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 11000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ],
+                            "hashKey": "e7e53a459d286e9e553660bcd357b5e63f9360e02c852c70783d595e87d69784"
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            },
+            {
+                "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                "instanceId": "d01d5b3f-e289-48bd-9162-c11716143e56",
+                "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                "name": "Text Modifier Group 1",
+                "displayName": "Text Modifier Group 1",
+                "translatedNames": [
+                    {
+                        "translation": "Text Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Text Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                        "modifier": {
+                            "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                            "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                            "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                            "name": "Text Modifier 1",
+                            "displayName": "Text Modifier 1",
+                            "translatedNames": [
+                                {
+                                    "translation": "Text Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "nutritionInfo": {
+                                "count": 0,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ]
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            },
+            {
+                "id": "1ac0ba51-f810-41ee-804a-8658cc76aeb7",
+                "instanceId": "d2c16caf-3482-4a19-8fbf-5d195aa71069",
+                "variationId": "a99a062a-0ae1-4ca7-a8b7-8e8fee3107f4",
+                "name": "Text Modifier Group 2",
+                "displayName": "Text Modifier Group 2",
+                "translatedNames": [
+                    {
+                        "translation": "Text Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Text Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_31850910-c6be-4e62-bf01-9ca466c8d324.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_31850910-c6be-4e62-bf01-9ca466c8d324.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "f4bab9f8-1c9a-4ca0-a385-b9778eb9149c",
+                        "modifier": {
+                            "id": "03a1897e-599e-4f90-ac0b-209d76f51a97",
+                            "instanceId": "1767f900-afbd-4e88-b9c9-0f15ee0cf2ee",
+                            "variationId": "b05bb177-c804-49aa-ba70-06928e592bed",
+                            "name": "Text Modifier 2",
+                            "displayName": "Text Modifier 2",
+                            "translatedNames": [
+                                {
+                                    "translation": "Text Modifier 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "nutritionInfo": {
+                                "count": 0,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ]
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            }
+        ],
+        "classifications": [
+            {
+                "id": "672dd750a3d3ee7d8696b598",
+                "name": "Alcoholic"
+            },
+            {
+                "id": "69a03eb67baf316badc917cf",
+                "name": "CBD Products"
+            }
+        ],
+        "allergens": [
+            {
+                "id": "6901961b00f228251990bee5",
+                "name": "Beef Allergen"
+            },
+            {
+                "id": "66fd1a536a3e17145ca7564a",
+                "name": "Caffeine Allergen"
+            }
+        ],
+        "nutritionInfo": {
+            "count": 100,
+            "unit": "KCAL"
+        },
+        "prices": [
+            {
+                "price": {
+                    "currencyId": "5f7ac8e08088545d96024089",
+                    "amount": 1000,
+                    "taxInclusive": true
+                },
+                "taxPercentages": []
+            }
+        ],
+        "hashKey": "4f7a803c06b74484909dc8710e6d1430be43dc004408a7957f4c70ca1226d776"
+    },
+    {
+        "id": "dc0bd802-13a4-4c42-98a2-94e5829ee83b",
+        "instanceId": "c199f790-2417-45cd-9c0f-c3dbbeac1cd7",
+        "variationId": "1c3ffdec-9bb4-404f-b2ca-386f80f40e7a",
+        "name": "Product 3",
+        "displayName": "Product 3",
+        "description": "Des",
+        "translatedNames": [
+            {
+                "translation": "Product 3",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDisplayNames": [
+            {
+                "translation": "Product 3",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDescriptions": [
+            {
+                "translation": "Des",
+                "locale": "en-us"
+            }
+        ],
+        "image": {
+            "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_b62def37-916b-4ec6-8c19-41a2909ecb9c.png",
+            "crop": null
+        },
+        "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_b62def37-916b-4ec6-8c19-41a2909ecb9c.png",
+        "externalId": "Ext",
+        "tags": [
+            {
+                "id": "69859f0b0a66916712d1eb75",
+                "name": "123"
+            },
+            {
+                "id": "69d37cab215ca46ffcc1cedb",
+                "name": "tag1"
+            }
+        ],
+        "customFields": [
+            {
+                "id": "699d8018464d5f30853706b5",
+                "value": "P",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8027464d5f30853706b6",
+                "value": "121",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d803f464d5f30853706b7",
+                "value": "true",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d805a464d5f30853706b8",
+                "value": "Select2",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8070464d5f30853706b9",
+                "value": "P",
+                "name": "Global Product"
+            }
+        ],
+        "status": "ACTIVE",
+        "categoryId": "699dd5360ce81557ed4c1b05",
+        "modifierGroups": [
+            {
+                "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                "instanceId": "cf954daa-729e-4a42-b0a2-810c1dc7b6f4",
+                "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                "name": "Text Modifier Group 1",
+                "displayName": "Text Modifier Group 1",
+                "translatedNames": [
+                    {
+                        "translation": "Text Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Text Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                        "modifier": {
+                            "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                            "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                            "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                            "name": "Text Modifier 1",
+                            "displayName": "Text Modifier 1",
+                            "translatedNames": [
+                                {
+                                    "translation": "Text Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "nutritionInfo": {
+                                "count": 0,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ]
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            },
+            {
+                "id": "1ac0ba51-f810-41ee-804a-8658cc76aeb7",
+                "instanceId": "baab33ec-f876-4cd6-bddc-2ba4af91052f",
+                "variationId": "a99a062a-0ae1-4ca7-a8b7-8e8fee3107f4",
+                "name": "Text Modifier Group 2",
+                "displayName": "Text Modifier Group 2",
+                "translatedNames": [
+                    {
+                        "translation": "Text Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Text Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_31850910-c6be-4e62-bf01-9ca466c8d324.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_31850910-c6be-4e62-bf01-9ca466c8d324.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "f4bab9f8-1c9a-4ca0-a385-b9778eb9149c",
+                        "modifier": {
+                            "id": "03a1897e-599e-4f90-ac0b-209d76f51a97",
+                            "instanceId": "1767f900-afbd-4e88-b9c9-0f15ee0cf2ee",
+                            "variationId": "b05bb177-c804-49aa-ba70-06928e592bed",
+                            "name": "Text Modifier 2",
+                            "displayName": "Text Modifier 2",
+                            "translatedNames": [
+                                {
+                                    "translation": "Text Modifier 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "nutritionInfo": {
+                                "count": 0,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ]
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            },
+            {
+                "id": "e2753bea-5215-45a9-9dc1-9e5551496b86",
+                "instanceId": "3f7313a8-adbd-407f-9c3d-259b3ad70392",
+                "variationId": "cb9769b2-dac0-4285-abef-da3575a005ea",
+                "name": "Product Modifier Group 1",
+                "displayName": "Product Modifier Group 1",
+                "translatedNames": [
+                    {
+                        "translation": "Product Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Product Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "07196887-1086-43ed-9edf-32952405b6e6",
+                        "modifier": {
+                            "id": "db897cc8-a334-4894-83a1-6b68bed31a65",
+                            "instanceId": "6d695e20-8a2c-43d4-b489-d058f45d2ed7",
+                            "variationId": "819a4455-f997-40c4-8cfc-10cb989d2080",
+                            "name": "Product Modifier 1",
+                            "displayName": "Product Modifier 1",
+                            "description": "PM1",
+                            "translatedNames": [
+                                {
+                                    "translation": "Product Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDisplayNames": [
+                                {
+                                    "translation": "Product Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDescriptions": [
+                                {
+                                    "translation": "PM1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "image": {
+                                "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                "crop": "{\"x\":45,\"y\":110,\"width\":362,\"height\":362}"
+                            },
+                            "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png?width=362&height=362&x=45&y=110",
+                            "externalId": "PM1",
+                            "tags": [
+                                {
+                                    "id": "69859f0b0a66916712d1eb75",
+                                    "name": "123"
+                                }
+                            ],
+                            "customFields": [
+                                {
+                                    "id": "699d8018464d5f30853706b5",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8027464d5f30853706b6",
+                                    "value": "121",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d803f464d5f30853706b7",
+                                    "value": "true",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d805a464d5f30853706b8",
+                                    "value": "Select2",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8070464d5f30853706b9",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "categoryId": "699dd5360ce81557ed4c1b05",
+                            "modifierGroups": [
+                                {
+                                    "id": "185a8fbe-c74d-4c86-adaa-8d41b3f35721",
+                                    "instanceId": "8c0c81fe-d0eb-452e-8c8d-c1332e9612b9",
+                                    "variationId": "3694d4a6-ba6a-40a6-bd78-3f37542df80c",
+                                    "name": "Product Modifier Group 2",
+                                    "displayName": "Product Modifier Group 2",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Product Modifier Group 2",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Product Modifier Group 2",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "5db69739-5ca0-4165-9d27-38fab0d9fa5b",
+                                            "modifier": {
+                                                "id": "c4e11139-6e08-444c-9bca-e8c740f959e0",
+                                                "instanceId": "de74a6fc-4321-4c43-bb2b-0340d4dce04e",
+                                                "variationId": "706adcb2-cb61-4a25-aa9d-5315173ab439",
+                                                "name": "Product Modifier 2",
+                                                "displayName": "Product Modifier 2",
+                                                "description": "PM2",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Product Modifier 2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDisplayNames": [
+                                                    {
+                                                        "translation": "Product Modifier 2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDescriptions": [
+                                                    {
+                                                        "translation": "PM2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "image": {
+                                                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png",
+                                                    "crop": "{\"x\":60,\"y\":130,\"width\":365,\"height\":365}"
+                                                },
+                                                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png?width=365&height=365&x=60&y=130",
+                                                "externalId": "PM2",
+                                                "tags": [
+                                                    {
+                                                        "id": "69859f0b0a66916712d1eb75",
+                                                        "name": "123"
+                                                    }
+                                                ],
+                                                "customFields": [
+                                                    {
+                                                        "id": "699d8018464d5f30853706b5",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8027464d5f30853706b6",
+                                                        "value": "121",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d803f464d5f30853706b7",
+                                                        "value": "true",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d805a464d5f30853706b8",
+                                                        "value": "Select2",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8070464d5f30853706b9",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "categoryId": "699dd5360ce81557ed4c1b05",
+                                                "classifications": [
+                                                    {
+                                                        "id": "672dd750a3d3ee7d8696b598",
+                                                        "name": "Alcoholic"
+                                                    },
+                                                    {
+                                                        "id": "69a03eb67baf316badc917cf",
+                                                        "name": "CBD Products"
+                                                    }
+                                                ],
+                                                "allergens": [
+                                                    {
+                                                        "id": "670598bc1efb9b5621220250",
+                                                        "name": "Cereal - Kamut Allergen"
+                                                    },
+                                                    {
+                                                        "id": "670599b41efb9b5621220253",
+                                                        "name": "Cereal - Barley Allergen"
+                                                    }
+                                                ],
+                                                "nutritionInfo": {
+                                                    "count": 2,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 10000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ],
+                                                "hashKey": "39875d6122eb6bd6e2cb628f37e3e0cf1ed5b2a68052464cc36cc749ab903787"
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                },
+                                {
+                                    "id": "1ac0ba51-f810-41ee-804a-8658cc76aeb7",
+                                    "instanceId": "32d84abd-35ec-4068-8751-c061f3c46979",
+                                    "variationId": "a99a062a-0ae1-4ca7-a8b7-8e8fee3107f4",
+                                    "name": "Text Modifier Group 2",
+                                    "displayName": "Text Modifier Group 2",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Text Modifier Group 2",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Text Modifier Group 2",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_31850910-c6be-4e62-bf01-9ca466c8d324.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_31850910-c6be-4e62-bf01-9ca466c8d324.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "f4bab9f8-1c9a-4ca0-a385-b9778eb9149c",
+                                            "modifier": {
+                                                "id": "03a1897e-599e-4f90-ac0b-209d76f51a97",
+                                                "instanceId": "1767f900-afbd-4e88-b9c9-0f15ee0cf2ee",
+                                                "variationId": "b05bb177-c804-49aa-ba70-06928e592bed",
+                                                "name": "Text Modifier 2",
+                                                "displayName": "Text Modifier 2",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Text Modifier 2",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "nutritionInfo": {
+                                                    "count": 0,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ]
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                }
+                            ],
+                            "classifications": [
+                                {
+                                    "id": "672dd750a3d3ee7d8696b598",
+                                    "name": "Alcoholic"
+                                }
+                            ],
+                            "allergens": [
+                                {
+                                    "id": "670599b41efb9b5621220253",
+                                    "name": "Cereal - Barley Allergen"
+                                }
+                            ],
+                            "nutritionInfo": {
+                                "count": 1,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ],
+                            "hashKey": "6dcf63db3047056d774467e8538412767156b4d2dcc1a3775f605a4f6c4ec06b"
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            },
+            {
+                "id": "185a8fbe-c74d-4c86-adaa-8d41b3f35721",
+                "instanceId": "8a7cbe42-885a-46da-8d35-6c9e21520e8a",
+                "variationId": "ec07d6b2-057e-4a07-96a6-0ec5d8dfa900",
+                "name": "Product Modifier Group 2",
+                "displayName": "Product Modifier Group 2",
+                "translatedNames": [
+                    {
+                        "translation": "Product Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Product Modifier Group 2",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_3ed9f8b9-bb6d-44d2-a689-86896f5d4b6e.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "911736bf-2fa9-441d-ac4c-0bdd4dd07eb7",
+                        "modifier": {
+                            "id": "c4e11139-6e08-444c-9bca-e8c740f959e0",
+                            "instanceId": "1581c060-1e5e-4415-95bb-3f85bad2efbe",
+                            "variationId": "e1fc0e90-6e40-4873-af7e-a83614e0d359",
+                            "name": "Product Modifier 2",
+                            "displayName": "Product Modifier 2",
+                            "description": "PM2",
+                            "translatedNames": [
+                                {
+                                    "translation": "Product Modifier 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDisplayNames": [
+                                {
+                                    "translation": "Product Modifier 2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "translatedDescriptions": [
+                                {
+                                    "translation": "PM2",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "image": {
+                                "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png",
+                                "crop": "{\"x\":60,\"y\":130,\"width\":365,\"height\":365}"
+                            },
+                            "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_8d75f3a3-2c38-478b-abd1-618d6de20b6d.png?width=365&height=365&x=60&y=130",
+                            "externalId": "PM2",
+                            "tags": [
+                                {
+                                    "id": "69859f0b0a66916712d1eb75",
+                                    "name": "123"
+                                }
+                            ],
+                            "customFields": [
+                                {
+                                    "id": "699d8018464d5f30853706b5",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8027464d5f30853706b6",
+                                    "value": "121",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d803f464d5f30853706b7",
+                                    "value": "true",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d805a464d5f30853706b8",
+                                    "value": "Select2",
+                                    "name": "Global Product"
+                                },
+                                {
+                                    "id": "699d8070464d5f30853706b9",
+                                    "value": "P",
+                                    "name": "Global Product"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "categoryId": "699dd5360ce81557ed4c1b05",
+                            "modifierGroups": [
+                                {
+                                    "id": "e2753bea-5215-45a9-9dc1-9e5551496b86",
+                                    "instanceId": "538b0943-8807-4dde-96c2-cb1416251b7e",
+                                    "variationId": "3e4df53a-d434-4b18-8772-2929b91bc9cf",
+                                    "name": "Product Modifier Group 1",
+                                    "displayName": "Product Modifier Group 1",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Product Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Product Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_503807f1-4c44-4837-a280-852f89c900e7.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "cea8ece1-0ae7-48ef-98f1-69de093611b2",
+                                            "modifier": {
+                                                "id": "db897cc8-a334-4894-83a1-6b68bed31a65",
+                                                "instanceId": "c6cc5b19-9987-4b8a-a0e3-6ca639ed21d5",
+                                                "variationId": "62934b0d-0a94-47b3-9f90-1c25bf361f61",
+                                                "name": "Product Modifier 1",
+                                                "displayName": "Product Modifier 1",
+                                                "description": "PM1",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Product Modifier 1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDisplayNames": [
+                                                    {
+                                                        "translation": "Product Modifier 1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "translatedDescriptions": [
+                                                    {
+                                                        "translation": "PM1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "image": {
+                                                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                                    "crop": "{\"x\":45,\"y\":110,\"width\":362,\"height\":362}"
+                                                },
+                                                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png?width=362&height=362&x=45&y=110",
+                                                "externalId": "PM1",
+                                                "tags": [
+                                                    {
+                                                        "id": "69859f0b0a66916712d1eb75",
+                                                        "name": "123"
+                                                    }
+                                                ],
+                                                "customFields": [
+                                                    {
+                                                        "id": "699d8018464d5f30853706b5",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8027464d5f30853706b6",
+                                                        "value": "121",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d803f464d5f30853706b7",
+                                                        "value": "true",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d805a464d5f30853706b8",
+                                                        "value": "Select2",
+                                                        "name": "Global Product"
+                                                    },
+                                                    {
+                                                        "id": "699d8070464d5f30853706b9",
+                                                        "value": "P",
+                                                        "name": "Global Product"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "categoryId": "699dd5360ce81557ed4c1b05",
+                                                "classifications": [
+                                                    {
+                                                        "id": "672dd750a3d3ee7d8696b598",
+                                                        "name": "Alcoholic"
+                                                    }
+                                                ],
+                                                "allergens": [
+                                                    {
+                                                        "id": "670599b41efb9b5621220253",
+                                                        "name": "Cereal - Barley Allergen"
+                                                    }
+                                                ],
+                                                "nutritionInfo": {
+                                                    "count": 1,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ],
+                                                "hashKey": "325e1130561f5a0ca6087fe7f562c0984e3eb4d875db35b16f33ace00ed9dab2"
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                },
+                                {
+                                    "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                                    "instanceId": "f638095e-8658-4302-867b-c5a9b0049c17",
+                                    "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                                    "name": "Text Modifier Group 1",
+                                    "displayName": "Text Modifier Group 1",
+                                    "translatedNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "translatedDisplayNames": [
+                                        {
+                                            "translation": "Text Modifier Group 1",
+                                            "locale": "en-us"
+                                        }
+                                    ],
+                                    "image": {
+                                        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                        "crop": null
+                                    },
+                                    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                                    "customFields": [
+                                        {
+                                            "id": "699d8086464d5f30853706ba",
+                                            "value": "MGT",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d80ef464d5f30853706bb",
+                                            "value": "111",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d814a464d5f30853706bc",
+                                            "value": "true",
+                                            "name": "Global MGT"
+                                        },
+                                        {
+                                            "id": "699d81b3464d5f30853706bd",
+                                            "value": "Select1",
+                                            "name": "Global MGT"
+                                        }
+                                    ],
+                                    "status": "ACTIVE",
+                                    "categoryId": "699dd5360ce81557ed4c1b05",
+                                    "minModifierCount": 0,
+                                    "maxModifierCount": 1,
+                                    "modifiers": [
+                                        {
+                                            "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                                            "modifier": {
+                                                "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                                                "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                                                "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                                                "name": "Text Modifier 1",
+                                                "displayName": "Text Modifier 1",
+                                                "translatedNames": [
+                                                    {
+                                                        "translation": "Text Modifier 1",
+                                                        "locale": "en-us"
+                                                    }
+                                                ],
+                                                "status": "ACTIVE",
+                                                "nutritionInfo": {
+                                                    "count": 0,
+                                                    "unit": "KCAL"
+                                                },
+                                                "prices": [
+                                                    {
+                                                        "price": {
+                                                            "currencyId": "5f7ac8e08088545d96024089",
+                                                            "amount": 1000,
+                                                            "taxInclusive": true
+                                                        },
+                                                        "taxPercentages": []
+                                                    }
+                                                ]
+                                            },
+                                            "perItemLimit": 1,
+                                            "sortIndex": 0,
+                                            "defaultModifier": false
+                                        }
+                                    ],
+                                    "isOptional": true
+                                }
+                            ],
+                            "classifications": [
+                                {
+                                    "id": "672dd750a3d3ee7d8696b598",
+                                    "name": "Alcoholic"
+                                },
+                                {
+                                    "id": "69a03eb67baf316badc917cf",
+                                    "name": "CBD Products"
+                                }
+                            ],
+                            "allergens": [
+                                {
+                                    "id": "670598bc1efb9b5621220250",
+                                    "name": "Cereal - Kamut Allergen"
+                                },
+                                {
+                                    "id": "670599b41efb9b5621220253",
+                                    "name": "Cereal - Barley Allergen"
+                                }
+                            ],
+                            "nutritionInfo": {
+                                "count": 2,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 10000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ],
+                            "hashKey": "f84ad6f050058699097045d7ac64396628953a82dcd8586161cdaeefa9a89205"
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            }
+        ],
+        "classifications": [
+            {
+                "id": "6356433809255e319b240d2a",
+                "name": "Chef's Special"
+            },
+            {
+                "id": "635fb84d36487b3529ea9d50",
+                "name": "Combo Item"
+            }
+        ],
+        "allergens": [
+            {
+                "id": "670599b41efb9b5621220253",
+                "name": "Cereal - Barley Allergen"
+            },
+            {
+                "id": "65ba3c50a74f606040849f0e",
+                "name": "Celery"
+            }
+        ],
+        "nutritionInfo": {
+            "count": 100,
+            "unit": "KCAL"
+        },
+        "prices": [
+            {
+                "price": {
+                    "currencyId": "5f7ac8e08088545d96024089",
+                    "amount": 10000,
+                    "taxInclusive": true
+                },
+                "taxPercentages": []
+            }
+        ],
+        "hashKey": "5ea9b454ceec350df22ed7d794de21652c9c745bcdfb97f521f8ff5af6c1c242"
+    },
+    {
+        "id": "320290a9-8c2d-4287-af20-bbacc1ffdba7",
+        "instanceId": "fc457ccc-e743-4b05-9d29-615776b6fba7",
+        "variationId": "b495064e-6865-41c0-a91a-8d873c10d34a",
+        "name": "Product 4",
+        "displayName": "Product 4",
+        "description": "Des4",
+        "translatedNames": [
+            {
+                "translation": "Product 4",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDisplayNames": [
+            {
+                "translation": "Product 4",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDescriptions": [
+            {
+                "translation": "Des4",
+                "locale": "en-us"
+            }
+        ],
+        "image": {
+            "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_5b2a6add-888b-4e3d-b447-6e2aeb9f671c.png",
+            "crop": "{\"x\":119,\"y\":37,\"width\":242,\"height\":242}"
+        },
+        "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_5b2a6add-888b-4e3d-b447-6e2aeb9f671c.png?width=242&height=242&x=119&y=37",
+        "externalId": "4",
+        "tags": [
+            {
+                "id": "69859f0b0a66916712d1eb75",
+                "name": "123"
+            }
+        ],
+        "customFields": [
+            {
+                "id": "699d8018464d5f30853706b5",
+                "value": "P",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8027464d5f30853706b6",
+                "value": "121",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d803f464d5f30853706b7",
+                "value": "true",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d805a464d5f30853706b8",
+                "value": "Select2",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8070464d5f30853706b9",
+                "value": "P",
+                "name": "Global Product"
+            }
+        ],
+        "status": "ACTIVE",
+        "categoryId": "699dd5360ce81557ed4c1b05",
+        "classifications": [
+            {
+                "id": "635fb84d36487b3529ea9d50",
+                "name": "Combo Item"
+            }
+        ],
+        "allergens": [
+            {
+                "id": "670599b41efb9b5621220253",
+                "name": "Cereal - Barley Allergen"
+            }
+        ],
+        "nutritionInfo": {
+            "count": 4,
+            "unit": "KCAL"
+        },
+        "prices": [
+            {
+                "price": {
+                    "currencyId": "5f7ac8e08088545d96024089",
+                    "amount": 10000,
+                    "taxInclusive": true
+                },
+                "taxPercentages": []
+            }
+        ],
+        "hashKey": "d806d1b1b7bdaeb38b347a016975182919bcfee8805868212fcf1eeb8ff258d2"
+    },
+    {
+        "id": "33b1ce54-a7b4-48b6-a40c-7a128d006a98",
+        "instanceId": "fe2b6cd7-fb16-4811-8b99-34c6d271e413",
+        "variationId": "66412ead-629f-41bd-8247-b28ccf8d72bf",
+        "name": "Product 2",
+        "displayName": "Product 2",
+        "description": "Des",
+        "translatedNames": [
+            {
+                "translation": "Product 2",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDisplayNames": [
+            {
+                "translation": "Product 2",
+                "locale": "en-us"
+            }
+        ],
+        "translatedDescriptions": [
+            {
+                "translation": "Des",
+                "locale": "en-us"
+            }
+        ],
+        "image": {
+            "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6173fc16-b3f6-4823-afcd-bf73228572fe.png",
+            "crop": null
+        },
+        "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6173fc16-b3f6-4823-afcd-bf73228572fe.png",
+        "externalId": "Ext",
+        "tags": [
+            {
+                "id": "69859f0b0a66916712d1eb75",
+                "name": "123"
+            },
+            {
+                "id": "69d37cab215ca46ffcc1cedb",
+                "name": "tag1"
+            }
+        ],
+        "customFields": [
+            {
+                "id": "699d8018464d5f30853706b5",
+                "value": "P",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8027464d5f30853706b6",
+                "value": "121",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d803f464d5f30853706b7",
+                "value": "true",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d805a464d5f30853706b8",
+                "value": "Select2",
+                "name": "Global Product"
+            },
+            {
+                "id": "699d8070464d5f30853706b9",
+                "value": "P",
+                "name": "Global Product"
+            }
+        ],
+        "status": "ACTIVE",
+        "categoryId": "699dd5360ce81557ed4c1b05",
+        "modifierGroups": [
+            {
+                "id": "09f7e13f-128e-422f-941d-32b384cfa848",
+                "instanceId": "94649053-6a4b-40ff-b043-7eb01d2d72f4",
+                "variationId": "892bc08d-1d03-4b4c-80ff-cc85c999560f",
+                "name": "Text Modifier Group 1",
+                "displayName": "Text Modifier Group 1",
+                "translatedNames": [
+                    {
+                        "translation": "Text Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "translatedDisplayNames": [
+                    {
+                        "translation": "Text Modifier Group 1",
+                        "locale": "en-us"
+                    }
+                ],
+                "image": {
+                    "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                    "crop": null
+                },
+                "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_d1727740-8d60-49bb-8a7e-0bae4342c275.png",
+                "customFields": [
+                    {
+                        "id": "699d8086464d5f30853706ba",
+                        "value": "MGT",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d80ef464d5f30853706bb",
+                        "value": "111",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d814a464d5f30853706bc",
+                        "value": "true",
+                        "name": "Global MGT"
+                    },
+                    {
+                        "id": "699d81b3464d5f30853706bd",
+                        "value": "Select1",
+                        "name": "Global MGT"
+                    }
+                ],
+                "status": "ACTIVE",
+                "categoryId": "699dd5360ce81557ed4c1b05",
+                "minModifierCount": 0,
+                "maxModifierCount": 1,
+                "modifiers": [
+                    {
+                        "id": "1bed63a7-c792-4f91-987c-56e7cff1082d",
+                        "modifier": {
+                            "id": "3472f343-b5d2-46f5-98dd-ba8d504b54ce",
+                            "instanceId": "b331cbd7-bd53-41b8-8a32-bbc023ddc83d",
+                            "variationId": "b42da2e6-48be-4f7e-846a-70dccbd92d83",
+                            "name": "Text Modifier 1",
+                            "displayName": "Text Modifier 1",
+                            "translatedNames": [
+                                {
+                                    "translation": "Text Modifier 1",
+                                    "locale": "en-us"
+                                }
+                            ],
+                            "status": "ACTIVE",
+                            "nutritionInfo": {
+                                "count": 0,
+                                "unit": "KCAL"
+                            },
+                            "prices": [
+                                {
+                                    "price": {
+                                        "currencyId": "5f7ac8e08088545d96024089",
+                                        "amount": 1000,
+                                        "taxInclusive": true
+                                    },
+                                    "taxPercentages": []
+                                }
+                            ]
+                        },
+                        "perItemLimit": 1,
+                        "sortIndex": 0,
+                        "defaultModifier": false
+                    }
+                ],
+                "isOptional": true
+            }
+        ],
+        "classifications": [
+            {
+                "id": "672dd750a3d3ee7d8696b598",
+                "name": "Alcoholic"
+            },
+            {
+                "id": "69a03eb67baf316badc917cf",
+                "name": "CBD Products"
+            }
+        ],
+        "allergens": [
+            {
+                "id": "6901961b00f228251990bee5",
+                "name": "Beef Allergen"
+            },
+            {
+                "id": "66fd1a536a3e17145ca7564a",
+                "name": "Caffeine Allergen"
+            }
+        ],
+        "nutritionInfo": {
+            "count": 100,
+            "unit": "KCAL"
+        },
+        "prices": [
+            {
+                "price": {
+                    "currencyId": "5f7ac8e08088545d96024089",
+                    "amount": 11000,
+                    "taxInclusive": true
+                },
+                "taxPercentages": []
+            }
+        ],
+        "hashKey": "e7e53a459d286e9e553660bcd357b5e63f9360e02c852c70783d595e87d69784"
+    }
+]

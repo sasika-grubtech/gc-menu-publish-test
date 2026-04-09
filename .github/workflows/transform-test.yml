@@ -1,0 +1,76 @@
+name: GC3 Backward-Comp Transform Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  transform-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create .env from secrets
+        run: |
+          cat <<EOF > .env
+          COGNITO_REGION=${{ secrets.COGNITO_REGION }}
+          COGNITO_CLIENT_ID=${{ secrets.COGNITO_CLIENT_ID }}
+          COGNITO_USER_POOL_ID=${{ secrets.COGNITO_USER_POOL_ID }}
+          COGNITO_USERNAME=${{ secrets.COGNITO_USERNAME }}
+          COGNITO_PASSWORD="${{ secrets.COGNITO_PASSWORD }}"
+          MOCK_SERVER_PORT=3000
+          SCENARIO=${{ secrets.SCENARIO }}
+          TRANSFORM_API_BASE=${{ secrets.TRANSFORM_API_BASE }}
+          MENU_MAT_API_BASE=${{ secrets.MENU_MAT_API_BASE }}
+          PARTNER_ID=${{ secrets.PARTNER_ID }}
+          BRAND_ID=${{ secrets.BRAND_ID }}
+          LOCATION_ID=${{ secrets.LOCATION_ID }}
+          AGGREGATOR_ID=${{ secrets.AGGREGATOR_ID }}
+          SERVICE_MODE=ALL
+          TARGET_BRAND_ID=${{ secrets.TARGET_BRAND_ID }}
+          POLL_INTERVAL_MS=10000
+          POLL_TIMEOUT_MS=600000
+          VALIDATION_API_URL=${{ secrets.VALIDATION_API_URL }}
+          EOF
+
+      - name: Verify data files exist
+        run: |
+          echo "── byDeployment files ──"
+          ls -la data/byDeployment/
+          echo "── product-hierarchy files ──"
+          ls -la data/product-hierarchy/
+
+      - name: Run transform test
+        run: npm start
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: transform-test-logs-${{ github.run_id }}
+          path: |
+            *.log
+          retention-days: 30

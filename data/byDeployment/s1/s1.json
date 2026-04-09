@@ -1,0 +1,81 @@
+{
+    "id": "7157f221-5319-4681-bb9f-4618f4ccd33e",
+    "variationId": "26257031-6879-4e03-9ef9-039a1b318b6f",
+    "name": "Menu 3",
+    "description": "Menu 3",
+    "translatedNames": [
+        {
+            "translation": "Menu 3",
+            "locale": "en-us"
+        }
+    ],
+    "translatedDescriptions": [
+        {
+            "translation": "Menu 3",
+            "locale": "en-us"
+        }
+    ],
+    "externalId": "Menu 3",
+    "tagIds": [
+        "69859f0b0a66916712d1eb75"
+    ],
+    "customFields": [
+        {
+            "customFieldId": "699d761d464d5f3085370675",
+            "value": "Glo"
+        }
+    ],
+    "status": "ACTIVE",
+    "releaseTag": "2026-04-09T03:35:05.556662132Z",
+    "gc3BatchId": "8ba1d38f-2316-4e32-8521-726267fa311a",
+    "gc3JobId": "5021cd97-5daa-4a7b-b344-c333ecafe769",
+    "currencyId": "5f7ac8e08088545d96024089",
+    "taxPercentages": [
+        {
+            "taxId": "69897886f252ce33bbbbd1ce",
+            "percentage": "10"
+        }
+    ],
+    "defaultLanguageId": "5f7c24a1463ffe2af0842b57",
+    "applyMenuLevelTax": true,
+    "categories": [
+        {
+            "id": "699588b7e4b2534df0dc2045",
+            "name": "Category 1",
+            "color": "blue",
+            "image": null,
+            "imageUrl": null,
+            "taxPercentages": [
+                {
+                    "taxId": "69897886f252ce33bbbbd1ce",
+                    "percentage": "10"
+                }
+            ],
+            "servingTimes": null,
+            "products": [
+                {
+                    "id": "33b1ce54-a7b4-48b6-a40c-7a128d006a98",
+                    "type": "Product",
+                    "instanceId": "3415b655-c790-4053-ba5a-0afef36d097e"
+                },
+                {
+                    "id": "dc0bd802-13a4-4c42-98a2-94e5829ee83b",
+                    "type": "Product",
+                    "instanceId": "ae6d3e83-3298-4e16-81ea-0864cb7cb346"
+                },
+                {
+                    "id": "88be128b-1846-46c0-8cae-f7a72c5bb7ba",
+                    "type": "Product",
+                    "instanceId": "00c9aec1-d69a-459e-bed1-0149891c1318"
+                }
+            ],
+            "translatedNames": [
+                {
+                    "translation": "Category 1",
+                    "locale": "en-us"
+                }
+            ]
+        }
+    ],
+    "hashKey": "f643a090c33e62a4b3f09f2ecd3bfe801264a694b4bdc0b46608950f5f6ce3cd"
+}

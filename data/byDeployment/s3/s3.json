@@ -1,0 +1,164 @@
+{
+    "id": "73525cb4-4a71-4172-9ff6-deb4765bc025",
+    "variationId": "fe367299-6416-4763-84e0-b1d964ce4f7e",
+    "name": "Menu 1",
+    "displayName": "Menu 1",
+    "translatedNames": [
+        {
+            "translation": "Menu 1",
+            "locale": "en-us"
+        }
+    ],
+    "image": {
+        "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6af562e3-f99e-4c19-8006-2bdf95532876.png",
+        "crop": null
+    },
+    "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6af562e3-f99e-4c19-8006-2bdf95532876.png",
+    "customFields": [
+        {
+            "id": "69d407dc215ca46ffcc22e61",
+            "value": "123",
+            "name": "menu custom"
+        },
+        {
+            "id": "699d761d464d5f3085370675",
+            "value": "Glo",
+            "name": "Global 1"
+        }
+    ],
+    "status": "ACTIVE",
+    "releaseTag": "2026-04-09T08:36:04.896826105Z",
+    "gc3BatchId": "42f4a2e3-a79d-4e55-ab5f-c8143278965b",
+    "gc3JobId": "b997d342-1c61-4782-8840-b0c10172ebf5",
+    "currencyId": "5f7ac8e08088545d96024089",
+    "taxPercentages": [
+        {
+            "taxId": "69897886f252ce33bbbbd1ce",
+            "percentage": "10"
+        }
+    ],
+    "defaultLanguageId": "5f7c24a1463ffe2af0842b57",
+    "applyMenuLevelTax": true,
+    "categories": [
+        {
+            "id": "699588b7e4b2534df0dc2045",
+            "name": "Category 1",
+            "color": "blue",
+            "image": {
+                "url": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6af562e3-f99e-4c19-8006-2bdf95532876.png",
+                "crop": null
+            },
+            "imageUrl": "https://d2ads64l41mif5.cloudfront.net/gc3/IMAGE_6af562e3-f99e-4c19-8006-2bdf95532876.png",
+            "taxPercentages": null,
+            "servingTimes": null,
+            "products": [
+                {
+                    "id": "33b1ce54-a7b4-48b6-a40c-7a128d006a98",
+                    "type": "Product",
+                    "instanceId": "4d69d452-8ba1-4cf5-8a1d-ecd54a7eaec7"
+                },
+                {
+                    "id": "88be128b-1846-46c0-8cae-f7a72c5bb7ba",
+                    "type": "Product",
+                    "instanceId": "4e9aeb84-9a7c-484b-90a1-7298e447e2d3"
+                },
+                {
+                    "id": "971abee2-605c-4d70-937e-2cf3c02ddb89",
+                    "type": "Product",
+                    "instanceId": "e252f3a5-405b-4572-bbde-cacaee3a229b"
+                }
+            ],
+            "translatedNames": [
+                {
+                    "translation": "Category 1",
+                    "locale": "en-us"
+                }
+            ]
+        },
+        {
+            "id": "699dd5360ce81557ed4c1b05",
+            "name": "Category 3",
+            "color": "orange",
+            "image": null,
+            "imageUrl": null,
+            "taxPercentages": null,
+            "servingTimes": null,
+            "products": [
+                {
+                    "id": "971abee2-605c-4d70-937e-2cf3c02ddb89",
+                    "type": "Product",
+                    "instanceId": "60c1b4b8-d0d4-4607-bc81-fa7a46357ab8"
+                },
+                {
+                    "id": "88be128b-1846-46c0-8cae-f7a72c5bb7ba",
+                    "type": "Product",
+                    "instanceId": "bf1bae82-234c-4782-8489-2e6627be8984"
+                },
+                {
+                    "id": "dc0bd802-13a4-4c42-98a2-94e5829ee83b",
+                    "type": "Product",
+                    "instanceId": "c199f790-2417-45cd-9c0f-c3dbbeac1cd7"
+                },
+                {
+                    "id": "33b1ce54-a7b4-48b6-a40c-7a128d006a98",
+                    "type": "Product",
+                    "instanceId": "fe2b6cd7-fb16-4811-8b99-34c6d271e413"
+                },
+                {
+                    "id": "320290a9-8c2d-4287-af20-bbacc1ffdba7",
+                    "type": "Product",
+                    "instanceId": "fc457ccc-e743-4b05-9d29-615776b6fba7"
+                },
+                {
+                    "id": "db897cc8-a334-4894-83a1-6b68bed31a65",
+                    "type": "Product",
+                    "instanceId": "98c30ed0-e9e5-4d0e-b595-c1a3533285ed"
+                }
+            ],
+            "translatedNames": [
+                {
+                    "translation": "Category 3",
+                    "locale": "en-us"
+                }
+            ]
+        },
+        {
+            "id": "6996dde0275c8b783dd2d294",
+            "name": "Category 2",
+            "color": "indigo",
+            "image": null,
+            "imageUrl": null,
+            "taxPercentages": null,
+            "servingTimes": null,
+            "products": [
+                {
+                    "id": "320290a9-8c2d-4287-af20-bbacc1ffdba7",
+                    "type": "Product",
+                    "instanceId": "5861d293-2489-45b2-b756-fa23ce8adab9"
+                },
+                {
+                    "id": "dc0bd802-13a4-4c42-98a2-94e5829ee83b",
+                    "type": "Product",
+                    "instanceId": "6cff6f5b-8237-4e22-92b1-a7ccc1589199"
+                },
+                {
+                    "id": "88be128b-1846-46c0-8cae-f7a72c5bb7ba",
+                    "type": "Product",
+                    "instanceId": "dc85591a-77d1-47eb-8258-b9bb066c9a64"
+                },
+                {
+                    "id": "971abee2-605c-4d70-937e-2cf3c02ddb89",
+                    "type": "Product",
+                    "instanceId": "c874cbae-2a8b-433c-9967-f532a51609f5"
+                }
+            ],
+            "translatedNames": [
+                {
+                    "translation": "Category 2",
+                    "locale": "en-us"
+                }
+            ]
+        }
+    ],
+    "hashKey": "c434c4bffe948c96c784f133ed39fd463ef9acee85eccc3e1c041fbbe251ae2b"
+}
